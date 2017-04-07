@@ -45,6 +45,7 @@
     },
     "dependencies": {
         "braintree-web": "^3.12.1",
-        "invariant": "^2.2.2"
+        "invariant": "^2.2.2",
+        "prop-types": "^15.5.0"
     }
 }

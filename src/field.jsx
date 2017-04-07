@@ -1,26 +1,25 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import Api from './api';
 import fieldClassName from './fieldClassName';
 
 export default class BraintreeHostedField extends React.Component {
 
     static propTypes = {
-        type: React.PropTypes.oneOf([
+        type: PropTypes.oneOf([
             'number', 'expirationDate', 'expirationMonth', 'expirationYear', 'cvv', 'postalCode',
         ]).isRequired,
-        placeholder: React.PropTypes.string,
-
-        onBlur: React.PropTypes.func,
-        onFocus: React.PropTypes.func,
-        onEmpty: React.PropTypes.func,
-        onNotEmpty: React.PropTypes.func,
-        onCardTypeChange: React.PropTypes.func,
-        onValidityChange: React.PropTypes.func,
+        placeholder: PropTypes.string,
+        onBlur: PropTypes.func,
+        onFocus: PropTypes.func,
+        onEmpty: PropTypes.func,
+        onNotEmpty: PropTypes.func,
+        onCardTypeChange: PropTypes.func,
+        onValidityChange: PropTypes.func,
     }
 
     static contextTypes = {
-        braintreeApi: React.PropTypes.instanceOf(Api),
+        braintreeApi: PropTypes.instanceOf(Api),
     }
 
     constructor(props) {

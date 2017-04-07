@@ -1,18 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import invariant from 'invariant';
 import Api from './api';
 
 export default class Braintree extends React.Component {
 
     static propTypes = {
-        children: React.PropTypes.node.isRequired,
-        authorization: React.PropTypes.string.isRequired,
-        styles: React.PropTypes.object,
-        onError: React.PropTypes.func,
+        children: PropTypes.node.isRequired,
+        authorization: PropTypes.string.isRequired,
+        styles: PropTypes.object,
+        onError: PropTypes.func,
     }
 
     static childContextTypes = {
-        braintreeApi: React.PropTypes.instanceOf(Api),
+        braintreeApi: PropTypes.instanceOf(Api),
     }
 
     componentWillReceiveProps(nextProps) {
