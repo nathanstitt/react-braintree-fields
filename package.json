@@ -14,6 +14,7 @@
     "scripts": {
         "test": "$(npm bin)/jest",
         "build": "rollup -c",
+        "dev": "$(npm bin)/webpack-dev-server --hot --inline",
         "prepublish": "npm run build && npm test"
     },
     "keywords": [
@@ -26,13 +27,13 @@
         "babel-core": "^6.24.0",
         "babel-loader": "^6.4.1",
         "babel-plugin-external-helpers": "^6.22.0",
-        "babel-preset-react": "^6.24.1",
         "babel-plugin-transform-class-properties": "^6.24.1",
         "babel-plugin-transform-decorators-legacy": "^1.3.4",
         "babel-plugin-transform-function-bind": "^6.22.0",
         "babel-plugin-transform-object-rest-spread": "^6.23.0",
         "babel-plugin-transform-react-jsx": "^6.23.0",
         "babel-preset-es2015": "^6.24.0",
+        "babel-preset-react": "^6.24.1",
         "babel-preset-stage-1": "^6.22.0",
         "enzyme": "^2.8.0",
         "jest": "^19.0.2",
