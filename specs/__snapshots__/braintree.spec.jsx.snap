@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Braintree hosted fields renders and matches snapshot 1`] = `
+<div>
+  <div
+    className="field-number-1"
+  />
+  <div
+    className="field-expirationDate-1"
+  />
+  <div
+    className="field-expirationMonth-1"
+  />
+  <div
+    className="field-expirationYear-1"
+  />
+  <div
+    className="field-cvv-1"
+  />
+  <div
+    className="field-postalCode-1"
+  />
+</div>
+`;
