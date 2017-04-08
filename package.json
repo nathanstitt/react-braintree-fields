@@ -14,7 +14,7 @@
   "scripts": {
     "test": "$(npm bin)/jest",
     "build": "rollup -c",
-    "dev": "$(npm bin)/webpack-dev-server --hot --inline",
+    "dev": "$(npm bin)/webpack-dev-server --hot --inline --port 2222",
     "prepublish": "npm run build && npm test"
   },
   "keywords": [
