@@ -25,8 +25,18 @@ render((
         >
             <div>
                 <h3>child</h3>
+                Number:
                 <Field type="number" onFocus={onFocus} />
+                Date:
                 <Field type="expirationDate" />
+                Month:
+                <Field type="expirationMonth" />
+                Year:
+                <Field type="expirationYear" />
+                CVV:
+                <Field type="cvv" />
+                Zip:
+                <Field type="postalCode" />
             </div>
         </Braintree>
     </div>
