@@ -67,7 +67,9 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
                         <Field type="postalCode" />
                     </div>
                 </Braintree>
-                <button onClick={this.getToken}>Get token</button>
+                <div className="footer">
+                    <button onClick={this.getToken}>Get token</button>
+                </div>
             </div>
         )
     }

@@ -3,17 +3,15 @@ const path = require('path');
 
 const config = {
     entry: {
-        lib: __dirname + '/src/index.js',
         demo: __dirname + '/demo.jsx',
     },
     output: {
-        path: __dirname,
-        publicPath: '/',
-        filename: '[name].js',
+        path: __dirname + '/docs',
+        publicPath: '/docs',
+        filename: 'demo.js',
     },
     module: {
         rules: [
-            { test: /\.css$/, use: ['style-loader', 'css-loader'] },
             {
                 loader: 'babel-loader',
                 test: /\.jsx?$/,
@@ -45,7 +43,7 @@ const config = {
     devServer: {
         hot: true,
         inline: true,
-        port: 8889,
+        port: 2222,
         historyApiFallback: true,
         stats: {
             colors: true,
