@@ -10,11 +10,10 @@ A few small React components to make integrating [Braintree's Hosted Fields](htt
 ```javascript
 import { Braintree, Field } from 'react-braintree-fields';
 
-
-
 <Braintree
     authorization='sandbox_g42y39zw_348pk9cgf3bgyw2b'
     onError={this.handleError}
+    onCardTypeChange={this.onCardTypeChange}
     styles={{
         'input': {
             'font-size': '14px',
@@ -26,14 +25,15 @@ import { Braintree, Field } from 'react-braintree-fields';
         }
     }}
 >
-    <div>
-        <h3>child</h3>
+    <div className="fields">
         <Field type="number" onFocus={onFocus} />
         <Field type="expirationDate" />
+        <Field type="cvv" />
     </div>
 </Braintree>
 ```
 
+See [demo.jsx](demo.jsx) for a more complete working example.
 
 ## Braintree Component
 
