@@ -7,11 +7,11 @@ function cap(string) {
 
 export default class BraintreeClientApi {
 
-    constructor({ authorization, onError, styles }) {
+    constructor({ authorization, styles, ...callbacks }) {
         this.fields = {};
         this.handlers = {};
         this.styles = styles || {};
-        this.onErrorCallback = onError;
+        this.callbacks = callbacks || {};
 
         Braintree.create({ authorization }, (err, clientInstance) => {
             if (err) {
@@ -25,7 +25,7 @@ export default class BraintreeClientApi {
 
     onError(err) {
         if (!err) { return; }
-        if (this.onErrorCallback) { this.onErrorCallback(err); }
+        if (this.callbacks.onError) { this.callbacks.onError(err); }
     }
 
     attach() {
@@ -51,7 +51,10 @@ export default class BraintreeClientApi {
     onFieldEvent(eventName, event) {
         const fieldHandlers = this.handlers[event.emittedBy];
         if (fieldHandlers && fieldHandlers[eventName]) {
-            fieldHandlers[eventName](event);
+            fieldHandlers[eventName](event.fields[event.emittedBy], event);
+        }
+        if (this.callbacks[eventName]) {
+            this.callbacks[eventName](event);
         }
     }
 
@@ -69,7 +72,7 @@ export default class BraintreeClientApi {
             ].forEach((eventName) => {
                 hostedFields.on(eventName, ev => this.onFieldEvent(`on${cap(eventName)}`, ev));
             });
-            return this.onError(err);
+            this.onError(err);
         });
     }
 }

@@ -11,12 +11,12 @@ export default class BraintreeHostedField extends React.Component {
         ]).isRequired,
         placeholder: PropTypes.string,
         className: PropTypes.string,
-        onBlur: PropTypes.func,
-        onFocus: PropTypes.func,
-        onEmpty: PropTypes.func,
-        onNotEmpty: PropTypes.func,
         onCardTypeChange: PropTypes.func,
         onValidityChange: PropTypes.func,
+        onNotEmpty: PropTypes.func,
+        onFocus: PropTypes.func,
+        onEmpty: PropTypes.func,
+        onBlur: PropTypes.func,
     }
 
     static contextTypes = {

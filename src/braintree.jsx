@@ -8,8 +8,10 @@ export default class Braintree extends React.Component {
     static propTypes = {
         children: PropTypes.element.isRequired,
         authorization: PropTypes.string.isRequired,
-        styles: PropTypes.object,
+        onValidityChange: PropTypes.func,
+        onCardTypeChange: PropTypes.func,
         onError: PropTypes.func,
+        styles: PropTypes.object,
     }
 
     static childContextTypes = {
@@ -31,11 +33,7 @@ export default class Braintree extends React.Component {
     }
 
     componentWillUnmount() {
-        // if (this.pendingAttach) {
-        //     clearTimeout(this.pendingAttach);
-        // } else {
         this.api.teardown();
-//        }
     }
 
     getChildContext() {
