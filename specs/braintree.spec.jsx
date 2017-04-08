@@ -45,7 +45,7 @@ describe('Braintree hosted fields', () => {
         const onFocus = jest.fn();
         const client = mount(buildTree({}, { number: { onFocus } }));
         const { api } = client.instance();
-        api.onFieldEvent('onFocus', { emittedBy: 'number' });
-        expect(onFocus).toHaveBeenCalled();
+        api.onFieldEvent('onFocus', { emittedBy: 'number', fields: { number: { foo: 'bar' } } });
+        expect(onFocus).toHaveBeenCalledWith({ foo: 'bar' }, expect.anything());
     });
 });
