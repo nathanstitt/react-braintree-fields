@@ -1,54 +1,54 @@
 {
-    "name": "react-braintree-fields",
-    "version": "0.1.0",
-    "description": "React component for braintree hosted fields",
-    "main": "dist/build.full.js",
-    "module": "dist/build.module.js",
-    "jsnext:main": "dist/build.module.js",
-    "repository": "https://github.com/nathanstitt/react-braintree-fields.git",
-    "author": "Nathan Stitt",
-    "license": "MIT",
-    "peerDependencies": {
-        "react": "^15.0.0"
-    },
-    "scripts": {
-        "test": "$(npm bin)/jest",
-        "build": "rollup -c",
-        "dev": "$(npm bin)/webpack-dev-server --hot --inline",
-        "prepublish": "npm run build && npm test"
-    },
-    "keywords": [
-        "react",
-        "braintree",
-        "hosted fields"
-    ],
-    "devDependencies": {
-        "babel": "^6.23.0",
-        "babel-core": "^6.24.0",
-        "babel-loader": "^6.4.1",
-        "babel-plugin-external-helpers": "^6.22.0",
-        "babel-plugin-transform-class-properties": "^6.24.1",
-        "babel-plugin-transform-decorators-legacy": "^1.3.4",
-        "babel-plugin-transform-function-bind": "^6.22.0",
-        "babel-plugin-transform-object-rest-spread": "^6.23.0",
-        "babel-plugin-transform-react-jsx": "^6.23.0",
-        "babel-preset-es2015": "^6.24.0",
-        "babel-preset-react": "^6.24.1",
-        "babel-preset-stage-1": "^6.22.0",
-        "enzyme": "^2.8.0",
-        "jest": "^19.0.2",
-        "react": "^15.0.0",
-        "react-dom": "^15.0.0",
-        "react-addons-test-utils": "^15.4.2",
-        "react-test-renderer": "^15.4.2",
-        "rollup": "^0.41.6",
-        "rollup-plugin-babel": "^2.7.1",
-        "webpack": "^2.3.3",
-        "webpack-dev-server": "^2.4.2"
-    },
-    "dependencies": {
-        "braintree-web": "^3.12.1",
-        "invariant": "^2.2.2",
-        "prop-types": "^15.5.0"
-    }
+  "name": "react-braintree-fields",
+  "version": "0.1.1",
+  "description": "React component for braintree hosted fields",
+  "main": "dist/build.full.js",
+  "module": "dist/build.module.js",
+  "jsnext:main": "dist/build.module.js",
+  "repository": "https://github.com/nathanstitt/react-braintree-fields.git",
+  "author": "Nathan Stitt",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^15.0.0"
+  },
+  "scripts": {
+    "test": "$(npm bin)/jest",
+    "build": "rollup -c",
+    "dev": "$(npm bin)/webpack-dev-server --hot --inline",
+    "prepublish": "npm run build && npm test"
+  },
+  "keywords": [
+    "react",
+    "braintree",
+    "hosted fields"
+  ],
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-function-bind": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.23.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.22.0",
+    "enzyme": "^2.8.0",
+    "jest": "^19.0.2",
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0",
+    "react-addons-test-utils": "^15.4.2",
+    "react-test-renderer": "^15.4.2",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "braintree-web": "^3.12.1",
+    "invariant": "^2.2.2",
+    "prop-types": "^15.5.0"
+  }
 }
