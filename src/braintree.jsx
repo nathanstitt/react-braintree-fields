@@ -6,7 +6,7 @@ import Api from './api';
 export default class Braintree extends React.Component {
 
     static propTypes = {
-        children: PropTypes.node.isRequired,
+        children: PropTypes.element.isRequired,
         authorization: PropTypes.string.isRequired,
         styles: PropTypes.object,
         onError: PropTypes.func,
