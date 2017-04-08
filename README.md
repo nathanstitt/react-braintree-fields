@@ -43,7 +43,7 @@ function onSubmit() {
 
 ```
 
-See [demo.jsx](demo.jsx) for a more complete working example.
+See [demo site](https://nathanstitt.github.io/react-braintree-fields/) for a working example. It renders [demo.jsx](demo.jsx)
 
 ## Braintree Component
 
