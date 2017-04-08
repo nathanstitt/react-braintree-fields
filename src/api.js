@@ -9,9 +9,9 @@ export default class BraintreeClientApi {
 
     constructor({ authorization, styles, ...callbacks }) {
         this.fields = {};
-        this.handlers = {};
+        this.fieldHandlers = {};
         this.styles = styles || {};
-        this.callbacks = callbacks || {};
+        this.wrapperHandlers = callbacks || {};
 
         Braintree.create({ authorization }, (err, clientInstance) => {
             if (err) {
@@ -25,7 +25,7 @@ export default class BraintreeClientApi {
 
     onError(err) {
         if (!err) { return; }
-        if (this.callbacks.onError) { this.callbacks.onError(err); }
+        if (this.wrapperHandlers.onError) { this.wrapperHandlers.onError(err); }
     }
 
     attach() {
@@ -41,7 +41,7 @@ export default class BraintreeClientApi {
     }
 
     checkInField(selector, { type, placeholder, ...handlers }) {
-        this.handlers[type] = handlers;
+        this.fieldHandlers[type] = handlers;
         this.fields[type] = {
             selector,
             placeholder,
@@ -49,12 +49,12 @@ export default class BraintreeClientApi {
     }
 
     onFieldEvent(eventName, event) {
-        const fieldHandlers = this.handlers[event.emittedBy];
+        const fieldHandlers = this.fieldHandlers[event.emittedBy];
         if (fieldHandlers && fieldHandlers[eventName]) {
             fieldHandlers[eventName](event.fields[event.emittedBy], event);
         }
-        if (this.callbacks[eventName]) {
-            this.callbacks[eventName](event);
+        if (this.wrapperHandlers[eventName]) {
+            this.wrapperHandlers[eventName](event);
         }
     }
 
