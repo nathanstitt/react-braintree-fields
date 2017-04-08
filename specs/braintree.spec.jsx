@@ -7,10 +7,13 @@ import { Braintree, Field } from '../src/index.js';
 jest.mock('braintree-web/client');
 jest.mock('../src/field-selector', () => type => `#field-${type}-1`);
 
+let getToken;
+
 const buildTree = (style = {}, props = {}) => (
     <Braintree
         authorization='sandbox_g42y39zw_348pk9cgf3bgyw2b'
         styles={style}
+        getTokenRef={ref => (getToken = ref)}
     >
         <div>
             <Field type="number"          placeholder="cc #"  {...props.number}          />
@@ -47,5 +50,14 @@ describe('Braintree hosted fields', () => {
         const { api } = client.instance();
         api.onFieldEvent('onFocus', { emittedBy: 'number', fields: { number: { foo: 'bar' } } });
         expect(onFocus).toHaveBeenCalledWith({ foo: 'bar' }, expect.anything());
+    });
+
+    it('sets token ref', () => {
+        const client = mount(buildTree());
+        const api = client.instance().api;
+        expect(getToken).toBeTruthy();
+        api.tokenize = jest.fn();
+        getToken();
+        expect(api.tokenize).toHaveBeenCalled();
     });
 });
