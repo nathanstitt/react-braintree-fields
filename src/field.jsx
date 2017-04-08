@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Api from './api';
-import fieldClassName from './fieldClassName';
+import fieldSelector from './field-selector';
 
 export default class BraintreeHostedField extends React.Component {
 
@@ -10,6 +10,7 @@ export default class BraintreeHostedField extends React.Component {
             'number', 'expirationDate', 'expirationMonth', 'expirationYear', 'cvv', 'postalCode',
         ]).isRequired,
         placeholder: PropTypes.string,
+        className: PropTypes.string,
         onBlur: PropTypes.func,
         onFocus: PropTypes.func,
         onEmpty: PropTypes.func,
@@ -24,14 +25,21 @@ export default class BraintreeHostedField extends React.Component {
 
     constructor(props) {
         super(props);
-        this.className = fieldClassName(props.type);
+        this.selector = fieldSelector(props.type);
     }
 
     componentDidMount() {
-        this.context.braintreeApi.checkInField(this.className, this.props);
+        this.context.braintreeApi.checkInField(`#${this.selector}`, this.props);
+    }
+
+
+    get className() {
+        const list = ['braintree-hosted-field'];
+        if (this.props.className) { list.push(this.props.className); }
+        return list.join(' ');
     }
 
     render() {
-        return <div className={this.className} />;
+        return <div id={this.selector} className={this.className} />;
     }
 }

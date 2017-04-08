@@ -5,7 +5,7 @@ import BraintreeClient from 'braintree-web/client';
 import { Braintree, Field } from '../src/index.js';
 
 jest.mock('braintree-web/client');
-jest.mock('../src/fieldClassName', () => type => `field-${type}-1`);
+jest.mock('../src/field-selector', () => type => `#field-${type}-1`);
 
 const buildTree = (style = {}, props = {}) => (
     <Braintree

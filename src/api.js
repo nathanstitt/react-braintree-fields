@@ -40,10 +40,10 @@ export default class BraintreeClientApi {
         if (this.hostedFields) { this.hostedFields.teardown(); }
     }
 
-    checkInField(className, { type, placeholder, ...handlers }) {
+    checkInField(selector, { type, placeholder, ...handlers }) {
         this.handlers[type] = handlers;
         this.fields[type] = {
-            selector: `.${className}`,
+            selector,
             placeholder,
         };
     }
