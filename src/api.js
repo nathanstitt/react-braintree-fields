@@ -58,6 +58,19 @@ export default class BraintreeClientApi {
         }
     }
 
+    tokenize() {
+        return new Promise((resolve, reject) => {
+            this.hostedFields.tokenize((err, payload) => {
+                if (err) {
+                    this.onError(err);
+                    reject(err);
+                } else {
+                    resolve(payload);
+                }
+            });
+        });
+    }
+
     _attach() {
         delete this.isAttachable;
         return HostedFields.create({

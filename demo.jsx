@@ -8,9 +8,15 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
 
     constructor(props) {
         super(props);
-        ['onCardTypeChange'].forEach((prop) =>
+        ['onCardTypeChange', 'getToken'].forEach((prop) =>
             this[prop] = this[prop].bind(this)
         );
+    }
+
+    getToken() {
+        this.tokenize().then((t) => {
+            debugger
+        })
     }
 
     onCardTypeChange({ cards }) {
@@ -28,6 +34,7 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
                 <Braintree
                     authorization='sandbox_g42y39zw_348pk9cgf3bgyw2b'
                     onError={console.log}
+                    getTokenRef={t => (this.tokenize = t)}
                     onCardTypeChange={this.onCardTypeChange}
                     styles={{
                         'input': {
@@ -60,6 +67,7 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
                         <Field type="postalCode" />
                     </div>
                 </Braintree>
+                <button onClick={this.getToken}>Get token</button>
             </div>
         )
     }

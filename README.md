@@ -10,10 +10,17 @@ A few small React components to make integrating [Braintree's Hosted Fields](htt
 ```javascript
 import { Braintree, Field } from 'react-braintree-fields';
 
+let getToken;
+function onSubmit() {
+   getToken().then((payload) => {
+     console.log("nonce=" , payload.nonce)
+   })
+}
 <Braintree
     authorization='sandbox_g42y39zw_348pk9cgf3bgyw2b'
     onError={this.handleError}
     onCardTypeChange={this.onCardTypeChange}
+    getTokenRef={ref => (getToken = ref)}
     styles={{
         'input': {
             'font-size': '14px',
@@ -30,7 +37,10 @@ import { Braintree, Field } from 'react-braintree-fields';
         <Field type="expirationDate" />
         <Field type="cvv" />
     </div>
+    <button onClick={onSubmit}>Submit</button>
 </Braintree>
+
+
 ```
 
 See [demo.jsx](demo.jsx) for a more complete working example.
@@ -41,7 +51,8 @@ Props:
  * authorization: Required, either a [tokenization key or a client token](https://developers.braintreepayments.com/guides/hosted-fields/setup-and-integration/)
  * styles: Object containing [valid field styles](https://braintree.github.io/braintree-web/3.11.1/module-braintree-web_hosted-fields.html#.create)
  * onError: Function that will be called if an Braintree error is encountered.
-
+ * getTokenRef: A function that will be called once Braintree the API is initialized.  It will be called with a function that can be used to initiate tokenization.
+   * The tokenization function will return a Promise which will be either resolved or rejected.  If resolved, the promise payload will contain an object with the `nonce` and other data from Braintree.
 
 ## Field Component
 

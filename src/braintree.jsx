@@ -8,6 +8,7 @@ export default class Braintree extends React.Component {
     static propTypes = {
         children: PropTypes.element.isRequired,
         authorization: PropTypes.string.isRequired,
+        getTokenRef: PropTypes.func.isRequired,
         onValidityChange: PropTypes.func,
         onCardTypeChange: PropTypes.func,
         onError: PropTypes.func,
@@ -30,6 +31,7 @@ export default class Braintree extends React.Component {
 
     componentDidMount() {
         this.api.attach();
+        this.props.getTokenRef(() => this.api.tokenize());
     }
 
     componentWillUnmount() {
