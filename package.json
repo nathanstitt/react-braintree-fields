@@ -14,7 +14,7 @@
   "scripts": {
     "test": "$(npm bin)/jest",
     "build": "rollup -c",
-    "dev": "$(npm bin)/webpack-dev-server --hot --inline --port 2222",
+    "dev": "",
     "prepublish": "npm run build && npm test"
   },
   "keywords": [
@@ -36,10 +36,11 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.22.0",
     "enzyme": "^2.8.0",
+    "eslint": "^3.19.0",
     "jest": "^19.0.2",
     "react": "^15.0.0",
-    "react-dom": "^15.0.0",
     "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.0.0",
     "react-test-renderer": "^15.4.2",
     "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1",
@@ -48,6 +49,7 @@
   },
   "dependencies": {
     "braintree-web": "^3.12.1",
+    "eslint-config-argosity": "^1.0.5",
     "invariant": "^2.2.2",
     "prop-types": "^15.5.0"
   }
