@@ -263,6 +263,15 @@ babel-core@6, babel-core@^6.0.0, babel-core@^6.24.0:
     slash "^1.0.0"
     source-map "^0.5.0"
 
+babel-eslint@^7.1.0:
+  version "7.2.1"
+  resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-7.2.1.tgz#079422eb73ba811e3ca0865ce87af29327f8c52f"
+  dependencies:
+    babel-code-frame "^6.22.0"
+    babel-traverse "^6.23.1"
+    babel-types "^6.23.0"
+    babylon "^6.16.1"
+
 babel-generator@^6.18.0, babel-generator@^6.24.0:
   version "6.24.0"
   resolved "https://registry.yarnpkg.com/babel-generator/-/babel-generator-6.24.0.tgz#eba270a8cc4ce6e09a61be43465d7c62c1f87c56"
@@ -982,7 +991,7 @@ babel@^6.23.0:
   version "6.23.0"
   resolved "https://registry.yarnpkg.com/babel/-/babel-6.23.0.tgz#d0d1e7d803e974765beea3232d4e153c0efb90f4"
 
-babylon@^6.11.0, babylon@^6.13.0, babylon@^6.15.0:
+babylon@^6.11.0, babylon@^6.13.0, babylon@^6.15.0, babylon@^6.16.1:
   version "6.16.1"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.16.1.tgz#30c5a22f481978a9e7f8cdfdf496b11d94b404d3"
 
@@ -1820,10 +1829,11 @@ eslint-config-airbnb@^14.1.0:
   dependencies:
     eslint-config-airbnb-base "^11.1.0"
 
-eslint-config-argosity@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/eslint-config-argosity/-/eslint-config-argosity-1.0.5.tgz#8c386b80b1ed1ebd02a5a8cad88059e093b36e13"
+eslint-config-argosity@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/eslint-config-argosity/-/eslint-config-argosity-1.0.6.tgz#5155a5aacc201bbb291d1945a9168d253201e179"
   dependencies:
+    babel-eslint "^7.1.0"
     eslint-config-airbnb "^14.1.0"
     eslint-config-airbnb-base "^11.1.1"
     eslint-plugin-import "^2.2.0"
