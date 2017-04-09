@@ -5,6 +5,7 @@
 
 set -e
 
+
 script/lint
 
 # run tests.
