@@ -5,8 +5,6 @@
 
 set -e
 
-cd "$(dirname "$0")/.."
-
 script/lint
 
 # run tests.
