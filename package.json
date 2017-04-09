@@ -13,9 +13,8 @@
   },
   "scripts": {
     "test": "$(npm bin)/jest",
-    "build": "rollup -c",
-    "dev": "",
-    "prepublish": "npm run build && npm test"
+    "build": "./script/build",
+    "prepublish": "./script/build"
   },
   "keywords": [
     "react",

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+script/lint
+
+script/test
+
+webpack
+
+rollup -c
