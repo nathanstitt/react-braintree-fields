@@ -92,7 +92,7 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
                     </div>
                 </Braintree>
                 <div className="footer">
-                    <button onClick={this.getToken}>Get token</button>
+                    <button onClick={this.getToken}>Get nonce token</button>
                 </div>
             </div>
         );

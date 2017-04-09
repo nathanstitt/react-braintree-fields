@@ -2,10 +2,22 @@
 
 set -e
 
+if ! git diff-files --quiet --
+then
+  echo "tree is dirty, please commit changes before building"
+  exit 1
+fi
+
 script/lint
 
 script/test
 
 webpack
+
+if ! git diff-files --quiet --
+then
+    git add docs/*
+    git commit -m 'Update demo files for ghpages'
+fi
 
 rollup -c

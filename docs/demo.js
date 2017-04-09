@@ -10489,7 +10489,7 @@ module.exports = ReactPropTypesSecret;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Field = exports.Braintree = undefined;
+exports.HostedField = exports.Braintree = undefined;
 
 var _braintree = __webpack_require__(106);
 
@@ -10502,7 +10502,7 @@ var _field2 = _interopRequireDefault(_field);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.Braintree = _braintree2.default;
-exports.Field = _field2.default;
+exports.HostedField = _field2.default;
 
 /***/ }),
 /* 104 */
@@ -10642,7 +10642,7 @@ var BraintreeHostedfieldDemo = function (_React$PureComponent) {
                         'div',
                         null,
                         'Number:',
-                        _react2.default.createElement(_index.Field, {
+                        _react2.default.createElement(_index.HostedField, {
                             type: 'number',
                             onBlur: function onBlur() {
                                 return _this3.setState({ numberFocused: false });
@@ -10659,15 +10659,15 @@ var BraintreeHostedfieldDemo = function (_React$PureComponent) {
                             this.state.card
                         ),
                         'Date:',
-                        _react2.default.createElement(_index.Field, { type: 'expirationDate' }),
+                        _react2.default.createElement(_index.HostedField, { type: 'expirationDate' }),
                         'Month:',
-                        _react2.default.createElement(_index.Field, { type: 'expirationMonth' }),
+                        _react2.default.createElement(_index.HostedField, { type: 'expirationMonth' }),
                         'Year:',
-                        _react2.default.createElement(_index.Field, { type: 'expirationYear' }),
+                        _react2.default.createElement(_index.HostedField, { type: 'expirationYear' }),
                         'CVV:',
-                        _react2.default.createElement(_index.Field, { type: 'cvv' }),
+                        _react2.default.createElement(_index.HostedField, { type: 'cvv' }),
                         'Zip:',
-                        _react2.default.createElement(_index.Field, { type: 'postalCode' })
+                        _react2.default.createElement(_index.HostedField, { type: 'postalCode' })
                     )
                 ),
                 _react2.default.createElement(
