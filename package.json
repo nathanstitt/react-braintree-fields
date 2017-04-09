@@ -14,7 +14,8 @@
   "scripts": {
     "test": "$(npm bin)/jest",
     "build": "./script/build",
-    "prepublish": "./script/build"
+    "ci": "./script/cibuild",
+    "prepublish": "./script/prepublish"
   },
   "keywords": [
     "react",

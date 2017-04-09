@@ -23,6 +23,7 @@ export default {
     globals: {
         react: 'React',
         invariant: 'invariant',
+        'prop-types': 'PropTypes',
         'braintree-web/client': 'Braintree',
         'braintree-web/hosted-fields': 'HostedFields',
     },
