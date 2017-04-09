@@ -2,7 +2,7 @@
 
 set -e
 
-if ! git diff-index --quiet HEAD --; then
+if [ -n "$(git status --porcelain)" ]; then 
   echo "tree is dirty, please commit changes before building"
   exit 1
 fi
@@ -13,14 +13,10 @@ script/test
 
 webpack
 
-git status
-
-if ! git diff-index --quiet HEAD --; then
-  echo $?
-   echo "UNCLEAN"
-   git status
-    git add docs/*
-    git commit -m 'Update demo files for ghpages'
+if [ -n "$(git status --porcelain)" ]; then 
+   echo "Adding docs"
+   git add docs/*
+   git commit -m 'Update demo files for ghpages'
 fi
 
 echo "Done"
