@@ -1,7 +1,7 @@
 import { render } from 'react-dom';
 import React from 'react';
 
-import { Braintree, Field } from './src/index';
+import { Braintree, HostedField } from './src/index';
 
 
 class BraintreeHostedfieldDemo extends React.PureComponent {
@@ -72,7 +72,7 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
                 >
                     <div>
                         Number:
-                        <Field
+                        <HostedField
                             type="number"
                             onBlur={() => this.setState({ numberFocused: false })}
                             onFocus={() => this.setState({ numberFocused: true })}
@@ -80,15 +80,15 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
                         />
                         <p>Card type: {this.state.card}</p>
                         Date:
-                        <Field type="expirationDate" />
+                        <HostedField type="expirationDate" />
                         Month:
-                        <Field type="expirationMonth" />
+                        <HostedField type="expirationMonth" />
                         Year:
-                        <Field type="expirationYear" />
+                        <HostedField type="expirationYear" />
                         CVV:
-                        <Field type="cvv" />
+                        <HostedField type="cvv" />
                         Zip:
-                        <Field type="postalCode" />
+                        <HostedField type="postalCode" />
                     </div>
                 </Braintree>
                 <div className="footer">

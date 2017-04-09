@@ -1,7 +1,7 @@
 import Braintree from './braintree.jsx';
-import Field from './field.jsx';
+import HostedField from './field.jsx';
 
 export {
     Braintree,
-    Field,
+    HostedField,
 };

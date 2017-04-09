@@ -2,7 +2,7 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 import BraintreeClient from 'braintree-web/client';
-import { Braintree, Field } from '../src/index.js';
+import { Braintree, HostedField } from '../src/index.js';
 
 jest.mock('braintree-web/client');
 jest.mock('../src/field-selector', () => type => `#field-${type}-1`);
@@ -16,12 +16,12 @@ const buildTree = (style = {}, props = {}) => (
         getTokenRef={ref => (getToken = ref)}
     >
         <div>
-            <Field type="number"          placeholder="cc #"  {...props.number}          />
-            <Field type="expirationDate"  placeholder="date"  {...props.expirationDate}  />
-            <Field type="expirationMonth" placeholder="month" {...props.expirationMonth} />
-            <Field type="expirationYear"  placeholder="year"  {...props.expirationYear}  />
-            <Field type="cvv"             placeholder="cvv"   {...props.cvv}             />
-            <Field type="postalCode"      placeholder="zip"   {...props.postalCode}      />
+            <HostedField type="number"          placeholder="cc #"  {...props.number}          />
+            <HostedField type="expirationDate"  placeholder="date"  {...props.expirationDate}  />
+            <HostedField type="expirationMonth" placeholder="month" {...props.expirationMonth} />
+            <HostedField type="expirationYear"  placeholder="year"  {...props.expirationYear}  />
+            <HostedField type="cvv"             placeholder="cvv"   {...props.cvv}             />
+            <HostedField type="postalCode"      placeholder="zip"   {...props.postalCode}      />
         </div>
     </Braintree>
 );
