@@ -10676,7 +10676,7 @@ var BraintreeHostedfieldDemo = function (_React$PureComponent) {
                     _react2.default.createElement(
                         'button',
                         { onClick: this.getToken },
-                        'Get nonce token'
+                        'Get token'
                     )
                 )
             );
