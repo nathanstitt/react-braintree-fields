@@ -41,7 +41,7 @@ const config = {
         fs: 'empty',
     },
     devServer: {
-        hot: true,
+        hot: false,
         inline: true,
         port: 2222,
         historyApiFallback: true,

@@ -5,7 +5,6 @@ import BraintreeClient from 'braintree-web/client';
 import { Braintree, HostedField } from '../src/index.js';
 
 jest.mock('braintree-web/client');
-jest.mock('../src/field-selector', () => type => `#field-${type}-1`);
 
 let getToken;
 

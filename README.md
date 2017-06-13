@@ -8,13 +8,16 @@ A few small React components to make integrating [Braintree's Hosted Fields](htt
 ## Introduction
 
 ```javascript
-import { Braintree, Field } from 'react-braintree-fields';
+import { Braintree, HostedField } from 'react-braintree-fields';
 
 let getToken;
 function onSubmit() {
    getToken().then((payload) => {
      console.log("nonce=" , payload.nonce)
    })
+}
+function onFocus(event) {
+    console.log("number is focused", event);
 }
 <Braintree
     authorization='sandbox_g42y39zw_348pk9cgf3bgyw2b'
@@ -33,9 +36,9 @@ function onSubmit() {
     }}
 >
     <div className="fields">
-        <Field type="number" onFocus={onFocus} />
-        <Field type="expirationDate" />
-        <Field type="cvv" />
+        <HostedField type="number" onFocus={onFocus} />
+        <HostedField type="expirationDate" />
+        <HostedField type="cvv" />
     </div>
     <button onClick={onSubmit}>Submit</button>
 </Braintree>
@@ -54,7 +57,7 @@ Props:
  * getTokenRef: A function that will be called once Braintree the API is initialized.  It will be called with a function that can be used to initiate tokenization.
    * The tokenization function will return a Promise which will be either resolved or rejected.  If resolved, the promise payload will contain an object with the `nonce` and other data from Braintree.
 
-## Field Component
+## HostedField Component
 
 Props:
   * type: Required, one of:
@@ -65,3 +68,4 @@ Props:
   * onNotEmpty
   * onValidityChange
   * onCardTypeChange - accepted on any field, but will only be called by type="number"
+  * placeholder - A string to that will be displayed in the input while it's empty

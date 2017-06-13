@@ -6,13 +6,15 @@ function cap(string) {
 }
 
 export default class BraintreeClientApi {
+    fields = {};
+
+    _nextFieldId = 1;
+
+    fieldHandlers = {};
 
     constructor({ authorization, styles, ...callbacks }) {
-        this.fields = {};
-        this.fieldHandlers = {};
         this.styles = styles || {};
         this.wrapperHandlers = callbacks || {};
-
         Braintree.create({ authorization }, (err, clientInstance) => {
             if (err) {
                 this.onError(err);
@@ -21,6 +23,11 @@ export default class BraintreeClientApi {
                 if (this.isAttachable) { this._attach(); }
             }
         });
+    }
+
+    nextFieldId() {
+        this._nextFieldId += 1;
+        return this._nextFieldId;
     }
 
     onError(err) {
@@ -40,12 +47,14 @@ export default class BraintreeClientApi {
         if (this.hostedFields) { this.hostedFields.teardown(); }
     }
 
-    checkInField(selector, { type, placeholder, ...handlers }) {
+    checkInField({ type, placeholder, ...handlers }) {
+        const id = `field-wrapper-${this.nextFieldId()}`;
         this.fieldHandlers[type] = handlers;
         this.fields[type] = {
-            selector,
+            selector: `#${id}`,
             placeholder,
         };
+        return id;
     }
 
     onFieldEvent(eventName, event) {

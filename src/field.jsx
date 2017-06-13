@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Api from './api';
-import fieldSelector from './field-selector';
 
 export default class BraintreeHostedField extends React.Component {
 
@@ -23,15 +22,9 @@ export default class BraintreeHostedField extends React.Component {
         braintreeApi: PropTypes.instanceOf(Api),
     }
 
-    constructor(props) {
-        super(props);
-        this.selector = fieldSelector(props.type);
+    componentWillMount() {
+        this.fieldId = this.context.braintreeApi.checkInField(this.props);
     }
-
-    componentDidMount() {
-        this.context.braintreeApi.checkInField(`#${this.selector}`, this.props);
-    }
-
 
     get className() {
         const list = ['braintree-hosted-field'];
@@ -40,6 +33,6 @@ export default class BraintreeHostedField extends React.Component {
     }
 
     render() {
-        return <div id={this.selector} className={this.className} />;
+        return <div id={this.fieldId} className={this.className} />;
     }
 }
