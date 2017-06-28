@@ -47,12 +47,16 @@ export default class BraintreeClientApi {
         if (this.hostedFields) { this.hostedFields.teardown(); }
     }
 
-    checkInField({ type, placeholder, ...handlers }) {
+    checkInField({ formatInput, maxlength, minlength, placeholder, select, type, ...handlers }) {
         const id = `field-wrapper-${this.nextFieldId()}`;
         this.fieldHandlers[type] = handlers;
         this.fields[type] = {
-            selector: `#${id}`,
+            formatInput,
+            maxlength,
+            minlength,
             placeholder,
+            select,
+            selector: `#${id}`,
         };
         return id;
     }
