@@ -9,41 +9,55 @@ A few small React components to make integrating [Braintree's Hosted Fields](htt
 
 ```javascript
 import { Braintree, HostedField } from 'react-braintree-fields';
+class MySillyCheckoutForm extends React.PureComponent {
 
-let getToken;
-function onSubmit() {
-   getToken().then((payload) => {
-     console.log("nonce=" , payload.nonce)
-   })
+    function onSubmit() {
+       this.getToken({ cardholderName: 'My Order Name' }).then((payload) => {
+         console.log("nonce=" , payload.nonce)
+       })
+    }
+
+    onCardTypeChange() {
+        this.setState({ card: (1 === cards.length) ? cards[0].type : '' });
+    }
+
+    function onFocus(event) {
+        console.log("number is focused", event);
+    }
+
+    onError(err) {
+       console.warn(err);
+       this.ccNum.focus(); // focus number field
+    }
+
+    render() {
+        return (
+            <Braintree
+                authorization='sandbox_g42y39zw_348pk9cgf3bgyw2b'
+                onError={this.handleError}
+                onCardTypeChange={this.onCardTypeChange}
+                getTokenRef={ref => (this.getToken = ref)}
+                styles={{
+                    'input': {
+                        'font-size': '14px',
+                        'font-family': 'helvetica, tahoma, calibri, sans-serif',
+                        'color': '#3a3a3a'
+                    },
+                    ':focus': {
+                        'color': 'black'
+                    }
+                }}
+            >
+                <div className="fields">
+                    <HostedField type="number" onFocus={onFocus} ref={ccNum => (this.ccNum = ccNum)} />
+                    <HostedField type="expirationDate" />
+                    <HostedField type="cvv" />
+                </div>
+                <button onClick={onSubmit}>Submit</button>
+            </Braintree>
+        );
+    }
 }
-function onFocus(event) {
-    console.log("number is focused", event);
-}
-<Braintree
-    authorization='sandbox_g42y39zw_348pk9cgf3bgyw2b'
-    onError={this.handleError}
-    onCardTypeChange={this.onCardTypeChange}
-    getTokenRef={ref => (getToken = ref)}
-    styles={{
-        'input': {
-            'font-size': '14px',
-            'font-family': 'helvetica, tahoma, calibri, sans-serif',
-            'color': '#3a3a3a'
-        },
-        ':focus': {
-            'color': 'black'
-        }
-    }}
->
-    <div className="fields">
-        <HostedField type="number" onFocus={onFocus} />
-        <HostedField type="expirationDate" />
-        <HostedField type="cvv" />
-    </div>
-    <button onClick={onSubmit}>Submit</button>
-</Braintree>
-
-
 ```
 
 See [demo site](https://nathanstitt.github.io/react-braintree-fields/) for a working example. It renders [demo.jsx](demo.jsx)
@@ -69,3 +83,5 @@ Props:
   * onValidityChange
   * onCardTypeChange - accepted on any field, but will only be called by type="number"
   * placeholder - A string to that will be displayed in the input while it's empty
+
+Fields also have "focus" and "clear" methods.  These may be called by obtaining a reference to the field.

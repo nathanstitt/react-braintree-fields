@@ -31,7 +31,7 @@ export default class Braintree extends React.Component {
 
     componentDidMount() {
         this.api.attach();
-        this.props.getTokenRef(() => this.api.tokenize());
+        this.props.getTokenRef(this.api.tokenize.bind(this.api));
     }
 
     componentWillUnmount() {

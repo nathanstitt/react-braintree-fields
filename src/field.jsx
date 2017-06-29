@@ -22,6 +22,14 @@ export default class BraintreeHostedField extends React.Component {
         braintreeApi: PropTypes.instanceOf(Api),
     }
 
+    focus() {
+        this.context.braintreeApi.focusField(this.props.type);
+    }
+
+    clear() {
+        this.context.braintreeApi.clearField(this.props.type);
+    }
+
     componentWillMount() {
         this.fieldId = this.context.braintreeApi.checkInField(this.props);
     }

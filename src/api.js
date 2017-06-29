@@ -57,6 +57,14 @@ export default class BraintreeClientApi {
         return id;
     }
 
+    focusField(fieldType, cb) {
+        this.hostedFields.focus(fieldType, cb);
+    }
+
+    clearField(fieldType, cb) {
+        this.hostedFields.clear(fieldType, cb);
+    }
+
     onFieldEvent(eventName, event) {
         const fieldHandlers = this.fieldHandlers[event.emittedBy];
         if (fieldHandlers && fieldHandlers[eventName]) {
@@ -67,9 +75,9 @@ export default class BraintreeClientApi {
         }
     }
 
-    tokenize() {
+    tokenize(options = {}) {
         return new Promise((resolve, reject) => {
-            this.hostedFields.tokenize((err, payload) => {
+            this.hostedFields.tokenize(options, (err, payload) => {
                 if (err) {
                     this.onError(err);
                     reject(err);

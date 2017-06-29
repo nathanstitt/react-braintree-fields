@@ -52,11 +52,7 @@ describe('Braintree hosted fields', () => {
     });
 
     it('sets token ref', () => {
-        const client = mount(buildTree());
-        const api = client.instance().api;
+        shallow(buildTree());
         expect(getToken).toBeTruthy();
-        api.tokenize = jest.fn();
-        getToken();
-        expect(api.tokenize).toHaveBeenCalled();
     });
 });
