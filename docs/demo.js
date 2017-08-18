@@ -7153,11 +7153,15 @@ var BraintreeClientApi = function () {
         value: function create(client) {
             var _this2 = this;
 
-            return __WEBPACK_IMPORTED_MODULE_1_braintree_web_hosted_fields___default.a.create({
+            __WEBPACK_IMPORTED_MODULE_1_braintree_web_hosted_fields___default.a.create({
                 client: client,
                 styles: this.styles,
                 fields: this.fields
             }, function (err, hostedFields) {
+                if (err) {
+                    _this2.onError(err);
+                    return;
+                }
                 _this2.hostedFields = hostedFields;
                 ['blur', 'focus', 'empty', 'notEmpty', 'cardTypeChange', 'validityChange'].forEach(function (eventName) {
                     hostedFields.on(eventName, function (ev) {
@@ -11576,6 +11580,11 @@ var BraintreeHostedfieldDemo = function (_React$PureComponent) {
             this.setState({ card: 1 === cards.length ? cards[0].type : '' });
         }
     }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.setState({ authorization: 'sandbox_g42y39zw_348pk9cgf3bgyw2b' });
+        }
+    }, {
         key: 'renderResult',
         value: function renderResult(title, obj) {
             if (!obj) {
@@ -11615,7 +11624,7 @@ var BraintreeHostedfieldDemo = function (_React$PureComponent) {
                 __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_2__src_index__["a" /* Braintree */],
                     {
-                        authorization: 'sandbox_g42y39zw_348pk9cgf3bgyw2b',
+                        authorization: this.state.authorization,
                         onError: this.onError,
                         getTokenRef: function getTokenRef(t) {
                             return _this3.tokenize = t;
@@ -11719,7 +11728,6 @@ var Braintree = function (_React$Component) {
     _createClass(Braintree, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            //        this.api.isAttachable = true;
             this.api.setAuthorization(this.props.authorization);
             if (this.props.getTokenRef) {
                 this.props.getTokenRef(this.api.tokenize.bind(this.api));
@@ -11769,7 +11777,7 @@ var Braintree = function (_React$Component) {
 
 Braintree.propTypes = {
     children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node.isRequired,
-    authorization: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string.isRequired,
+    authorization: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
     getTokenRef: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
     onValidityChange: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
     onCardTypeChange: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
