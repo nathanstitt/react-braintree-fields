@@ -37,6 +37,10 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
         numberFocused: false,
     }
 
+    componentDidMount() {
+        this.setState({ authorization: 'sandbox_g42y39zw_348pk9cgf3bgyw2b' });
+    }
+
     renderResult(title, obj) {
         if (!obj) { return null; }
         return (
@@ -55,7 +59,7 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
                 {this.renderResult('Token', this.state.token)}
 
                 <Braintree
-                    authorization='sandbox_g42y39zw_348pk9cgf3bgyw2b'
+                    authorization={this.state.authorization}
                     onError={this.onError}
                     getTokenRef={t => (this.tokenize = t)}
                     onCardTypeChange={this.onCardTypeChange}
