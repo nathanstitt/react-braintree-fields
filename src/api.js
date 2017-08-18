@@ -15,14 +15,23 @@ export default class BraintreeClientApi {
     constructor({ authorization, styles, ...callbacks }) {
         this.styles = styles || {};
         this.wrapperHandlers = callbacks || {};
-        Braintree.create({ authorization }, (err, clientInstance) => {
-            if (err) {
-                this.onError(err);
-            } else {
-                this.clientInstance = clientInstance;
-                if (this.isAttachable) { this._attach(); }
-            }
-        });
+        this.setAuthorization(authorization);
+    }
+
+    setAuthorization(authorization) {
+        if (!authorization && this.authorization) {
+            this.teardown();
+        } else if (authorization && authorization !== this.authorization) {
+            if (this.authorization) { this.teardown(); }
+            this.authorization = authorization;
+            Braintree.create({ authorization }, (err, clientInstance) => {
+                if (err) {
+                    this.onError(err);
+                } else {
+                    this.create(clientInstance);
+                }
+            });
+        }
     }
 
     nextFieldId() {
@@ -35,12 +44,21 @@ export default class BraintreeClientApi {
         if (this.wrapperHandlers.onError) { this.wrapperHandlers.onError(err); }
     }
 
-    attach() {
-        if (this.clientInstance) {
-            this._attach();
-        } else {
-            this.isAttachable = true;
-        }
+    create(client) {
+        return HostedFields.create({
+            client,
+            styles: this.styles,
+            fields: this.fields,
+        }, (err, hostedFields) => {
+            this.hostedFields = hostedFields;
+            [
+                'blur', 'focus', 'empty', 'notEmpty',
+                'cardTypeChange', 'validityChange',
+            ].forEach((eventName) => {
+                hostedFields.on(eventName, ev => this.onFieldEvent(`on${cap(eventName)}`, ev));
+            });
+            this.onError(err);
+        });
     }
 
     teardown() {
@@ -85,24 +103,6 @@ export default class BraintreeClientApi {
                     resolve(payload);
                 }
             });
-        });
-    }
-
-    _attach() {
-        delete this.isAttachable;
-        return HostedFields.create({
-            client: this.clientInstance,
-            styles: this.styles,
-            fields: this.fields,
-        }, (err, hostedFields) => {
-            this.hostedFields = hostedFields;
-            [
-                'blur', 'focus', 'empty', 'notEmpty',
-                'cardTypeChange', 'validityChange',
-            ].forEach((eventName) => {
-                hostedFields.on(eventName, ev => this.onFieldEvent(`on${cap(eventName)}`, ev));
-            });
-            this.onError(err);
         });
     }
 }

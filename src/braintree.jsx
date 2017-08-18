@@ -1,27 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import invariant from 'invariant';
 import Api from './api';
 
 export default class Braintree extends React.Component {
 
     static propTypes = {
-        children: PropTypes.element.isRequired,
+        children: PropTypes.node.isRequired,
         authorization: PropTypes.string.isRequired,
-        getTokenRef: PropTypes.func.isRequired,
+        getTokenRef: PropTypes.func,
         onValidityChange: PropTypes.func,
         onCardTypeChange: PropTypes.func,
         onError: PropTypes.func,
         styles: PropTypes.object,
+        className: PropTypes.string,
+        tagName: PropTypes.string,
+    }
+
+    static defaultProps = {
+        tagName: 'div',
     }
 
     static childContextTypes = {
         braintreeApi: PropTypes.instanceOf(Api),
-    }
-
-    componentWillReceiveProps(nextProps) {
-        invariant(nextProps.authorization === this.props.authorization,
-                  'Cannot update authorization after mounted');
     }
 
     constructor(props) {
@@ -30,12 +30,23 @@ export default class Braintree extends React.Component {
     }
 
     componentDidMount() {
-        this.api.attach();
-        this.props.getTokenRef(this.api.tokenize.bind(this.api));
+//        this.api.isAttachable = true;
+        this.api.setAuthorization(this.props.authorization);
+        if (this.props.getTokenRef) {
+            this.props.getTokenRef(this.api.tokenize.bind(this.api));
+        }
     }
 
     componentWillUnmount() {
         this.api.teardown();
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.api.setAuthorization(nextProps.authorization);
+    }
+
+    tokenize(options) {
+        return this.api.tokenize(options);
     }
 
     getChildContext() {
@@ -43,7 +54,14 @@ export default class Braintree extends React.Component {
     }
 
     render() {
-        return this.props.children;
+        const { className: providedClass, tagName: Tag } = this.props;
+        let className = 'braintree-hosted-fields-wrapper';
+        if (providedClass) { className += ` ${providedClass}`; }
+        return (
+            <Tag className={className}>
+                {this.props.children}
+            </Tag>
+        );
     }
 
 }

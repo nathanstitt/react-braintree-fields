@@ -12,6 +12,7 @@ import { Braintree, HostedField } from 'react-braintree-fields';
 class MySillyCheckoutForm extends React.PureComponent {
 
     function onSubmit() {
+        // could also obtain a reference to the Braintree wrapper element and call `.tokenize()`
        this.getToken({ cardholderName: 'My Order Name' }).then((payload) => {
          console.log("nonce=" , payload.nonce)
        })

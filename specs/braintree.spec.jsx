@@ -2,30 +2,40 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 import BraintreeClient from 'braintree-web/client';
+import HostedFields from 'braintree-web/hosted-fields';
 import { Braintree, HostedField } from '../src/index.js';
 
 jest.mock('braintree-web/client');
+jest.mock('braintree-web/hosted-fields');
 
 let getToken;
 
-const buildTree = (style = {}, props = {}) => (
+const buildTree = (
+    { styles = {}, props = {}, authorization = 'sandbox_g42y39zw_348pk9cgf3bgyw2b' } = {}
+) => (
     <Braintree
-        authorization='sandbox_g42y39zw_348pk9cgf3bgyw2b'
-        styles={style}
+        className="braintree-test"
+        authorization={authorization}
+        styles={styles}
         getTokenRef={ref => (getToken = ref)}
     >
-        <div>
-            <HostedField type="number"          placeholder="cc #"  {...props.number}          />
-            <HostedField type="expirationDate"  placeholder="date"  {...props.expirationDate}  />
-            <HostedField type="expirationMonth" placeholder="month" {...props.expirationMonth} />
-            <HostedField type="expirationYear"  placeholder="year"  {...props.expirationYear}  />
-            <HostedField type="cvv"             placeholder="cvv"   {...props.cvv}             />
-            <HostedField type="postalCode"      placeholder="zip"   {...props.postalCode}      />
-        </div>
+        <HostedField type="number"          placeholder="cc #"  {...props.number}          />
+        <HostedField type="expirationDate"  placeholder="date"  {...props.expirationDate}  />
+        <HostedField type="expirationMonth" placeholder="month" {...props.expirationMonth} />
+        <HostedField type="expirationYear"  placeholder="year"  {...props.expirationYear}  />
+        <HostedField type="cvv"             placeholder="cvv"   {...props.cvv}             />
+        <HostedField type="postalCode"      placeholder="zip"   {...props.postalCode}      />
     </Braintree>
 );
 
 describe('Braintree hosted fields', () => {
+    beforeEach(() => {
+
+    });
+    afterEach(() => {
+        BraintreeClient.create.mockClear();
+        HostedFields.create.mockClear();
+    });
     it('renders and matches snapshot', () => {
         expect(renderer.create(buildTree())).toMatchSnapshot();
     });
@@ -38,21 +48,41 @@ describe('Braintree hosted fields', () => {
     });
 
     it('sets styles', () => {
-        const style = { input: { 'font-size': '18px' } };
-        const client = shallow(buildTree(style));
-        expect(client.instance().api.styles).toEqual(style);
+        const styles = { input: { 'font-size': '18px' } };
+        const client = shallow(buildTree({ styles }));
+        expect(client.instance().api.styles).toEqual(styles);
     });
 
     it('forwards events to fields', () => {
         const onFocus = jest.fn();
-        const client = mount(buildTree({}, { number: { onFocus } }));
+        const client = mount(buildTree({ props: { number: { onFocus } } }));
         const { api } = client.instance();
         api.onFieldEvent('onFocus', { emittedBy: 'number', fields: { number: { foo: 'bar' } } });
         expect(onFocus).toHaveBeenCalledWith({ foo: 'bar' }, expect.anything());
     });
 
-    it('sets token ref', () => {
-        shallow(buildTree());
-        expect(getToken).toBeTruthy();
+    it('can set token ref during render', () => {
+        const clientInstance = jest.fn();
+        BraintreeClient.create = jest.fn((args, cb) => cb(null, clientInstance));
+        mount(buildTree({ authorization: 'onetwothree' }));
+        expect(BraintreeClient.create).toHaveBeenCalledWith(
+            { authorization: 'onetwothree' }, expect.any(Function),
+        );
+        expect(HostedFields.create.mock.calls).toMatchSnapshot();
+    });
+
+    it('can set token ref after render', () => {
+        const styles = { foo: 'bar' };
+        const fields = mount(buildTree({ styles, authorization: '' }));
+        const clientInstance = jest.fn();
+        BraintreeClient.create = jest.fn((args, cb) => cb(null, clientInstance));
+        expect(BraintreeClient.create).not.toHaveBeenCalled();
+        expect(HostedFields.create).not.toHaveBeenCalled();
+
+        fields.setProps({ authorization: 'blahblahblah' });
+        expect(BraintreeClient.create).toHaveBeenCalledWith(
+            { authorization: 'blahblahblah' }, expect.any(Function),
+        );
+        expect(HostedFields.create.mock.calls).toMatchSnapshot();
     });
 });

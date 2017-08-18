@@ -1,7 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Braintree hosted fields can set token ref after render 1`] = `
+Array [
+  Array [
+    Object {
+      "client": [Function],
+      "fields": Object {
+        "cvv": Object {
+          "placeholder": "cvv",
+          "selector": "#field-wrapper-6",
+        },
+        "expirationDate": Object {
+          "placeholder": "date",
+          "selector": "#field-wrapper-3",
+        },
+        "expirationMonth": Object {
+          "placeholder": "month",
+          "selector": "#field-wrapper-4",
+        },
+        "expirationYear": Object {
+          "placeholder": "year",
+          "selector": "#field-wrapper-5",
+        },
+        "number": Object {
+          "placeholder": "cc #",
+          "selector": "#field-wrapper-2",
+        },
+        "postalCode": Object {
+          "placeholder": "zip",
+          "selector": "#field-wrapper-7",
+        },
+      },
+      "styles": Object {
+        "foo": "bar",
+      },
+    },
+    [Function],
+  ],
+]
+`;
+
+exports[`Braintree hosted fields can set token ref during render 1`] = `
+Array [
+  Array [
+    Object {
+      "client": [Function],
+      "fields": Object {
+        "cvv": Object {
+          "placeholder": "cvv",
+          "selector": "#field-wrapper-6",
+        },
+        "expirationDate": Object {
+          "placeholder": "date",
+          "selector": "#field-wrapper-3",
+        },
+        "expirationMonth": Object {
+          "placeholder": "month",
+          "selector": "#field-wrapper-4",
+        },
+        "expirationYear": Object {
+          "placeholder": "year",
+          "selector": "#field-wrapper-5",
+        },
+        "number": Object {
+          "placeholder": "cc #",
+          "selector": "#field-wrapper-2",
+        },
+        "postalCode": Object {
+          "placeholder": "zip",
+          "selector": "#field-wrapper-7",
+        },
+      },
+      "styles": Object {},
+    },
+    [Function],
+  ],
+]
+`;
+
 exports[`Braintree hosted fields renders and matches snapshot 1`] = `
-<div>
+<div
+  className="braintree-hosted-fields-wrapper braintree-test"
+>
   <div
     className="braintree-hosted-field"
     id="field-wrapper-2"
