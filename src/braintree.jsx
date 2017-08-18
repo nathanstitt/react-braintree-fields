@@ -6,7 +6,7 @@ export default class Braintree extends React.Component {
 
     static propTypes = {
         children: PropTypes.node.isRequired,
-        authorization: PropTypes.string.isRequired,
+        authorization: PropTypes.string,
         getTokenRef: PropTypes.func,
         onValidityChange: PropTypes.func,
         onCardTypeChange: PropTypes.func,
@@ -30,7 +30,6 @@ export default class Braintree extends React.Component {
     }
 
     componentDidMount() {
-//        this.api.isAttachable = true;
         this.api.setAuthorization(this.props.authorization);
         if (this.props.getTokenRef) {
             this.props.getTokenRef(this.api.tokenize.bind(this.api));
