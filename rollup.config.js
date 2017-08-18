@@ -3,20 +3,20 @@ import babel from 'rollup-plugin-babel';
 const pkg = require('./package.json');
 
 const external = Object.keys(pkg.dependencies).concat(
-    ['react', 'braintree-web/client', 'braintree-web/hosted-fields']
+    ['react', 'prop-types', 'braintree-web/client', 'braintree-web/hosted-fields'],
 );
 
 export default {
     entry: 'src/index.js',
     plugins: [
         babel({
-            babelrc: false,
+            babelrc: true,
             exclude: 'node_modules/**',
-            presets: [ [ 'es2015', { modules: false } ], 'react' ],
+            presets: [['es2015', { modules: false }], 'react', 'es2015-rollup'],
             plugins: [
-                "transform-decorators-legacy",
-                "transform-class-properties",
-                "transform-object-rest-spread",
+                'transform-decorators-legacy',
+                'transform-class-properties',
+                'transform-object-rest-spread',
             ],
         }),
     ],
