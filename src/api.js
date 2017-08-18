@@ -45,11 +45,15 @@ export default class BraintreeClientApi {
     }
 
     create(client) {
-        return HostedFields.create({
+        HostedFields.create({
             client,
             styles: this.styles,
             fields: this.fields,
         }, (err, hostedFields) => {
+            if (err) {
+                this.onError(err);
+                return;
+            }
             this.hostedFields = hostedFields;
             [
                 'blur', 'focus', 'empty', 'notEmpty',
