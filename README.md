@@ -84,5 +84,11 @@ Props:
   * onValidityChange
   * onCardTypeChange - accepted on any field, but will only be called by type="number"
   * placeholder - A string to that will be displayed in the input while it's empty
+  * formatInput
+  * maxlength,
+  * minlength
+  * select
+
+See the [Braintree api docs](https://braintree.github.io/braintree-web/3.19.0/module-braintree-web_hosted-fields.html#%7Efield) for more details
 
 Fields also have "focus" and "clear" methods.  These may be called by obtaining a reference to the field.
