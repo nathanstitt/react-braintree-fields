@@ -7181,15 +7181,23 @@ var BraintreeClientApi = function () {
     }, {
         key: 'checkInField',
         value: function checkInField(_ref2) {
-            var type = _ref2.type,
+            var formatInput = _ref2.formatInput,
+                maxlength = _ref2.maxlength,
+                minlength = _ref2.minlength,
                 placeholder = _ref2.placeholder,
-                handlers = _objectWithoutProperties(_ref2, ['type', 'placeholder']);
+                select = _ref2.select,
+                type = _ref2.type,
+                handlers = _objectWithoutProperties(_ref2, ['formatInput', 'maxlength', 'minlength', 'placeholder', 'select', 'type']);
 
             var id = 'field-wrapper-' + this.nextFieldId();
             this.fieldHandlers[type] = handlers;
             this.fields[type] = {
-                selector: '#' + id,
-                placeholder: placeholder
+                formatInput: formatInput,
+                maxlength: maxlength,
+                minlength: minlength,
+                placeholder: placeholder,
+                select: select,
+                selector: '#' + id
             };
             return id;
         }
