@@ -2,10 +2,6 @@ import babel from 'rollup-plugin-babel';
 
 const pkg = require('./package.json');
 
-const external = Object.keys(pkg.dependencies).concat(
-    ['react', 'prop-types', 'braintree-web/client', 'braintree-web/hosted-fields'],
-);
-
 export default {
     entry: 'src/index.js',
     plugins: [
@@ -27,7 +23,7 @@ export default {
         'braintree-web/client': 'Braintree',
         'braintree-web/hosted-fields': 'HostedFields',
     },
-    external,
+    external: ['react', 'prop-types', 'braintree-web/client', 'braintree-web/hosted-fields'],
     targets: [
         {
             dest: pkg.main,
