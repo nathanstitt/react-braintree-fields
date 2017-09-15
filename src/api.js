@@ -6,6 +6,7 @@ function cap(string) {
 }
 
 export default class BraintreeClientApi {
+
     fields = {};
 
     _nextFieldId = 1;
@@ -113,4 +114,5 @@ export default class BraintreeClientApi {
             });
         });
     }
+
 }
