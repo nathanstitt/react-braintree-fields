@@ -31,10 +31,16 @@ class MySillyCheckoutForm extends React.PureComponent {
        this.ccNum.focus(); // focus number field
     }
 
+    onAuthorizationSuccess() {
+      this.setState({ isBraintreeReady : true });
+    }
+
     render() {
         return (
             <Braintree
+                className={ this.state.isBraintreeReady ? '' : 'disabled' }
                 authorization='sandbox_g42y39zw_348pk9cgf3bgyw2b'
+                onAuthorizationSuccess={this.onAuthorizationSuccess}
                 onError={this.handleError}
                 onCardTypeChange={this.onCardTypeChange}
                 getTokenRef={ref => (this.getToken = ref)}
@@ -67,6 +73,7 @@ See [demo site](https://nathanstitt.github.io/react-braintree-fields/) for a wor
 
 Props:
  * authorization: Required, either a [tokenization key or a client token](https://developers.braintreepayments.com/guides/hosted-fields/setup-and-integration/)
+ * onAuthorizationSuccess: Function that will be called after Braintree successfully initializes the form.
  * styles: Object containing [valid field styles](https://braintree.github.io/braintree-web/3.11.1/module-braintree-web_hosted-fields.html#.create)
  * onError: Function that will be called if an Braintree error is encountered.
  * getTokenRef: A function that will be called once Braintree the API is initialized.  It will be called with a function that can be used to initiate tokenization.
