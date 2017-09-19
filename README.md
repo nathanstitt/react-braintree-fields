@@ -18,7 +18,7 @@ class MySillyCheckoutForm extends React.PureComponent {
        })
     }
 
-    onCardTypeChange(cards) {
+    onCardTypeChange() {
         this.setState({ card: (1 === cards.length) ? cards[0].type : '' });
     }
 
