@@ -13,13 +13,13 @@ export default class BraintreeClientApi {
 
     fieldHandlers = {};
 
-    constructor({ authorization, styles, ...callbacks }) {
+    constructor({ authorization, styles, onAuthorizationSuccess, ...callbacks }) {
         this.styles = styles || {};
         this.wrapperHandlers = callbacks || {};
-        this.setAuthorization(authorization);
+        this.setAuthorization(authorization, onAuthorizationSuccess);
     }
 
-    setAuthorization(authorization) {
+    setAuthorization(authorization, onAuthorizationSuccess) {
         if (!authorization && this.authorization) {
             this.teardown();
         } else if (authorization && authorization !== this.authorization) {
@@ -29,7 +29,7 @@ export default class BraintreeClientApi {
                 if (err) {
                     this.onError(err);
                 } else {
-                    this.create(clientInstance);
+                    this.create(clientInstance, onAuthorizationSuccess);
                 }
             });
         }
@@ -45,7 +45,7 @@ export default class BraintreeClientApi {
         if (this.wrapperHandlers.onError) { this.wrapperHandlers.onError(err); }
     }
 
-    create(client) {
+    create(client, onAuthorizationSuccess) {
         HostedFields.create({
             client,
             styles: this.styles,
@@ -63,6 +63,10 @@ export default class BraintreeClientApi {
                 hostedFields.on(eventName, ev => this.onFieldEvent(`on${cap(eventName)}`, ev));
             });
             this.onError(err);
+
+            if (onAuthorizationSuccess) {
+                onAuthorizationSuccess();
+            }
         });
     }
 

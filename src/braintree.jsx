@@ -6,6 +6,7 @@ export default class Braintree extends React.Component {
 
     static propTypes = {
         children: PropTypes.node.isRequired,
+        onAuthorizationSuccess : PropTypes.func,
         authorization: PropTypes.string,
         getTokenRef: PropTypes.func,
         onValidityChange: PropTypes.func,
@@ -30,7 +31,7 @@ export default class Braintree extends React.Component {
     }
 
     componentDidMount() {
-        this.api.setAuthorization(this.props.authorization);
+        this.api.setAuthorization(this.props.authorization, this.props.onAuthorizationSuccess);
         if (this.props.getTokenRef) {
             this.props.getTokenRef(this.api.tokenize.bind(this.api));
         }
@@ -41,7 +42,7 @@ export default class Braintree extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        this.api.setAuthorization(nextProps.authorization);
+        this.api.setAuthorization(nextProps.authorization, this.props.onAuthorizationSuccess);
     }
 
     tokenize(options) {

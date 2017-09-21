@@ -11,10 +11,11 @@ jest.mock('braintree-web/hosted-fields');
 let getToken;
 
 const buildTree = (
-    { styles = {}, props = {}, authorization = 'sandbox_g42y39zw_348pk9cgf3bgyw2b' } = {}
+    { styles = {}, props = {}, authorization = 'sandbox_g42y39zw_348pk9cgf3bgyw2b', onAuthorizationSuccess = () => {} } = {}
 ) => (
     <Braintree
         className="braintree-test"
+        onAuthorizationSuccess={onAuthorizationSuccess}
         authorization={authorization}
         styles={styles}
         getTokenRef={ref => (getToken = ref)}
@@ -45,6 +46,16 @@ describe('Braintree hosted fields', () => {
         expect(BraintreeClient.create).toHaveBeenCalledWith(expect.objectContaining({
             authorization: 'sandbox_g42y39zw_348pk9cgf3bgyw2b',
         }), expect.anything());
+    });
+
+    it('registers an onAuthorizationSuccess callback when passed', () => {
+        BraintreeClient.create = jest.fn((args, cb) => cb(null, jest.fn()));
+        HostedFields.create = jest.fn((args, cb) => cb(null, {
+            on: jest.fn(),
+        }));
+        const onAuthorizationSuccess = jest.fn();
+        mount(buildTree({ onAuthorizationSuccess }));
+        expect(onAuthorizationSuccess.mock.calls.length).toEqual(1);
     });
 
     it('sets styles', () => {
