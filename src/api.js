@@ -13,7 +13,9 @@ export default class BraintreeClientApi {
 
     fieldHandlers = {};
 
-    constructor({ authorization, styles, onAuthorizationSuccess, ...callbacks }) {
+    constructor({
+        authorization, styles, onAuthorizationSuccess, ...callbacks
+    }) {
         this.styles = styles || {};
         this.wrapperHandlers = callbacks || {};
         this.setAuthorization(authorization, onAuthorizationSuccess);
@@ -74,7 +76,9 @@ export default class BraintreeClientApi {
         if (this.hostedFields) { this.hostedFields.teardown(); }
     }
 
-    checkInField({ formatInput, maxlength, minlength, placeholder, select, type, ...handlers }) {
+    checkInField({
+        formatInput, maxlength, minlength, placeholder, select, type, ...handlers
+    }) {
         const id = `field-wrapper-${this.nextFieldId()}`;
         this.fieldHandlers[type] = handlers;
         this.fields[type] = {
