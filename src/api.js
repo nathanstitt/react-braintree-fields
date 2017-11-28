@@ -32,6 +32,13 @@ export default class BraintreeClientApi {
                     this.onError(err);
                 } else {
                     this.create(clientInstance, onAuthorizationSuccess);
+
+                    if (this.wrapperHandlers.onDataCollectorInstanceReady) {
+                        Braintree.dataCollector.create({
+                            client: clientInstance,
+                            kount: true,
+                        }, this.wrapperHandlers.onDataCollectorInstanceReady);
+                    }
                 }
             });
         }
