@@ -4,6 +4,9 @@ A few small React components to make integrating [Braintree's Hosted Fields](htt
 
 [![Build Status](https://travis-ci.org/nathanstitt/react-braintree-fields.svg?branch=master)](https://travis-ci.org/nathanstitt/react-braintree-fields)
 
+# See also
+
+I've also written a vendor agnostic library [PaymentFields](https://github.com/nathanstitt/payment-fields)  It's an extension of this library to also support Square and Stripe.  You might check that out if you ever think you'll need to support additional processors.
 
 ## Introduction
 
