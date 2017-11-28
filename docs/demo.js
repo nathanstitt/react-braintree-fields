@@ -1116,6 +1116,13 @@ var BraintreeClientApi = function () {
                         _this.onError(err);
                     } else {
                         _this.create(clientInstance, onAuthorizationSuccess);
+
+                        if (_this.wrapperHandlers.onDataCollectorInstanceReady) {
+                            __WEBPACK_IMPORTED_MODULE_0_braintree_web_client___default.a.dataCollector.create({
+                                client: clientInstance,
+                                kount: true
+                            }, _this.wrapperHandlers.onDataCollectorInstanceReady);
+                        }
                     }
                 });
             }
