@@ -1,5 +1,6 @@
 import Braintree from 'braintree-web/client';
 import HostedFields from 'braintree-web/hosted-fields';
+import BraintreeDataCollector from 'braintree-web/data-collector';
 
 function cap(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -34,7 +35,7 @@ export default class BraintreeClientApi {
                     this.create(clientInstance, onAuthorizationSuccess);
 
                     if (this.wrapperHandlers.onDataCollectorInstanceReady) {
-                        Braintree.dataCollector.create({
+                        BraintreeDataCollector.create({
                             client: clientInstance,
                             kount: true,
                         }, this.wrapperHandlers.onDataCollectorInstanceReady);
