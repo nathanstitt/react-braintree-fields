@@ -78,6 +78,7 @@ Props:
  * onError: Function that will be called if an Braintree error is encountered.
  * getTokenRef: A function that will be called once Braintree the API is initialized.  It will be called with a function that can be used to initiate tokenization.
    * The tokenization function will return a Promise which will be either resolved or rejected.  If resolved, the promise payload will contain an object with the `nonce` and other data from Braintree.
+ * onDataCollectorInstanceReady: A function that will be called with the results of `Braintree.dataCollector.create`
 
 ## HostedField Component
 
