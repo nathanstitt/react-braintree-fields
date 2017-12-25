@@ -31,7 +31,7 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
 
     onCardTypeChange({ cards }) {
         if (1 === cards.length) {
-          const [{card}] = cards;
+          const [card] = cards;
           
           this.setState({ card: card.type });
           
