@@ -46,9 +46,9 @@
     "eslint-plugin-react": "^7.4.0",
     "jest": "^20.0.4",
     "jest-cli": "^20.0.4",
+    "prop-types": "^15.6",
     "raf": "^3.4.0",
     "react": "^16.0.0",
-    "prop-types": "^15.6",
     "react-dom": "^16.0.0",
     "react-test-renderer": "^16.0.0",
     "rollup": "^0.47.6",
@@ -57,7 +57,7 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
-    "braintree-web": "^3.22"
+    "braintree-web": "^3.26.0"
   },
   "jest": {
     "setupFiles": [
