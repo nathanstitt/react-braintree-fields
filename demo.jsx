@@ -64,6 +64,10 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
             </div>
         );
     }
+  
+    onAuthorizationSuccess() {
+      this.numberField.focus();
+    }
 
     render() {
         return (
@@ -74,6 +78,7 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
 
                 <Braintree
                     authorization={this.state.authorization}
+                    onAuthorizationSuccess={this.onAuthorizationSuccess}
                     onError={this.onError}
                     getTokenRef={t => (this.tokenize = t)}
                     onCardTypeChange={this.onCardTypeChange}
@@ -95,6 +100,7 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
                             onBlur={() => this.setState({ numberFocused: false })}
                             onFocus={() => this.setState({ numberFocused: true })}
                             className={this.state.numberFocused ? 'focused' : ''}
+                            ref={numberField => { this.numberField = numberField; }} />
                         />
                         <p>Card type: {this.state.card}</p>
                         Date:
