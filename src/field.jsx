@@ -29,6 +29,10 @@ export default class BraintreeHostedField extends React.Component {
     clear() {
         this.context.braintreeApi.clearField(this.props.type);
     }
+  
+    setPlaceholder(text) {
+      this.context.braintreeApi.setAttribute(this.props.type, 'placeholder', text);
+    }
 
     componentWillMount() {
         this.fieldId = this.context.braintreeApi.checkInField(this.props);

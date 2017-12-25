@@ -30,7 +30,21 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
     }
 
     onCardTypeChange({ cards }) {
-        this.setState({ card: (1 === cards.length) ? cards[0].type : '' });
+        if (1 === cards.length) {
+          const [{card}] = cards;
+          
+          this.setState({ card: card.type });
+          
+          if (card.code && card.code.name) {
+            this.cvvField.setPlaceholder(card.code.name);
+          } else {
+            this.cvvField.setPlaceholder('CVV');
+          }
+
+        } else {
+          this.setState({ card: '' });
+          this.cvvField.setPlaceholder('CVV');
+        }
     }
 
     state = {
@@ -90,7 +104,7 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
                         Year:
                         <HostedField type="expirationYear" />
                         CVV:
-                        <HostedField type="cvv" />
+                        <HostedField type="cvv" placeholder="CVV" ref={cvvField => { this.cvvField = cvvField; }} />
                         Zip:
                         <HostedField type="postalCode" />
                     </div>
