@@ -106,13 +106,13 @@ export default class BraintreeClientApi {
     clearField(fieldType, cb) {
         this.hostedFields.clear(fieldType, cb);
     }
-  
+
     setAttribute(fieldType, name, value) {
-      this.hostedFields.setAttribute({
-        field: fieldType,
-        attribute: name,
-        value: value
-      });
+        this.hostedFields.setAttribute({
+            field: fieldType,
+            attribute: name,
+            value,
+        });
     }
 
     onFieldEvent(eventName, event) {
