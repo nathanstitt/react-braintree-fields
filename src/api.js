@@ -108,6 +108,14 @@ export default class BraintreeClientApi {
         this.hostedFields.clear(fieldType, cb);
     }
 
+    setAttribute(fieldType, name, value) {
+        this.hostedFields.setAttribute({
+            field: fieldType,
+            attribute: name,
+            value,
+        });
+    }
+
     onFieldEvent(eventName, event) {
         const fieldHandlers = this.fieldHandlers[event.emittedBy];
         if (fieldHandlers && fieldHandlers[eventName]) {

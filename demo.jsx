@@ -30,7 +30,21 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
     }
 
     onCardTypeChange({ cards }) {
-        this.setState({ card: (1 === cards.length) ? cards[0].type : '' });
+        if (1 === cards.length) {
+          const [card] = cards;
+          
+          this.setState({ card: card.type });
+          
+          if (card.code && card.code.name) {
+            this.cvvField.setPlaceholder(card.code.name);
+          } else {
+            this.cvvField.setPlaceholder('CVV');
+          }
+
+        } else {
+          this.setState({ card: '' });
+          this.cvvField.setPlaceholder('CVV');
+        }
     }
 
     state = {
@@ -50,6 +64,10 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
             </div>
         );
     }
+  
+    onAuthorizationSuccess() {
+      this.numberField.focus();
+    }
 
     render() {
         return (
@@ -60,6 +78,7 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
 
                 <Braintree
                     authorization={this.state.authorization}
+                    onAuthorizationSuccess={this.onAuthorizationSuccess}
                     onError={this.onError}
                     getTokenRef={t => (this.tokenize = t)}
                     onCardTypeChange={this.onCardTypeChange}
@@ -81,6 +100,7 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
                             onBlur={() => this.setState({ numberFocused: false })}
                             onFocus={() => this.setState({ numberFocused: true })}
                             className={this.state.numberFocused ? 'focused' : ''}
+                            ref={numberField => { this.numberField = numberField; }} />
                         />
                         <p>Card type: {this.state.card}</p>
                         Date:
@@ -90,7 +110,7 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
                         Year:
                         <HostedField type="expirationYear" />
                         CVV:
-                        <HostedField type="cvv" />
+                        <HostedField type="cvv" placeholder="CVV" ref={cvvField => { this.cvvField = cvvField; }} />
                         Zip:
                         <HostedField type="postalCode" />
                     </div>

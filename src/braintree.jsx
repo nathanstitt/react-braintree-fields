@@ -6,7 +6,7 @@ export default class Braintree extends React.Component {
 
     static propTypes = {
         children: PropTypes.node.isRequired,
-        onAuthorizationSuccess : PropTypes.func,
+        onAuthorizationSuccess: PropTypes.func,
         authorization: PropTypes.string,
         getTokenRef: PropTypes.func,
         onValidityChange: PropTypes.func,
