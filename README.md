@@ -18,6 +18,7 @@ class MySillyCheckoutForm extends React.PureComponent {
         // could also obtain a reference to the Braintree wrapper element and call `.tokenize()`
        this.getToken({ cardholderName: 'My Order Name' }).then((payload) => {
          console.log("nonce=" , payload.nonce)
+         console.log("device_data", this.device_data)
        })
     }
 
@@ -37,6 +38,10 @@ class MySillyCheckoutForm extends React.PureComponent {
     onAuthorizationSuccess() {
       this.setState({ isBraintreeReady : true });
     }
+    
+    onDataCollectorInstanceReady(err, dataCollectorInstance) {
+      if(!err) this.device_data = dataCollectorInstance.deviceData
+    }
 
     render() {
         return (
@@ -44,6 +49,7 @@ class MySillyCheckoutForm extends React.PureComponent {
                 className={ this.state.isBraintreeReady ? '' : 'disabled' }
                 authorization='sandbox_g42y39zw_348pk9cgf3bgyw2b'
                 onAuthorizationSuccess={this.onAuthorizationSuccess}
+                onDataCollectorInstanceReady={this.onDataCollectorInstanceReady}
                 onError={this.handleError}
                 onCardTypeChange={this.onCardTypeChange}
                 getTokenRef={ref => (this.getToken = ref)}
@@ -81,7 +87,7 @@ Props:
  * onError: Function that will be called if an Braintree error is encountered.
  * getTokenRef: A function that will be called once Braintree the API is initialized.  It will be called with a function that can be used to initiate tokenization.
    * The tokenization function will return a Promise which will be either resolved or rejected.  If resolved, the promise payload will contain an object with the `nonce` and other data from Braintree.
- * onDataCollectorInstanceReady: A function that will be called with the results of `Braintree.dataCollector.create`
+ * onDataCollectorInstanceReady: A function that will be called with the results of `Braintree.dataCollector.create`. This can be used in conjunction with [Braintree's Advanced Fraud Tools](https://developers.braintreepayments.com/guides/advanced-fraud-tools/client-side/javascript/v3).
 
 ## HostedField Component
 
