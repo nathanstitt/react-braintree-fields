@@ -16,6 +16,7 @@ export default class BraintreeHostedField extends React.Component {
         onFocus: PropTypes.func,
         onEmpty: PropTypes.func,
         onBlur: PropTypes.func,
+        prefill: PropTypes.string,
     }
 
     static contextTypes = {
