@@ -105,7 +105,8 @@ Props:
   * maxlength,
   * minlength
   * select
+  * prefill
 
-See the [Braintree api docs](https://braintree.github.io/braintree-web/3.19.0/module-braintree-web_hosted-fields.html#%7Efield) for more details
+See the [Braintree api docs](https://braintree.github.io/braintree-web/3.33.0/module-braintree-web_hosted-fields.html#%7Efield) for more details
 
 Fields also have "focus" and "clear" methods.  These may be called by obtaining a reference to the field.

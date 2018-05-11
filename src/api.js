@@ -85,7 +85,7 @@ export default class BraintreeClientApi {
     }
 
     checkInField({
-        formatInput, maxlength, minlength, placeholder, select, type, ...handlers
+        formatInput, maxlength, minlength, placeholder, select, type, prefill, ...handlers
     }) {
         const id = `field-wrapper-${this.nextFieldId()}`;
         this.fieldHandlers[type] = handlers;
@@ -95,6 +95,7 @@ export default class BraintreeClientApi {
             minlength,
             placeholder,
             select,
+            prefill,
             selector: `#${id}`,
         };
         return id;

@@ -12,6 +12,7 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
             'onError',
             'getToken',
             'onCardTypeChange',
+            'onAuthorizationSuccess',
         ].forEach(prop => (this[prop] = this[prop].bind(this)));
     }
 
@@ -100,6 +101,7 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
                             onBlur={() => this.setState({ numberFocused: false })}
                             onFocus={() => this.setState({ numberFocused: true })}
                             className={this.state.numberFocused ? 'focused' : ''}
+                            prefill="4111 1111 1111 1111"
                             ref={numberField => { this.numberField = numberField; }} />
                         />
                         <p>Card type: {this.state.card}</p>
