@@ -33,9 +33,9 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
     onCardTypeChange({ cards }) {
         if (1 === cards.length) {
           const [card] = cards;
-          
+
           this.setState({ card: card.type });
-          
+
           if (card.code && card.code.name) {
             this.cvvField.setPlaceholder(card.code.name);
           } else {
@@ -65,7 +65,7 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
             </div>
         );
     }
-  
+
     onAuthorizationSuccess() {
       this.numberField.focus();
     }
@@ -102,7 +102,7 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
                             onFocus={() => this.setState({ numberFocused: true })}
                             className={this.state.numberFocused ? 'focused' : ''}
                             prefill="4111 1111 1111 1111"
-                            ref={numberField => { this.numberField = numberField; }} />
+                            ref={numberField => { this.numberField = numberField; }}
                         />
                         <p>Card type: {this.state.card}</p>
                         Date:
