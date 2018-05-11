@@ -10166,7 +10166,6 @@ var BraintreeClientApi = function () {
         value: function create(client, onAuthorizationSuccess) {
             var _this2 = this;
 
-            console.log(this.fields);
             __WEBPACK_IMPORTED_MODULE_1_braintree_web_hosted_fields___default.a.create({
                 client: client,
                 styles: this.styles,
@@ -14863,7 +14862,7 @@ var BraintreeHostedfieldDemo = function (_React$PureComponent) {
             numberFocused: false
         };
 
-        ['onError', 'getToken', 'onCardTypeChange'].forEach(function (prop) {
+        ['onError', 'getToken', 'onCardTypeChange', 'onAuthorizationSuccess'].forEach(function (prop) {
             return _this[prop] = _this[prop].bind(_this);
         });
         return _this;

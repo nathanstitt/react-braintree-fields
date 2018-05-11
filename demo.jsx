@@ -12,6 +12,7 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
             'onError',
             'getToken',
             'onCardTypeChange',
+            'onAuthorizationSuccess',
         ].forEach(prop => (this[prop] = this[prop].bind(this)));
     }
 
