@@ -2,6 +2,7 @@
   "name": "react-braintree-fields",
   "version": "1.0.0",
   "description": "React component for braintree hosted fields",
+  "browser": "dist/build.full.js",
   "main": "dist/build.full.js",
   "module": "dist/build.module.js",
   "jsnext:main": "dist/build.module.js",
