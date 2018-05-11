@@ -28,7 +28,7 @@ export default {
         {
             dest: pkg.main,
             format: 'umd',
-            moduleName: 'react-braintree-fields',
+            name: 'react-braintree-fields',
             sourceMap: true,
         }, {
             dest: pkg.module,
