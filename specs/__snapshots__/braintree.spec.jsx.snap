@@ -4,7 +4,7 @@ exports[`Braintree hosted fields can set token ref after render 1`] = `
 Array [
   Array [
     Object {
-      "client": [Function],
+      "client": [MockFunction],
       "fields": Object {
         "cvv": Object {
           "formatInput": undefined,
@@ -74,7 +74,7 @@ exports[`Braintree hosted fields can set token ref during render 1`] = `
 Array [
   Array [
     Object {
-      "client": [Function],
+      "client": [MockFunction],
       "fields": Object {
         "cvv": Object {
           "formatInput": undefined,
