@@ -10,7 +10,7 @@ export default class BraintreeClientApi {
 
     fields = {};
 
-    _nextFieldId = 1;
+    _nextFieldId = 0;
 
     fieldHandlers = {};
 
