@@ -85,7 +85,15 @@ export default class BraintreeClientApi {
     }
 
     checkInField({
-        formatInput, maxlength, minlength, placeholder, select, type, prefill, ...handlers
+        formatInput,
+        maxlength,
+        minlength,
+        placeholder,
+        select,
+        type,
+        prefill,
+        rejectUnsupportedCards,
+        ...handlers
     }) {
         const id = `field-wrapper-${this.nextFieldId()}`;
         this.fieldHandlers[type] = handlers;
@@ -98,6 +106,9 @@ export default class BraintreeClientApi {
             prefill,
             selector: `#${id}`,
         };
+        if (('number' === type) && rejectUnsupportedCards) {
+            this.fields.number.rejectUnsupportedCards = true;
+        }
         return id;
     }
 
