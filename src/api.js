@@ -92,10 +92,10 @@ export default class BraintreeClientApi {
         select,
         type,
         prefill,
+        id = `field-wrapper-${this.nextFieldId()}`,
         rejectUnsupportedCards,
         ...handlers
     }) {
-        const id = `field-wrapper-${this.nextFieldId()}`;
         this.fieldHandlers[type] = handlers;
         this.fields[type] = {
             formatInput,

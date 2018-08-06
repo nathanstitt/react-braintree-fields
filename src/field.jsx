@@ -8,6 +8,7 @@ export default class BraintreeHostedField extends React.Component {
         type: PropTypes.oneOf([
             'number', 'expirationDate', 'expirationMonth', 'expirationYear', 'cvv', 'postalCode',
         ]).isRequired,
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         placeholder: PropTypes.string,
         className: PropTypes.string,
         onCardTypeChange: PropTypes.func,
@@ -30,7 +31,7 @@ export default class BraintreeHostedField extends React.Component {
     clear() {
         this.context.braintreeApi.clearField(this.props.type);
     }
-  
+
     setPlaceholder(text) {
       this.context.braintreeApi.setAttribute(this.props.type, 'placeholder', text);
     }
