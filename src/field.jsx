@@ -33,7 +33,7 @@ export default class BraintreeHostedField extends React.Component {
     }
 
     setPlaceholder(text) {
-      this.context.braintreeApi.setAttribute(this.props.type, 'placeholder', text);
+        this.context.braintreeApi.setAttribute(this.props.type, 'placeholder', text);
     }
 
     componentWillMount() {

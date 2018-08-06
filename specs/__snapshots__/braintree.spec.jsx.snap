@@ -13,7 +13,7 @@ Array [
           "placeholder": "cvv",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#field-wrapper-6",
+          "selector": "#braintree-field-wrapper-5",
         },
         "expirationDate": Object {
           "formatInput": undefined,
@@ -22,7 +22,7 @@ Array [
           "placeholder": "date",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#field-wrapper-3",
+          "selector": "#braintree-field-wrapper-2",
         },
         "expirationMonth": Object {
           "formatInput": undefined,
@@ -31,7 +31,7 @@ Array [
           "placeholder": "month",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#field-wrapper-4",
+          "selector": "#braintree-field-wrapper-3",
         },
         "expirationYear": Object {
           "formatInput": undefined,
@@ -40,7 +40,7 @@ Array [
           "placeholder": "year",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#field-wrapper-5",
+          "selector": "#braintree-field-wrapper-4",
         },
         "number": Object {
           "formatInput": undefined,
@@ -49,7 +49,7 @@ Array [
           "placeholder": "cc #",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#field-wrapper-2",
+          "selector": "#braintree-field-wrapper-1",
         },
         "postalCode": Object {
           "formatInput": undefined,
@@ -58,7 +58,7 @@ Array [
           "placeholder": "zip",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#field-wrapper-7",
+          "selector": "#braintree-field-wrapper-6",
         },
       },
       "styles": Object {
@@ -83,7 +83,7 @@ Array [
           "placeholder": "cvv",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#field-wrapper-6",
+          "selector": "#braintree-field-wrapper-5",
         },
         "expirationDate": Object {
           "formatInput": undefined,
@@ -92,7 +92,7 @@ Array [
           "placeholder": "date",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#field-wrapper-3",
+          "selector": "#braintree-field-wrapper-2",
         },
         "expirationMonth": Object {
           "formatInput": undefined,
@@ -101,7 +101,7 @@ Array [
           "placeholder": "month",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#field-wrapper-4",
+          "selector": "#braintree-field-wrapper-3",
         },
         "expirationYear": Object {
           "formatInput": undefined,
@@ -110,7 +110,7 @@ Array [
           "placeholder": "year",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#field-wrapper-5",
+          "selector": "#braintree-field-wrapper-4",
         },
         "number": Object {
           "formatInput": undefined,
@@ -119,7 +119,7 @@ Array [
           "placeholder": "cc #",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#field-wrapper-2",
+          "selector": "#braintree-field-wrapper-1",
         },
         "postalCode": Object {
           "formatInput": undefined,
@@ -128,7 +128,7 @@ Array [
           "placeholder": "zip",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#field-wrapper-7",
+          "selector": "#braintree-field-wrapper-6",
         },
       },
       "styles": Object {},
@@ -144,27 +144,27 @@ exports[`Braintree hosted fields renders and matches snapshot 1`] = `
 >
   <div
     className="braintree-hosted-field"
-    id="field-wrapper-2"
+    id="braintree-field-wrapper-1"
   />
   <div
     className="braintree-hosted-field"
-    id="field-wrapper-3"
+    id="braintree-field-wrapper-2"
   />
   <div
     className="braintree-hosted-field"
-    id="field-wrapper-4"
+    id="braintree-field-wrapper-3"
   />
   <div
     className="braintree-hosted-field"
-    id="field-wrapper-5"
+    id="braintree-field-wrapper-4"
   />
   <div
     className="braintree-hosted-field"
-    id="field-wrapper-6"
+    id="braintree-field-wrapper-5"
   />
   <div
     className="braintree-hosted-field"
-    id="field-wrapper-7"
+    id="braintree-field-wrapper-6"
   />
 </div>
 `;

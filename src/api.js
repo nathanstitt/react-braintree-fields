@@ -92,7 +92,7 @@ export default class BraintreeClientApi {
         select,
         type,
         prefill,
-        id = `field-wrapper-${this.nextFieldId()}`,
+        id = `braintree-field-wrapper-${this.nextFieldId()}`,
         rejectUnsupportedCards,
         ...handlers
     }) {
