@@ -62,6 +62,8 @@
     "braintree-web": "^3.33.0"
   },
   "jest": {
+    "testEnvironment": "jsdom",
+    "testURL": "http://localhost/",
     "setupFiles": [
       "raf/polyfill"
     ],
