@@ -56,6 +56,7 @@ export default class BraintreeClientApi {
     }
 
     create(client, onAuthorizationSuccess) {
+        this.client = client;
         HostedFields.create({
             client,
             styles: this.styles,
