@@ -36,7 +36,7 @@ export default class BraintreeHostedField extends React.Component {
         this.context.braintreeApi.setAttribute(this.props.type, 'placeholder', text);
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.fieldId = this.context.braintreeApi.checkInField(this.props);
     }
 
