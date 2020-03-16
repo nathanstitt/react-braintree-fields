@@ -86,10 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./demo/demo-functional.jsx":
-/*!**********************************!*\
-  !*** ./demo/demo-functional.jsx ***!
-  \**********************************/
+/***/ "./demo/demo-class.jsx":
+/*!*****************************!*\
+  !*** ./demo/demo-class.jsx ***!
+  \*****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -104,109 +104,124 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Demo = () => {
-  var [tokenize, setTokenizeFunc] = react__WEBPACK_IMPORTED_MODULE_1___default.a.useState();
-  var [cardType, setCardType] = react__WEBPACK_IMPORTED_MODULE_1___default.a.useState('');
-  var [error, setError] = react__WEBPACK_IMPORTED_MODULE_1___default.a.useState(null);
-  var [token, setToken] = react__WEBPACK_IMPORTED_MODULE_1___default.a.useState(null);
-  var [focusedFieldName, setFocusedField] = react__WEBPACK_IMPORTED_MODULE_1___default.a.useState('');
-  var numberField = react__WEBPACK_IMPORTED_MODULE_1___default.a.useRef();
-  var cvvField = react__WEBPACK_IMPORTED_MODULE_1___default.a.useRef();
-  console.log({
-    focusedFieldName
-  });
+class Demo extends react__WEBPACK_IMPORTED_MODULE_1___default.a.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.state = {
+      numberFocused: false
+    };
+    this.numberField = react__WEBPACK_IMPORTED_MODULE_1___default.a.createRef();
+    this.braintree = react__WEBPACK_IMPORTED_MODULE_1___default.a.createRef();
+    ['onError', 'getToken', 'onCardTypeChange', 'onAuthorizationSuccess'].forEach(prop => this[prop] = this[prop].bind(this));
+  }
 
-  var onAuthorizationSuccess = () => {
-    numberField.current.focus();
-  };
+  onError(error) {
+    this.setState({
+      error: error.message || String(error)
+    });
+  }
 
-  var onDataCollectorInstanceReady = collector => {// DO SOMETHING with Braintree collector as needed
-  };
+  getToken() {
+    this.tokenize().then(token => this.setState({
+      token,
+      error: null
+    })).catch(error => this.onError(error));
+  }
 
-  var handleError = error => {
-    setError(error.message || String(error));
-  };
-
-  var onFieldBlur = (field, event) => setFocusedField('');
-
-  var onFieldFocus = (field, event) => setFocusedField(event.emittedBy);
-
-  var onCardTypeChange = (_ref) => {
+  onCardTypeChange(_ref) {
     var {
       cards
     } = _ref;
 
     if (1 === cards.length) {
       var [card] = cards;
-      setCardType(card.type);
+      this.setState({
+        card: card.type
+      });
 
       if (card.code && card.code.name) {
-        cvvField.current.setPlaceholder(card.code.name);
+        this.cvvField.setPlaceholder(card.code.name);
       } else {
-        cvvField.current.setPlaceholder('CVV');
+        this.cvvField.setPlaceholder('CVV');
       }
     } else {
-      setCardType('');
-      cvvField.current.setPlaceholder('CVV');
+      this.setState({
+        card: ''
+      });
+      this.cvvField.setPlaceholder('CVV');
     }
-  };
+  }
 
-  var getToken = () => {
-    tokenize().then(setToken).catch(handleError);
-  };
+  componentDidMount() {
+    this.setState({
+      authorization: 'sandbox_g42y39zw_348pk9cgf3bgyw2b'
+    });
+  }
 
-  var renderResult = (title, obj) => {
+  renderResult(title, obj) {
     if (!obj) {
       return null;
     }
 
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("b", null, title, ":"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("pre", null, JSON.stringify(obj, null, 4)));
-  };
+  }
 
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["Braintree"], {
-    className: "demo",
-    authorization: "sandbox_g42y39zw_348pk9cgf3bgyw2b",
-    onAuthorizationSuccess: onAuthorizationSuccess,
-    onDataCollectorInstanceReady: onDataCollectorInstanceReady,
-    onError: handleError,
-    onCardTypeChange: onCardTypeChange,
-    getTokenRef: ref => setTokenizeFunc(() => ref),
-    styles: {
-      'input': {
-        'font-size': 'inherit'
-      },
-      ':focus': {
-        'color': 'blue'
+  onAuthorizationSuccess() {
+    this.numberField.current.focus();
+  }
+
+  render() {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Braintree Hosted Fields Demo"), this.renderResult('Error', this.state.error), this.renderResult('Token', this.state.token), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["Braintree"], {
+      ref: this.braintree,
+      authorization: this.state.authorization,
+      onAuthorizationSuccess: this.onAuthorizationSuccess,
+      onError: this.onError,
+      getTokenRef: t => this.tokenize = t,
+      onCardTypeChange: this.onCardTypeChange,
+      styles: {
+        input: {
+          'font-size': '14px',
+          'font-family': 'helvetica, tahoma, calibri, sans-serif',
+          color: '#7d6b6b'
+        },
+        ':focus': {
+          color: 'black'
+        }
       }
-    }
-  }, renderResult('Error', error), renderResult('Token', token), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, "Number:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["HostedField"], {
-    type: "number",
-    className: focusedFieldName == 'number' ? 'focused' : '',
-    onBlur: onFieldBlur,
-    onFocus: onFieldFocus,
-    prefill: "4111 1111 1111 1111",
-    ref: numberField
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Card type: ", cardType), "Date:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["HostedField"], {
-    type: "expirationDate",
-    onBlur: onFieldBlur,
-    onFocus: onFieldFocus,
-    className: focusedFieldName == 'expirationDate' ? 'focused' : ''
-  }), "Month:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["HostedField"], {
-    type: "expirationMonth"
-  }), "Year:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["HostedField"], {
-    type: "expirationYear"
-  }), "CVV:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["HostedField"], {
-    type: "cvv",
-    placeholder: "CVV",
-    ref: cvvField
-  }), "Zip:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["HostedField"], {
-    type: "postalCode"
-  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "footer"
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-    onClick: getToken
-  }, "Get nonce token")));
-};
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, "Number:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["HostedField"], {
+      type: "number",
+      onBlur: () => this.setState({
+        numberFocused: false
+      }),
+      onFocus: () => this.setState({
+        numberFocused: true
+      }),
+      className: this.state.numberFocused ? 'focused' : '',
+      prefill: "4111 1111 1111 1111",
+      ref: this.numberField
+    }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Card type: ", this.state.card), "Date:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["HostedField"], {
+      type: "expirationDate"
+    }), "Month:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["HostedField"], {
+      type: "expirationMonth"
+    }), "Year:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["HostedField"], {
+      type: "expirationYear"
+    }), "CVV:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["HostedField"], {
+      type: "cvv",
+      placeholder: "CVV",
+      ref: cvvField => {
+        this.cvvField = cvvField;
+      }
+    }), "Zip:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["HostedField"], {
+      type: "postalCode"
+    }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "footer"
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      onClick: this.getToken
+    }, "Get nonce token")));
+  }
+
+}
 
 /* harmony default export */ __webpack_exports__["default"] = (Demo);
 
@@ -226,13 +241,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _src_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/index */ "./src/index.js");
-/* harmony import */ var _demo_functional_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./demo-functional.jsx */ "./demo/demo-functional.jsx");
+/* harmony import */ var _demo_class_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./demo-class.jsx */ "./demo/demo-class.jsx");
 
 
- //import Demo from './demo-class.jsx'
 
+ //import Demo from './demo-functional.jsx'
 
-Object(react_dom__WEBPACK_IMPORTED_MODULE_0__["render"])(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_demo_functional_jsx__WEBPACK_IMPORTED_MODULE_3__["default"]), document.getElementById('root'));
+Object(react_dom__WEBPACK_IMPORTED_MODULE_0__["render"])(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_demo_class_jsx__WEBPACK_IMPORTED_MODULE_3__["default"]), document.getElementById('root'));
 
 /***/ }),
 
@@ -40218,8 +40233,8 @@ class Braintree extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     this.api.teardown();
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.api.setAuthorization(nextProps.authorization, this.props.onAuthorizationSuccess);
+  componentDidUpdate() {
+    this.api.setAuthorization(this.props.authorization, this.props.onAuthorizationSuccess);
   }
 
   tokenize(options) {
@@ -40301,7 +40316,7 @@ class BraintreeHostedField extends react__WEBPACK_IMPORTED_MODULE_0___default.a.
     this.context.braintreeApi.setAttribute(this.props.type, 'placeholder', text);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.fieldId = this.context.braintreeApi.checkInField(this.props);
   }
 
