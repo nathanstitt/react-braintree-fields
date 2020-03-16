@@ -41,8 +41,8 @@ export default class Braintree extends React.Component {
         this.api.teardown();
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.api.setAuthorization(nextProps.authorization, this.props.onAuthorizationSuccess);
+    componentDidUpdate() {
+        this.api.setAuthorization(this.props.authorization, this.props.onAuthorizationSuccess);
     }
 
     tokenize(options) {
