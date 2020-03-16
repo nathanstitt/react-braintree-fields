@@ -11,11 +11,12 @@
   "license": "MIT",
   "peerDependencies": {
     "prop-types": "^15.7",
-    "react": "^16.8"
+    "react": "^16.13"
   },
   "scripts": {
     "test": "jest",
     "build": "./script/build",
+    "demo": "$(npm bin)/webpack-dev-server",
     "ci": "./script/cibuild",
     "preversion": "./script/preversion"
   },
@@ -25,31 +26,32 @@
     "hosted fields"
   ],
   "devDependencies": {
-    "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/core": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
     "babel-core": "^7.0.0-bridge.0",
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "babel-loader": "^8.0.6",
     "babelrc-rollup": "^3.0.0",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.12.1",
-    "eslint": "^5.16.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.8.0",
     "eslint-config-argosity": "^1.7.0",
-    "eslint-plugin-react": "^7.13.0",
-    "jest": "^24.8.0",
-    "jest-cli": "^24.8.0",
-    "prop-types": "^15.6",
+    "eslint-plugin-react": "^7.19.0",
+    "jest": "^25.1.0",
+    "jest-cli": "^25.1.0",
+    "prop-types": "^15.7.2",
     "raf": "^3.4.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.8.6",
-    "react-test-renderer": "^16.8.6",
-    "rollup": "^1.11.3",
-    "rollup-plugin-babel": "^4.3.2",
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.2",
-    "webpack-dev-server": "^3.3.1"
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-test-renderer": "^16.13.0",
+    "rollup": "^2.0.6",
+    "rollup-plugin-babel": "^4.4.0",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "braintree-web": "^3.44.2"
+    "braintree-web": "^3.59.0"
   }
 }
