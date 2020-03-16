@@ -5,15 +5,7 @@ const pkg = require('./package.json');
 const external = ['react', 'prop-types', 'braintree-web/data-collector', 'braintree-web/client', 'braintree-web/hosted-fields'];
 
 const plugins = [
-    babel({
-        babelrc: true,
-        // exclude: 'node_modules/**',
-        // presets: [['es2015', { modules: false }], 'react', 'es2015-rollup'],
-        // plugins: [
-        //     '@babel/transform-class-properties',
-        //     'transform-object-rest-spread',
-        // ],
-    }),
+    babel(),
 ];
 
 const globals = {
@@ -35,7 +27,7 @@ export default [
         output: {
             format: 'umd',
             name: 'react-braintree-fields',
-            sourceMap: true,
+            sourcemap: true,
             file: pkg.browser,
             globals,
         },
@@ -45,7 +37,7 @@ export default [
         external,
         output: {
             format: 'es',
-            sourceMap: true,
+            sourcemap: true,
             file: pkg.module,
             globals,
         },
