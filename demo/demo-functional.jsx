@@ -10,7 +10,7 @@ const Demo = () => {
     const [focusedFieldName, setFocusedField] = React.useState('')
     const numberField = React.useRef()
     const cvvField = React.useRef();
-    console.log({ focusedFieldName })
+
     const onAuthorizationSuccess = () => {
       numberField.current.focus();
     }
