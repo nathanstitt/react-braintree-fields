@@ -4,7 +4,7 @@ const path = require('path');
 const config = {
     mode: 'development',
     entry: {
-        demo: __dirname + '/demo.jsx',
+        demo: __dirname + '/demo/index.js',
     },
     output: {
         path: __dirname + '/docs',
@@ -17,18 +17,6 @@ const config = {
                 loader: 'babel-loader',
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                options: {
-                    plugins: [
-                        'babel-plugin-transform-class-properties',
-                        'babel-plugin-transform-function-bind',
-                        'babel-plugin-transform-react-jsx',
-                    ].map(require.resolve),
-                    presets: [
-                        [require.resolve('babel-preset-es2015'), { modules: false }],
-                        require.resolve('babel-preset-react'),
-                        require.resolve('babel-preset-stage-1'),
-                    ],
-                },
             },
         ],
     },

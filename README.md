@@ -38,7 +38,7 @@ class MySillyCheckoutForm extends React.PureComponent {
     onAuthorizationSuccess() {
       this.setState({ isBraintreeReady : true });
     }
-    
+
     onDataCollectorInstanceReady(err, dataCollectorInstance) {
       if(!err) this.device_data = dataCollectorInstance.deviceData
     }
@@ -76,7 +76,7 @@ class MySillyCheckoutForm extends React.PureComponent {
 }
 ```
 
-See [demo site](https://nathanstitt.github.io/react-braintree-fields/) for a working example. It renders [demo.jsx](demo.jsx)
+See [demo site](https://nathanstitt.github.io/react-braintree-fields/) for a working example. It renders [demo/demo-class.jsx](demo-class.jsx)  There's also a [demo/demo-functional.jsx](functional version) available that illustrates how to work around the issue of storing a function reference using setState that was discovered in #20
 
 ## Braintree Component
 

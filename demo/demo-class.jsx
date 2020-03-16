@@ -1,10 +1,8 @@
 import { render } from 'react-dom';
 import React from 'react';
+import { Braintree, HostedField } from '../src/index';
 
-import { Braintree, HostedField } from './src/index';
-
-
-class BraintreeHostedfieldDemo extends React.PureComponent {
+class Demo extends React.PureComponent {
 
     constructor(props) {
         super(props);
@@ -21,15 +19,13 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
     state = {}
 
     onError(error) {
-        this.setState({ error });
+        this.setState({ error: error.message || String(error) });
     }
 
     getToken() {
         this.tokenize().then(
             token => this.setState({ token, error: null }),
-        ).catch(
-            error => this.setState({ token: null, error }),
-        );
+        ).catch(error => this.onError(error));
     }
 
     onCardTypeChange({ cards }) {
@@ -128,6 +124,4 @@ class BraintreeHostedfieldDemo extends React.PureComponent {
     }
 }
 
-render((
-    <BraintreeHostedfieldDemo />
-), document.getElementById('root'));
+export default Demo;
