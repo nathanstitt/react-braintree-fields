@@ -7,13 +7,12 @@ const external = ['react', 'prop-types', 'braintree-web/data-collector', 'braint
 const plugins = [
     babel({
         babelrc: true,
-        exclude: 'node_modules/**',
-        presets: [['es2015', { modules: false }], 'react', 'es2015-rollup'],
-        plugins: [
-            'transform-decorators-legacy',
-            'transform-class-properties',
-            'transform-object-rest-spread',
-        ],
+        // exclude: 'node_modules/**',
+        // presets: [['es2015', { modules: false }], 'react', 'es2015-rollup'],
+        // plugins: [
+        //     '@babel/transform-class-properties',
+        //     'transform-object-rest-spread',
+        // ],
     }),
 ];
 
