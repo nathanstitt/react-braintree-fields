@@ -40038,9 +40038,9 @@ class BraintreeClientApi {
     } = _ref,
         callbacks = _objectWithoutProperties(_ref, ["authorization", "styles", "onAuthorizationSuccess"]);
 
-    this.fields = {};
+    this.fields = Object.create(null);
     this._nextFieldId = 0;
-    this.fieldHandlers = {};
+    this.fieldHandlers = Object.create(null);
     this.styles = styles || {};
     this.wrapperHandlers = callbacks || {};
     this.setAuthorization(authorization, onAuthorizationSuccess);
@@ -40050,6 +40050,15 @@ class BraintreeClientApi {
     if (!authorization && this.authorization) {
       this.teardown();
     } else if (authorization && authorization !== this.authorization) {
+      // fields have not yet checked in, delay setting so they can register
+      if (0 === Object.keys(this.fields).length && !this.pendingAuthTimer) {
+        this.pendingAuthTimer = setTimeout(() => {
+          this.pendingAuthTimer = null;
+          this.setAuthorization(authorization, onAuthorizationSuccess);
+        }, 5);
+        return;
+      }
+
       if (this.authorization) {
         this.teardown();
       }
@@ -40117,6 +40126,11 @@ class BraintreeClientApi {
     if (this.hostedFields) {
       this.hostedFields.teardown();
     }
+
+    if (this.pendingAuthTimer) {
+      clearTimeout(this.pendingAuthTimer);
+      this.pendingAuthTimer = null;
+    }
   }
 
   checkInField(_ref2) {
@@ -40133,22 +40147,24 @@ class BraintreeClientApi {
     } = _ref2,
         handlers = _objectWithoutProperties(_ref2, ["formatInput", "maxlength", "minlength", "placeholder", "select", "type", "prefill", "id", "rejectUnsupportedCards"]);
 
-    this.fieldHandlers[type] = handlers;
-    this.fields[type] = {
-      formatInput,
-      maxlength,
-      minlength,
-      placeholder,
-      select,
-      prefill,
-      selector: "#".concat(id)
+    var onRenderComplete = () => {
+      this.fieldHandlers[type] = handlers;
+      this.fields[type] = {
+        formatInput,
+        maxlength,
+        minlength,
+        placeholder,
+        select,
+        prefill,
+        selector: "#".concat(id)
+      };
+
+      if ('number' === type && rejectUnsupportedCards) {
+        this.fields.number.rejectUnsupportedCards = true;
+      }
     };
 
-    if ('number' === type && rejectUnsupportedCards) {
-      this.fields.number.rejectUnsupportedCards = true;
-    }
-
-    return id;
+    return [id, onRenderComplete];
   }
 
   focusField(fieldType, cb) {
@@ -40304,6 +40320,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class BraintreeHostedField extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor() {
+    super(...arguments);
+    this.state = {};
+  }
+
   focus() {
     this.context.braintreeApi.focusField(this.props.type);
   }
@@ -40317,7 +40338,10 @@ class BraintreeHostedField extends react__WEBPACK_IMPORTED_MODULE_0___default.a.
   }
 
   componentDidMount() {
-    this.fieldId = this.context.braintreeApi.checkInField(this.props);
+    var [fieldId, onRenderComplete] = this.context.braintreeApi.checkInField(this.props);
+    this.setState({
+      fieldId
+    }, onRenderComplete);
   }
 
   get className() {
@@ -40331,8 +40355,16 @@ class BraintreeHostedField extends react__WEBPACK_IMPORTED_MODULE_0___default.a.
   }
 
   render() {
+    var {
+      fieldId
+    } = this.state;
+
+    if (!fieldId) {
+      return null;
+    }
+
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      id: this.fieldId,
+      id: fieldId,
       className: this.className
     });
   }
