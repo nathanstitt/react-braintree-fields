@@ -7,6 +7,7 @@ import { Braintree, HostedField } from '../src/index.js';
 
 jest.mock('braintree-web/client');
 jest.mock('braintree-web/hosted-fields');
+jest.useFakeTimers();
 
 let getToken;
 
@@ -43,6 +44,7 @@ describe('Braintree hosted fields', () => {
 
     it('registers when mounted', () => {
         mount(buildTree());
+        jest.runAllTimers();
         expect(BraintreeClient.create).toHaveBeenCalledWith(expect.objectContaining({
             authorization: 'sandbox_g42y39zw_348pk9cgf3bgyw2b',
         }), expect.anything());
@@ -55,6 +57,7 @@ describe('Braintree hosted fields', () => {
         }));
         const onAuthorizationSuccess = jest.fn();
         mount(buildTree({ onAuthorizationSuccess }));
+        jest.runAllTimers();
         expect(onAuthorizationSuccess.mock.calls.length).toEqual(1);
     });
 
@@ -76,6 +79,7 @@ describe('Braintree hosted fields', () => {
         const clientInstance = jest.fn();
         BraintreeClient.create = jest.fn((args, cb) => cb(null, clientInstance));
         mount(buildTree({ authorization: 'onetwothree' }));
+        jest.runAllTimers();
         expect(BraintreeClient.create).toHaveBeenCalledWith(
             { authorization: 'onetwothree' }, expect.any(Function),
         );
@@ -85,6 +89,7 @@ describe('Braintree hosted fields', () => {
     it('can set token ref after render', () => {
         const styles = { foo: 'bar' };
         const fields = mount(buildTree({ styles, authorization: '' }));
+        jest.runAllTimers();
         const clientInstance = jest.fn();
         BraintreeClient.create = jest.fn((args, cb) => cb(null, clientInstance));
         expect(BraintreeClient.create).not.toHaveBeenCalled();

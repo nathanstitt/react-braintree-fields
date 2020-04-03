@@ -8,11 +8,11 @@ function cap(string) {
 
 export default class BraintreeClientApi {
 
-    fields = {};
+    fields = Object.create(null);
 
     _nextFieldId = 0;
 
-    fieldHandlers = {};
+    fieldHandlers = Object.create(null);
 
     constructor({
         authorization, styles, onAuthorizationSuccess, ...callbacks
@@ -26,6 +26,15 @@ export default class BraintreeClientApi {
         if (!authorization && this.authorization) {
             this.teardown();
         } else if (authorization && authorization !== this.authorization) {
+            // fields have not yet checked in, delay setting so they can register
+            if (0 === Object.keys(this.fields).length && !this.pendingAuthTimer) {
+                this.pendingAuthTimer = setTimeout(() => {
+                    this.pendingAuthTimer = null;
+                    this.setAuthorization(authorization, onAuthorizationSuccess);
+                }, 5);
+                return;
+            }
+
             if (this.authorization) { this.teardown(); }
             this.authorization = authorization;
             Braintree.create({ authorization }, (err, clientInstance) => {
@@ -83,6 +92,10 @@ export default class BraintreeClientApi {
 
     teardown() {
         if (this.hostedFields) { this.hostedFields.teardown(); }
+        if (this.pendingAuthTimer) {
+            clearTimeout(this.pendingAuthTimer);
+            this.pendingAuthTimer = null;
+        }
     }
 
     checkInField({
@@ -97,20 +110,22 @@ export default class BraintreeClientApi {
         rejectUnsupportedCards,
         ...handlers
     }) {
-        this.fieldHandlers[type] = handlers;
-        this.fields[type] = {
-            formatInput,
-            maxlength,
-            minlength,
-            placeholder,
-            select,
-            prefill,
-            selector: `#${id}`,
+        const onRenderComplete = () => {
+            this.fieldHandlers[type] = handlers;
+            this.fields[type] = {
+                formatInput,
+                maxlength,
+                minlength,
+                placeholder,
+                select,
+                prefill,
+                selector: `#${id}`,
+            };
+            if (('number' === type) && rejectUnsupportedCards) {
+                this.fields.number.rejectUnsupportedCards = true;
+            }
         };
-        if (('number' === type) && rejectUnsupportedCards) {
-            this.fields.number.rejectUnsupportedCards = true;
-        }
-        return id;
+        return [id, onRenderComplete];
     }
 
     focusField(fieldType, cb) {

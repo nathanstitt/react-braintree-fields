@@ -144,21 +144,27 @@ exports[`Braintree hosted fields renders and matches snapshot 1`] = `
 >
   <div
     className="braintree-hosted-field"
+    id="braintree-field-wrapper-1"
   />
   <div
     className="braintree-hosted-field"
+    id="braintree-field-wrapper-2"
   />
   <div
     className="braintree-hosted-field"
+    id="braintree-field-wrapper-3"
   />
   <div
     className="braintree-hosted-field"
+    id="braintree-field-wrapper-4"
   />
   <div
     className="braintree-hosted-field"
+    id="braintree-field-wrapper-5"
   />
   <div
     className="braintree-hosted-field"
+    id="braintree-field-wrapper-6"
   />
 </div>
 `;

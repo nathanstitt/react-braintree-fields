@@ -24,6 +24,8 @@ export default class BraintreeHostedField extends React.Component {
         braintreeApi: PropTypes.instanceOf(Api),
     }
 
+    state = {}
+
     focus() {
         this.context.braintreeApi.focusField(this.props.type);
     }
@@ -37,7 +39,8 @@ export default class BraintreeHostedField extends React.Component {
     }
 
     componentDidMount() {
-        this.fieldId = this.context.braintreeApi.checkInField(this.props);
+        const [ fieldId,  onRenderComplete ] = this.context.braintreeApi.checkInField(this.props);
+        this.setState({ fieldId }, onRenderComplete);
     }
 
     get className() {
@@ -47,6 +50,9 @@ export default class BraintreeHostedField extends React.Component {
     }
 
     render() {
-        return <div id={this.fieldId} className={this.className} />;
+        const { fieldId } = this.state;
+        if (!fieldId) { return null; }
+
+        return <div id={fieldId} className={this.className} />;
     }
 }
