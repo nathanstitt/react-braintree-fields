@@ -9,6 +9,7 @@ const Demo = () => {
     const [focusedFieldName, setFocusedField] = React.useState('');
     const numberField = React.useRef();
     const cvvField = React.useRef();
+    const cardholderNameField = React.useRef();
 
     const onAuthorizationSuccess = () => {
         numberField.current.focus();
@@ -91,6 +92,15 @@ const Demo = () => {
                         ref={numberField}
                     />
                     <p>Card type: {cardType}</p>
+                    Name:
+                    <HostedField
+                        type="cardholderName"
+                        className={'cardholderName' === focusedFieldName ? 'focused' : ''}
+                        onBlur={onFieldBlur}
+                        onFocus={onFieldFocus}
+                        placeholder="Name on Card"
+                        ref={cardholderNameField}
+                    />
                     Date:
                     <HostedField
                         type="expirationDate"
