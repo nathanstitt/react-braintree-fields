@@ -6,7 +6,7 @@ export default class BraintreeHostedField extends React.Component {
 
     static propTypes = {
         type: PropTypes.oneOf([
-            'number', 'expirationDate', 'expirationMonth', 'expirationYear', 'cvv', 'postalCode',
+            'number', 'expirationDate', 'expirationMonth', 'expirationYear', 'cvv', 'postalCode', 'cardholderName',
         ]).isRequired,
         id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         placeholder: PropTypes.string,
