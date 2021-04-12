@@ -104,6 +104,8 @@ class Demo extends React.PureComponent {
                             ref={this.numberField}
                         />
                         <p>Card type: {this.state.card}</p>
+                        Name:
+                        <HostedField type="cardholderName" />
                         Date:
                         <HostedField type="expirationDate" />
                         Month:
