@@ -6,6 +6,15 @@ Array [
     Object {
       "client": [MockFunction],
       "fields": Object {
+        "cardholderName": Object {
+          "formatInput": undefined,
+          "maxlength": undefined,
+          "minlength": undefined,
+          "placeholder": "name",
+          "prefill": undefined,
+          "select": undefined,
+          "selector": "#braintree-field-wrapper-1",
+        },
         "cvv": Object {
           "formatInput": undefined,
           "maxlength": undefined,
@@ -13,7 +22,7 @@ Array [
           "placeholder": "cvv",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#braintree-field-wrapper-5",
+          "selector": "#braintree-field-wrapper-6",
         },
         "expirationDate": Object {
           "formatInput": undefined,
@@ -22,7 +31,7 @@ Array [
           "placeholder": "date",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#braintree-field-wrapper-2",
+          "selector": "#braintree-field-wrapper-3",
         },
         "expirationMonth": Object {
           "formatInput": undefined,
@@ -31,7 +40,7 @@ Array [
           "placeholder": "month",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#braintree-field-wrapper-3",
+          "selector": "#braintree-field-wrapper-4",
         },
         "expirationYear": Object {
           "formatInput": undefined,
@@ -40,7 +49,7 @@ Array [
           "placeholder": "year",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#braintree-field-wrapper-4",
+          "selector": "#braintree-field-wrapper-5",
         },
         "number": Object {
           "formatInput": undefined,
@@ -49,7 +58,7 @@ Array [
           "placeholder": "cc #",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#braintree-field-wrapper-1",
+          "selector": "#braintree-field-wrapper-2",
         },
         "postalCode": Object {
           "formatInput": undefined,
@@ -58,7 +67,7 @@ Array [
           "placeholder": "zip",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#braintree-field-wrapper-6",
+          "selector": "#braintree-field-wrapper-7",
         },
       },
       "styles": Object {
@@ -76,6 +85,15 @@ Array [
     Object {
       "client": [MockFunction],
       "fields": Object {
+        "cardholderName": Object {
+          "formatInput": undefined,
+          "maxlength": undefined,
+          "minlength": undefined,
+          "placeholder": "name",
+          "prefill": undefined,
+          "select": undefined,
+          "selector": "#braintree-field-wrapper-1",
+        },
         "cvv": Object {
           "formatInput": undefined,
           "maxlength": undefined,
@@ -83,7 +101,7 @@ Array [
           "placeholder": "cvv",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#braintree-field-wrapper-5",
+          "selector": "#braintree-field-wrapper-6",
         },
         "expirationDate": Object {
           "formatInput": undefined,
@@ -92,7 +110,7 @@ Array [
           "placeholder": "date",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#braintree-field-wrapper-2",
+          "selector": "#braintree-field-wrapper-3",
         },
         "expirationMonth": Object {
           "formatInput": undefined,
@@ -101,7 +119,7 @@ Array [
           "placeholder": "month",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#braintree-field-wrapper-3",
+          "selector": "#braintree-field-wrapper-4",
         },
         "expirationYear": Object {
           "formatInput": undefined,
@@ -110,7 +128,7 @@ Array [
           "placeholder": "year",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#braintree-field-wrapper-4",
+          "selector": "#braintree-field-wrapper-5",
         },
         "number": Object {
           "formatInput": undefined,
@@ -119,7 +137,7 @@ Array [
           "placeholder": "cc #",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#braintree-field-wrapper-1",
+          "selector": "#braintree-field-wrapper-2",
         },
         "postalCode": Object {
           "formatInput": undefined,
@@ -128,7 +146,7 @@ Array [
           "placeholder": "zip",
           "prefill": undefined,
           "select": undefined,
-          "selector": "#braintree-field-wrapper-6",
+          "selector": "#braintree-field-wrapper-7",
         },
       },
       "styles": Object {},
@@ -165,6 +183,10 @@ exports[`Braintree hosted fields renders and matches snapshot 1`] = `
   <div
     className="braintree-hosted-field"
     id="braintree-field-wrapper-6"
+  />
+  <div
+    className="braintree-hosted-field"
+    id="braintree-field-wrapper-7"
   />
 </div>
 `;

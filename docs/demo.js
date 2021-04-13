@@ -95,24 +95,21 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _src_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/index */ "./src/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _src_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../src/index */ "./src/index.js");
 
 
 
-
-class Demo extends react__WEBPACK_IMPORTED_MODULE_1___default.a.PureComponent {
+class Demo extends react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent {
   constructor(props) {
     super(props);
     this.state = {};
     this.state = {
       numberFocused: false
     };
-    this.numberField = react__WEBPACK_IMPORTED_MODULE_1___default.a.createRef();
-    this.braintree = react__WEBPACK_IMPORTED_MODULE_1___default.a.createRef();
+    this.numberField = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+    this.braintree = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
     ['onError', 'getToken', 'onCardTypeChange', 'onAuthorizationSuccess'].forEach(prop => this[prop] = this[prop].bind(this));
   }
 
@@ -164,7 +161,7 @@ class Demo extends react__WEBPACK_IMPORTED_MODULE_1___default.a.PureComponent {
       return null;
     }
 
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("b", null, title, ":"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("pre", null, JSON.stringify(obj, null, 4)));
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, title, ":"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("pre", null, JSON.stringify(obj, null, 4)));
   }
 
   onAuthorizationSuccess() {
@@ -172,7 +169,7 @@ class Demo extends react__WEBPACK_IMPORTED_MODULE_1___default.a.PureComponent {
   }
 
   render() {
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Braintree Hosted Fields Demo"), this.renderResult('Error', this.state.error), this.renderResult('Token', this.state.token), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["Braintree"], {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Braintree Hosted Fields Demo"), this.renderResult('Error', this.state.error), this.renderResult('Token', this.state.token), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_1__["Braintree"], {
       ref: this.braintree,
       authorization: this.state.authorization,
       onAuthorizationSuccess: this.onAuthorizationSuccess,
@@ -189,7 +186,7 @@ class Demo extends react__WEBPACK_IMPORTED_MODULE_1___default.a.PureComponent {
           color: 'black'
         }
       }
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, "Number:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["HostedField"], {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Number:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_1__["HostedField"], {
       type: "number",
       onBlur: () => this.setState({
         numberFocused: false
@@ -200,23 +197,25 @@ class Demo extends react__WEBPACK_IMPORTED_MODULE_1___default.a.PureComponent {
       className: this.state.numberFocused ? 'focused' : '',
       prefill: "4111 1111 1111 1111",
       ref: this.numberField
-    }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Card type: ", this.state.card), "Date:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["HostedField"], {
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Card type: ", this.state.card), "Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_1__["HostedField"], {
+      type: "cardholderName"
+    }), "Date:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_1__["HostedField"], {
       type: "expirationDate"
-    }), "Month:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["HostedField"], {
+    }), "Month:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_1__["HostedField"], {
       type: "expirationMonth"
-    }), "Year:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["HostedField"], {
+    }), "Year:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_1__["HostedField"], {
       type: "expirationYear"
-    }), "CVV:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["HostedField"], {
+    }), "CVV:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_1__["HostedField"], {
       type: "cvv",
       placeholder: "CVV",
       ref: cvvField => {
         this.cvvField = cvvField;
       }
-    }), "Zip:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_2__["HostedField"], {
+    }), "Zip:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_index__WEBPACK_IMPORTED_MODULE_1__["HostedField"], {
       type: "postalCode"
-    }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "footer"
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       onClick: this.getToken
     }, "Get nonce token")));
   }
@@ -258,355 +257,348 @@ Object(react_dom__WEBPACK_IMPORTED_MODULE_0__["render"])(react__WEBPACK_IMPORTED
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global, setImmediate) {var require;var require;(function(f){if(true){module.exports=f()}else { var g; }})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return require(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(_dereq_,module,exports){
-(function (global){
-'use strict';
-
-var PromisePolyfill = _dereq_('promise-polyfill');
-
-module.exports = global.Promise || PromisePolyfill;
-
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"promise-polyfill":11}],2:[function(_dereq_,module,exports){
-'use strict';
-
-var Promise = _dereq_('./lib/promise');
-var scriptPromiseCache = {};
-
-function loadScript(options) {
-  var attrs, container, script, scriptLoadPromise;
-  var stringifiedOptions = JSON.stringify(options);
-
-  if (!options.forceScriptReload) {
-    scriptLoadPromise = scriptPromiseCache[stringifiedOptions];
-
-    if (scriptLoadPromise) {
-      return scriptLoadPromise;
-    }
-  }
-
-  script = document.createElement('script');
-  attrs = options.dataAttributes || {};
-  container = options.container || document.head;
-
-  script.src = options.src;
-  script.id = options.id;
-  script.async = true;
-
-  if (options.crossorigin) {
-    script.setAttribute('crossorigin', options.crossorigin);
-  }
-
-  Object.keys(attrs).forEach(function (key) {
-    script.setAttribute('data-' + key, attrs[key]);
-  });
-
-  scriptLoadPromise = new Promise(function (resolve, reject) {
-    script.addEventListener('load', function () {
-      resolve(script);
-    });
-    script.addEventListener('error', function () {
-      reject(new Error(options.src + ' failed to load.'));
-    });
-    script.addEventListener('abort', function () {
-      reject(new Error(options.src + ' has aborted.'));
-    });
-    container.appendChild(script);
-  });
-
-  scriptPromiseCache[stringifiedOptions] = scriptLoadPromise;
-
-  return scriptLoadPromise;
-}
-
-loadScript.clearCache = function () {
-  scriptPromiseCache = {};
+/* WEBPACK VAR INJECTION */(function(setImmediate) {var require;var require;(function(f){if(true){module.exports=f()}else { var g; }})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return require(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(_dereq_,module,exports){
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PromiseGlobal = void 0;
+var promise_polyfill_1 = __importDefault(_dereq_("promise-polyfill"));
+var PromiseGlobal = 
+// eslint-disable-next-line no-undef
+typeof Promise !== "undefined" ? Promise : promise_polyfill_1.default;
+exports.PromiseGlobal = PromiseGlobal;
 
+},{"promise-polyfill":15}],2:[function(_dereq_,module,exports){
+"use strict";
+var promise_1 = _dereq_("./lib/promise");
+var scriptPromiseCache = {};
+function loadScript(options) {
+    var scriptLoadPromise;
+    var stringifiedOptions = JSON.stringify(options);
+    if (!options.forceScriptReload) {
+        scriptLoadPromise = scriptPromiseCache[stringifiedOptions];
+        if (scriptLoadPromise) {
+            return scriptLoadPromise;
+        }
+    }
+    var script = document.createElement("script");
+    var attrs = options.dataAttributes || {};
+    var container = options.container || document.head;
+    script.src = options.src;
+    script.id = options.id || "";
+    script.async = true;
+    if (options.crossorigin) {
+        script.setAttribute("crossorigin", "" + options.crossorigin);
+    }
+    Object.keys(attrs).forEach(function (key) {
+        script.setAttribute("data-" + key, "" + attrs[key]);
+    });
+    scriptLoadPromise = new promise_1.PromiseGlobal(function (resolve, reject) {
+        script.addEventListener("load", function () {
+            resolve(script);
+        });
+        script.addEventListener("error", function () {
+            reject(new Error(options.src + " failed to load."));
+        });
+        script.addEventListener("abort", function () {
+            reject(new Error(options.src + " has aborted."));
+        });
+        container.appendChild(script);
+    });
+    scriptPromiseCache[stringifiedOptions] = scriptLoadPromise;
+    return scriptLoadPromise;
+}
+loadScript.clearCache = function () {
+    scriptPromiseCache = {};
+};
 module.exports = loadScript;
 
 },{"./lib/promise":1}],3:[function(_dereq_,module,exports){
-(function (global){
-'use strict';
+module.exports = _dereq_("./dist/load-script");
 
-var isIE11 = _dereq_('./is-ie11');
-
+},{"./dist/load-script":2}],4:[function(_dereq_,module,exports){
+"use strict";
+var isIE11 = _dereq_("./is-ie11");
 module.exports = function isIE(ua) {
-  ua = ua || global.navigator.userAgent;
-
-  return ua.indexOf('MSIE') !== -1 || isIE11(ua);
+    ua = ua || window.navigator.userAgent;
+    return ua.indexOf("MSIE") !== -1 || isIE11(ua);
 };
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./is-ie11":4}],4:[function(_dereq_,module,exports){
-'use strict';
-
+},{"./is-ie11":5}],5:[function(_dereq_,module,exports){
+"use strict";
 module.exports = function isIe11(ua) {
-  ua = ua || navigator.userAgent;
-
-  return ua.indexOf('Trident/7') !== -1;
-};
-
-},{}],5:[function(_dereq_,module,exports){
-'use strict';
-
-module.exports = function isIe9(ua) {
-  ua = ua || navigator.userAgent;
-
-  return ua.indexOf('MSIE 9') !== -1;
+    ua = ua || window.navigator.userAgent;
+    return ua.indexOf("Trident/7") !== -1;
 };
 
 },{}],6:[function(_dereq_,module,exports){
-(function (global){
-'use strict';
-
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#Methods
-var PROMISE_METHODS = [
-  'all',
-  'allSettled',
-  'race',
-  'reject',
-  'resolve'
-];
-
-function shouldCatchExceptions(options) {
-  if (options.hasOwnProperty('suppressUnhandledPromiseMessage')) {
-    return Boolean(options.suppressUnhandledPromiseMessage);
-  }
-
-  return Boolean(ExtendedPromise.suppressUnhandledPromiseMessage);
-}
-
-function ExtendedPromise(options) {
-  var self = this;
-
-  if (typeof options === 'function') {
-    return new ExtendedPromise.Promise(options);
-  }
-
-  this._promise = new ExtendedPromise.Promise(function (resolve, reject) {
-    self._resolveFunction = resolve;
-    self._rejectFunction = reject;
-  });
-
-  options = options || {};
-  this._onResolve = options.onResolve || ExtendedPromise.defaultOnResolve;
-  this._onReject = options.onReject || ExtendedPromise.defaultOnReject;
-
-  if (shouldCatchExceptions(options)) {
-    this._promise.catch(function () {
-      // prevents unhandled promise rejection warning
-      // in the console for extended promises that
-      // that catch the error in an asynchronous manner
-    });
-  }
-
-  this._resetState();
-
-  this._promise.resolve = this.resolve.bind(this);
-  this._promise.reject = this.reject.bind(this);
-
-  return this._promise;
-}
-
-PROMISE_METHODS.forEach(function (method) {
-  ExtendedPromise[method] = function () {
-    var args = Array.prototype.slice.call(arguments);
-
-    return ExtendedPromise.Promise[method].apply(ExtendedPromise.Promise, args);
-  };
-});
-
-ExtendedPromise.setPromise = function (PromiseClass) {
-  ExtendedPromise.Promise = PromiseClass;
+"use strict";
+module.exports = function isIe9(ua) {
+    ua = ua || window.navigator.userAgent;
+    return ua.indexOf("MSIE 9") !== -1;
 };
 
-// default to system level Promise, but allow it to be overwritten
-ExtendedPromise.setPromise(global.Promise);
-
-ExtendedPromise.defaultOnResolve = function (result) {
-  return ExtendedPromise.Promise.resolve(result);
-};
-
-ExtendedPromise.defaultOnReject = function (err) {
-  return ExtendedPromise.Promise.reject(err);
-};
-
-ExtendedPromise.prototype.resolve = function (arg) {
-  var self = this;
-
-  if (this._promise.isFulfilled) {
-    return this._promise;
-  }
-  this._setResolved();
-
-  ExtendedPromise.Promise.resolve().then(function () {
-    return self._onResolve(arg);
-  }).then(this._resolveFunction).catch(function (err) {
-    self._resetState();
-
-    self._promise.reject(err);
-  });
-
-  return this._promise;
-};
-
-ExtendedPromise.prototype.reject = function (arg) {
-  var self = this;
-
-  if (this._promise.isFulfilled) {
-    return this._promise;
-  }
-  this._setRejected();
-
-  ExtendedPromise.Promise.resolve().then(function () {
-    return self._onReject(arg);
-  }).then(function (result) {
-    self._setResolved();
-
-    self._resolveFunction(result);
-  }).catch(this._rejectFunction);
-
-  return this._promise;
-};
-
-ExtendedPromise.prototype._resetState = function () {
-  this._promise.isFulfilled = false;
-  this._promise.isResolved = false;
-  this._promise.isRejected = false;
-};
-
-ExtendedPromise.prototype._setResolved = function () {
-  this._promise.isFulfilled = true;
-  this._promise.isResolved = true;
-  this._promise.isRejected = false;
-};
-
-ExtendedPromise.prototype._setRejected = function () {
-  this._promise.isFulfilled = true;
-  this._promise.isResolved = false;
-  this._promise.isRejected = true;
-};
-
-module.exports = ExtendedPromise;
-
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],7:[function(_dereq_,module,exports){
-'use strict';
+module.exports = _dereq_("./dist/is-ie");
 
-function deferred(fn) {
-  return function () {
-    // IE9 doesn't support passing arguments to setTimeout so we have to emulate it.
-    var args = arguments;
+},{"./dist/is-ie":4}],8:[function(_dereq_,module,exports){
+module.exports = _dereq_("./dist/is-ie9");
 
-    setTimeout(function () {
-      try {
-        fn.apply(null, args);
-      } catch (err) {
-        /* eslint-disable no-console */
-        console.log('Error in callback function');
-        console.log(err);
-        /* eslint-enable no-console */
-      }
-    }, 1);
-  };
-}
-
-module.exports = deferred;
-
-},{}],8:[function(_dereq_,module,exports){
-'use strict';
-
-function once(fn) {
-  var called = false;
-
-  return function () {
-    if (!called) {
-      called = true;
-      fn.apply(null, arguments);
+},{"./dist/is-ie9":6}],9:[function(_dereq_,module,exports){
+"use strict";
+var GlobalPromise = (typeof Promise !== "undefined"
+    ? Promise // eslint-disable-line no-undef
+    : null);
+var ExtendedPromise = /** @class */ (function () {
+    function ExtendedPromise(options) {
+        var _this = this;
+        if (typeof options === "function") {
+            this._promise = new ExtendedPromise.Promise(options);
+            return;
+        }
+        this._promise = new ExtendedPromise.Promise(function (resolve, reject) {
+            _this._resolveFunction = resolve;
+            _this._rejectFunction = reject;
+        });
+        options = options || {};
+        this._onResolve = options.onResolve || ExtendedPromise.defaultOnResolve;
+        this._onReject = options.onReject || ExtendedPromise.defaultOnReject;
+        if (ExtendedPromise.shouldCatchExceptions(options)) {
+            this._promise.catch(function () {
+                // prevents unhandled promise rejection warning
+                // in the console for extended promises that
+                // that catch the error in an asynchronous manner
+            });
+        }
+        this._resetState();
     }
-  };
-}
-
-module.exports = once;
-
-},{}],9:[function(_dereq_,module,exports){
-'use strict';
-
-function promiseOrCallback(promise, callback) { // eslint-disable-line consistent-return
-  if (callback) {
-    promise
-      .then(function (data) {
-        callback(null, data);
-      })
-      .catch(function (err) {
-        callback(err);
-      });
-  } else {
-    return promise;
-  }
-}
-
-module.exports = promiseOrCallback;
+    ExtendedPromise.defaultOnResolve = function (result) {
+        return ExtendedPromise.Promise.resolve(result);
+    };
+    ExtendedPromise.defaultOnReject = function (err) {
+        return ExtendedPromise.Promise.reject(err);
+    };
+    ExtendedPromise.setPromise = function (PromiseClass) {
+        ExtendedPromise.Promise = PromiseClass;
+    };
+    ExtendedPromise.shouldCatchExceptions = function (options) {
+        if (options.hasOwnProperty("suppressUnhandledPromiseMessage")) {
+            return Boolean(options.suppressUnhandledPromiseMessage);
+        }
+        return Boolean(ExtendedPromise.suppressUnhandledPromiseMessage);
+    };
+    // start Promise methods documented in:
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#Methods
+    ExtendedPromise.all = function (args) {
+        return ExtendedPromise.Promise.all(args);
+    };
+    ExtendedPromise.allSettled = function (args) {
+        return ExtendedPromise.Promise.allSettled(args);
+    };
+    ExtendedPromise.race = function (args) {
+        return ExtendedPromise.Promise.race(args);
+    };
+    ExtendedPromise.reject = function (arg) {
+        return ExtendedPromise.Promise.reject(arg);
+    };
+    ExtendedPromise.resolve = function (arg) {
+        return ExtendedPromise.Promise.resolve(arg);
+    };
+    ExtendedPromise.prototype.then = function () {
+        var _a;
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        return (_a = this._promise).then.apply(_a, args);
+    };
+    ExtendedPromise.prototype.catch = function () {
+        var _a;
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        return (_a = this._promise).catch.apply(_a, args);
+    };
+    ExtendedPromise.prototype.resolve = function (arg) {
+        var _this = this;
+        if (this.isFulfilled) {
+            return this;
+        }
+        this._setResolved();
+        ExtendedPromise.Promise.resolve()
+            .then(function () {
+            return _this._onResolve(arg);
+        })
+            .then(function (argForResolveFunction) {
+            _this._resolveFunction(argForResolveFunction);
+        })
+            .catch(function (err) {
+            _this._resetState();
+            _this.reject(err);
+        });
+        return this;
+    };
+    ExtendedPromise.prototype.reject = function (arg) {
+        var _this = this;
+        if (this.isFulfilled) {
+            return this;
+        }
+        this._setRejected();
+        ExtendedPromise.Promise.resolve()
+            .then(function () {
+            return _this._onReject(arg);
+        })
+            .then(function (result) {
+            _this._setResolved();
+            _this._resolveFunction(result);
+        })
+            .catch(function (err) {
+            return _this._rejectFunction(err);
+        });
+        return this;
+    };
+    ExtendedPromise.prototype._resetState = function () {
+        this.isFulfilled = false;
+        this.isResolved = false;
+        this.isRejected = false;
+    };
+    ExtendedPromise.prototype._setResolved = function () {
+        this.isFulfilled = true;
+        this.isResolved = true;
+        this.isRejected = false;
+    };
+    ExtendedPromise.prototype._setRejected = function () {
+        this.isFulfilled = true;
+        this.isResolved = false;
+        this.isRejected = true;
+    };
+    ExtendedPromise.Promise = GlobalPromise;
+    return ExtendedPromise;
+}());
+module.exports = ExtendedPromise;
 
 },{}],10:[function(_dereq_,module,exports){
 'use strict';
 
-var deferred = _dereq_('./lib/deferred');
-var once = _dereq_('./lib/once');
-var promiseOrCallback = _dereq_('./lib/promise-or-callback');
+function uuid() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+    var r = Math.random() * 16 | 0;
+    var v = c === 'x' ? r : r & 0x3 | 0x8;
 
-function wrapPromise(fn) {
-  return function () {
-    var callback;
-    var args = Array.prototype.slice.call(arguments);
-    var lastArg = args[args.length - 1];
-
-    if (typeof lastArg === 'function') {
-      callback = args.pop();
-      callback = once(deferred(callback));
-    }
-
-    return promiseOrCallback(fn.apply(this, args), callback); // eslint-disable-line no-invalid-this
-  };
+    return v.toString(16);
+  });
 }
 
-wrapPromise.wrapPrototype = function (target, options) {
-  var methods, ignoreMethods, includePrivateMethods;
+module.exports = uuid;
 
-  options = options || {};
-  ignoreMethods = options.ignoreMethods || [];
-  includePrivateMethods = options.transformPrivateMethods === true;
+},{}],11:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+function deferred(fn) {
+    return function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        setTimeout(function () {
+            try {
+                fn.apply(void 0, args);
+            }
+            catch (err) {
+                /* eslint-disable no-console */
+                console.log("Error in callback function");
+                console.log(err);
+                /* eslint-enable no-console */
+            }
+        }, 1);
+    };
+}
+exports.deferred = deferred;
 
-  methods = Object.getOwnPropertyNames(target.prototype).filter(function (method) {
-    var isNotPrivateMethod;
-    var isNonConstructorFunction = method !== 'constructor' &&
-      typeof target.prototype[method] === 'function';
-    var isNotAnIgnoredMethod = ignoreMethods.indexOf(method) === -1;
+},{}],12:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+function once(fn) {
+    var called = false;
+    return function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        if (!called) {
+            called = true;
+            fn.apply(void 0, args);
+        }
+    };
+}
+exports.once = once;
 
-    if (includePrivateMethods) {
-      isNotPrivateMethod = true;
-    } else {
-      isNotPrivateMethod = method.charAt(0) !== '_';
+},{}],13:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/* eslint-disable consistent-return */
+function promiseOrCallback(promise, callback) {
+    if (!callback) {
+        return promise;
     }
+    promise.then(function (data) { return callback(null, data); }).catch(function (err) { return callback(err); });
+}
+exports.promiseOrCallback = promiseOrCallback;
 
-    return isNonConstructorFunction &&
-      isNotPrivateMethod &&
-      isNotAnIgnoredMethod;
-  });
-
-  methods.forEach(function (method) {
-    var original = target.prototype[method];
-
-    target.prototype[method] = wrapPromise(original);
-  });
-
-  return target;
+},{}],14:[function(_dereq_,module,exports){
+"use strict";
+var deferred_1 = _dereq_("./lib/deferred");
+var once_1 = _dereq_("./lib/once");
+var promise_or_callback_1 = _dereq_("./lib/promise-or-callback");
+function wrapPromise(fn) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        var callback;
+        var lastArg = args[args.length - 1];
+        if (typeof lastArg === "function") {
+            callback = args.pop();
+            callback = once_1.once(deferred_1.deferred(callback));
+        }
+        // I know, I know, this looks bad. But it's a quirk of the library that
+        // we need to allow passing the this context to the original function
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore: this has an implicit any
+        return promise_or_callback_1.promiseOrCallback(fn.apply(this, args), callback); // eslint-disable-line no-invalid-this
+    };
+}
+wrapPromise.wrapPrototype = function (target, options) {
+    if (options === void 0) { options = {}; }
+    var ignoreMethods = options.ignoreMethods || [];
+    var includePrivateMethods = options.transformPrivateMethods === true;
+    var methods = Object.getOwnPropertyNames(target.prototype).filter(function (method) {
+        var isNotPrivateMethod;
+        var isNonConstructorFunction = method !== "constructor" &&
+            typeof target.prototype[method] === "function";
+        var isNotAnIgnoredMethod = ignoreMethods.indexOf(method) === -1;
+        if (includePrivateMethods) {
+            isNotPrivateMethod = true;
+        }
+        else {
+            isNotPrivateMethod = method.charAt(0) !== "_";
+        }
+        return (isNonConstructorFunction && isNotPrivateMethod && isNotAnIgnoredMethod);
+    });
+    methods.forEach(function (method) {
+        var original = target.prototype[method];
+        target.prototype[method] = wrapPromise(original);
+    });
+    return target;
 };
-
 module.exports = wrapPromise;
 
-},{"./lib/deferred":7,"./lib/once":8,"./lib/promise-or-callback":9}],11:[function(_dereq_,module,exports){
+},{"./lib/deferred":11,"./lib/once":12,"./lib/promise-or-callback":13}],15:[function(_dereq_,module,exports){
 'use strict';
 
 /**
@@ -629,6 +621,54 @@ function finallyConstructor(callback) {
       });
     }
   );
+}
+
+function allSettled(arr) {
+  var P = this;
+  return new P(function(resolve, reject) {
+    if (!(arr && typeof arr.length !== 'undefined')) {
+      return reject(
+        new TypeError(
+          typeof arr +
+            ' ' +
+            arr +
+            ' is not iterable(cannot read property Symbol(Symbol.iterator))'
+        )
+      );
+    }
+    var args = Array.prototype.slice.call(arr);
+    if (args.length === 0) return resolve([]);
+    var remaining = args.length;
+
+    function res(i, val) {
+      if (val && (typeof val === 'object' || typeof val === 'function')) {
+        var then = val.then;
+        if (typeof then === 'function') {
+          then.call(
+            val,
+            function(val) {
+              res(i, val);
+            },
+            function(e) {
+              args[i] = { status: 'rejected', reason: e };
+              if (--remaining === 0) {
+                resolve(args);
+              }
+            }
+          );
+          return;
+        }
+      }
+      args[i] = { status: 'fulfilled', value: val };
+      if (--remaining === 0) {
+        resolve(args);
+      }
+    }
+
+    for (var i = 0; i < args.length; i++) {
+      res(i, args[i]);
+    }
+  });
 }
 
 // Store setTimeout reference so promise-polyfill will be unaffected by
@@ -834,6 +874,8 @@ Promise.all = function(arr) {
   });
 };
 
+Promise.allSettled = allSettled;
+
 Promise.resolve = function(value) {
   if (value && typeof value === 'object' && value.constructor === Promise) {
     return value;
@@ -882,7 +924,7 @@ Promise._unhandledRejectionFn = function _unhandledRejectionFn(err) {
 
 module.exports = Promise;
 
-},{}],12:[function(_dereq_,module,exports){
+},{}],16:[function(_dereq_,module,exports){
 'use strict';
 
 var isIe = _dereq_('@braintree/browser-detection/is-ie');
@@ -893,7 +935,7 @@ module.exports = {
   isIe9: isIe9
 };
 
-},{"@braintree/browser-detection/is-ie":3,"@braintree/browser-detection/is-ie9":5}],13:[function(_dereq_,module,exports){
+},{"@braintree/browser-detection/is-ie":7,"@braintree/browser-detection/is-ie9":8}],17:[function(_dereq_,module,exports){
 'use strict';
 
 var BRAINTREE_VERSION = _dereq_('./constants').BRAINTREE_VERSION;
@@ -1208,9 +1250,11 @@ Client.prototype.request = function (options, callback) {
       requestOptions.method = 'post';
       requestOptions.data = assign({
         clientSdkMetadata: {
+          platform: self._configuration.analyticsMetadata.platform,
           source: self._configuration.analyticsMetadata.source,
           integration: self._configuration.analyticsMetadata.integration,
-          sessionId: self._configuration.analyticsMetadata.sessionId
+          sessionId: self._configuration.analyticsMetadata.sessionId,
+          version: VERSION
         }
       }, options.data);
 
@@ -1285,6 +1329,8 @@ function formatRequestError(status, err) { // eslint-disable-line consistent-ret
 
   if (status === -1) {
     requestError = new BraintreeError(errors.CLIENT_REQUEST_TIMEOUT);
+  } else if (status === 401) {
+    requestError = new BraintreeError(errors.CLIENT_AUTHORIZATION_INVALID);
   } else if (status === 403) {
     requestError = new BraintreeError(errors.CLIENT_AUTHORIZATION_INSUFFICIENT);
   } else if (status === 429) {
@@ -1361,33 +1407,33 @@ function getAuthorizationHeadersForGraphQL(configuration) {
 
 module.exports = Client;
 
-},{"../lib/add-metadata":34,"../lib/analytics":35,"../lib/assets":36,"../lib/assign":37,"../lib/braintree-error":38,"../lib/constants":39,"../lib/convert-methods-to-error":40,"../lib/convert-to-braintree-error":41,"../lib/create-authorization-data":42,"../lib/deferred":43,"../lib/is-verified-domain":47,"../lib/methods":49,"../lib/once":50,"../lib/promise":51,"./constants":14,"./errors":15,"./get-configuration":16,"./request":28,"./request/graphql":26,"@braintree/wrap-promise":10}],14:[function(_dereq_,module,exports){
+},{"../lib/add-metadata":38,"../lib/analytics":39,"../lib/assets":40,"../lib/assign":41,"../lib/braintree-error":42,"../lib/constants":43,"../lib/convert-methods-to-error":44,"../lib/convert-to-braintree-error":45,"../lib/create-authorization-data":46,"../lib/deferred":47,"../lib/is-verified-domain":51,"../lib/methods":53,"../lib/once":54,"../lib/promise":55,"./constants":18,"./errors":19,"./get-configuration":20,"./request":32,"./request/graphql":30,"@braintree/wrap-promise":14}],18:[function(_dereq_,module,exports){
 'use strict';
 
 module.exports = {
   BRAINTREE_VERSION: '2018-05-10'
 };
 
-},{}],15:[function(_dereq_,module,exports){
+},{}],19:[function(_dereq_,module,exports){
 'use strict';
 
 /**
- * @name BraintreeError.Client - Interal Error Codes
+ * @name BraintreeError.Client - Internal Error Codes
  * @ignore
- * @description These codes should never be experienced by the mechant directly.
+ * @description These codes should never be experienced by the merchant directly.
  * @property {MERCHANT} CLIENT_GATEWAY_CONFIGURATION_INVALID_DOMAIN An error to prevent client creation for domains that are not allowed in the JS.
  * @property {INTERNAL} CLIENT_MISSING_GATEWAY_CONFIGURATION Occurs when the client is created without a gateway configuration. Should never happen.
  */
 
 /**
  * @name BraintreeError.Client - Create Error Codes
- * @description Errors that may occur when [creating the client](/current/module-braintree-web_client.html#.create)
+ * @description Errors that may occur when [creating the client](./module-braintree-web_client.html#.create)
  * @property {MERCHANT} CLIENT_INVALID_AUTHORIZATION Occurs when client token cannot be parsed.
  */
 
 /**
  * @name BraintreeError.Client - Request Error Codes
- * @description Errors that may occur when [using the request method](/current/Client.html#request)
+ * @description Errors that may occur when [using the request method](./Client.html#request)
  * @property {MERCHANT} CLIENT_OPTION_REQUIRED An option required in the request method was not provided. Usually `options.method` or `options.endpoint`
  * @property {MERCHANT} CLIENT_OPTION_INVALID The request option provided is invalid.
  * @property {MERCHANT} CLIENT_GATEWAY_NETWORK The Braintree gateway could not be contacted.
@@ -1395,7 +1441,8 @@ module.exports = {
  * @property {NETWORK} CLIENT_REQUEST_ERROR The response from a request had status 400 or greater.
  * @property {NETWORK} CLIENT_GRAPHQL_REQUEST_ERROR The response from a request to GraphQL contained an error.
  * @property {MERCHANT} CLIENT_RATE_LIMITED The response from a request had a status of 429, indicating rate limiting.
- * @property {MERCHANT} CLIENT_AUTHORIZATION_INSUFFICIENT The user assocaited with the client token or tokenization key does not have permissions to make the request.
+ * @property {MERCHANT} CLIENT_AUTHORIZATION_INSUFFICIENT The user associated with the client token or tokenization key does not have permissions to make the request.
+ * @property {MERCHANT} CLIENT_AUTHORIZATION_INVALID The provided authorization could not be found. Either the client token has expired and a new client token must be generated or the tokenization key used is set to be inactive or has been deleted.
  */
 
 var BraintreeError = _dereq_('../lib/braintree-error');
@@ -1452,18 +1499,22 @@ module.exports = {
     type: BraintreeError.types.MERCHANT,
     code: 'CLIENT_AUTHORIZATION_INSUFFICIENT',
     message: 'The authorization used has insufficient privileges.'
+  },
+  CLIENT_AUTHORIZATION_INVALID: {
+    type: BraintreeError.types.MERCHANT,
+    code: 'CLIENT_AUTHORIZATION_INVALID',
+    message: 'Either the client token has expired and a new one should be generated or the tokenization key has been deactivated or deleted.'
   }
 };
 
-},{"../lib/braintree-error":38}],16:[function(_dereq_,module,exports){
-(function (global){
+},{"../lib/braintree-error":42}],20:[function(_dereq_,module,exports){
 'use strict';
 
 var BraintreeError = _dereq_('../lib/braintree-error');
 var Promise = _dereq_('../lib/promise');
 var wrapPromise = _dereq_('@braintree/wrap-promise');
 var request = _dereq_('./request');
-var uuid = _dereq_('../lib/vendor/uuid');
+var uuid = _dereq_('@braintree/uuid');
 var constants = _dereq_('../lib/constants');
 var errors = _dereq_('./errors');
 var GraphQL = _dereq_('./request/graphql');
@@ -1477,7 +1528,7 @@ function getConfiguration(authData) {
     var configuration, attrs, configUrl, reqOptions;
     var sessionId = uuid();
     var analyticsMetadata = {
-      merchantAppId: global.location.host,
+      merchantAppId: window.location.host,
       platform: constants.PLATFORM,
       sdkVersion: constants.VERSION,
       source: constants.SOURCE,
@@ -1521,12 +1572,26 @@ function getConfiguration(authData) {
       reqOptions.metadata = analyticsMetadata;
     }
 
+    // NEXT_MAJOR_VERSION
+    // there are various issues with the config endpoint where the values returned
+    // do not match the values from the merchant account id passed into a client token
+    // we need to update the configuration request endpoint to be able to pass the
+    // correct values. The following ones are incorrect
+    // * applePayWeb - definitely supportedNetworks, which compiles all the card
+    //    networks from all the merchant accounts instead of providing just the
+    //    ones from the specified one. The same is probably true for ios apple pay
+    //    Also the merchantidentifier
+    // NEXT_MAJOR_VERSION Allow passing in merchant account id when creating the component
+    // to fetch the config for that merchant account id (particularly helpful when using
+    // a tokenization key for authorization)
     request(reqOptions, function (err, response, status) {
       var errorTemplate;
 
       if (err) {
         if (status === 403) {
           errorTemplate = errors.CLIENT_AUTHORIZATION_INSUFFICIENT;
+        } else if (status === 401) {
+          errorTemplate = errors.CLIENT_AUTHORIZATION_INVALID;
         } else {
           errorTemplate = errors.CLIENT_GATEWAY_NETWORK;
         }
@@ -1559,13 +1624,12 @@ module.exports = {
   getConfiguration: wrapPromise(getConfiguration)
 };
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../lib/braintree-error":38,"../lib/constants":39,"../lib/is-date-string-before-or-on":46,"../lib/promise":51,"../lib/vendor/uuid":54,"./constants":14,"./errors":15,"./request":28,"./request/graphql":26,"@braintree/wrap-promise":10}],17:[function(_dereq_,module,exports){
+},{"../lib/braintree-error":42,"../lib/constants":43,"../lib/is-date-string-before-or-on":50,"../lib/promise":55,"./constants":18,"./errors":19,"./request":32,"./request/graphql":30,"@braintree/uuid":10,"@braintree/wrap-promise":14}],21:[function(_dereq_,module,exports){
 'use strict';
 
 var BraintreeError = _dereq_('../lib/braintree-error');
 var Client = _dereq_('./client');
-var VERSION = "3.59.0";
+var VERSION = "3.76.2";
 var Promise = _dereq_('../lib/promise');
 var wrapPromise = _dereq_('@braintree/wrap-promise');
 var sharedErrors = _dereq_('../lib/errors');
@@ -1585,7 +1649,17 @@ var sharedErrors = _dereq_('../lib/errors');
  * createClient({
  *   authorization: CLIENT_AUTHORIZATION
  * }, function (createErr, clientInstance) {
- *   // ...
+ *   if (createErr) {
+ *     if (createErr.code === 'CLIENT_AUTHORIZATION_INVALID') {
+ *       // either the client token has expired, and a new one should be generated
+ *       // or the tokenization key was deactivated or deleted
+ *     } else {
+ *       console.log('something went wrong creating the client instance', createErr);
+ *     }
+ *     return;
+ *   }
+ *
+ *  // set up other components
  * });
  * @static
  */
@@ -1610,7 +1684,7 @@ module.exports = {
   VERSION: VERSION
 };
 
-},{"../lib/braintree-error":38,"../lib/errors":45,"../lib/promise":51,"./client":13,"@braintree/wrap-promise":10}],18:[function(_dereq_,module,exports){
+},{"../lib/braintree-error":42,"../lib/errors":49,"../lib/promise":55,"./client":17,"@braintree/wrap-promise":14}],22:[function(_dereq_,module,exports){
 'use strict';
 
 var querystring = _dereq_('../../lib/querystring');
@@ -1767,7 +1841,7 @@ module.exports = {
   request: request
 };
 
-},{"../../lib/assign":37,"../../lib/querystring":52,"./default-request":19,"./graphql/request":27,"./parse-body":31,"./prep-body":32,"./xhr":33}],19:[function(_dereq_,module,exports){
+},{"../../lib/assign":41,"../../lib/querystring":56,"./default-request":23,"./graphql/request":31,"./parse-body":35,"./prep-body":36,"./xhr":37}],23:[function(_dereq_,module,exports){
 'use strict';
 
 function DefaultRequest(options) {
@@ -1803,16 +1877,14 @@ DefaultRequest.prototype.determineStatus = function (status) {
 
 module.exports = DefaultRequest;
 
-},{}],20:[function(_dereq_,module,exports){
-(function (global){
+},{}],24:[function(_dereq_,module,exports){
 'use strict';
 
 module.exports = function getUserAgent() {
-  return global.navigator.userAgent;
+  return window.navigator.userAgent;
 };
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],21:[function(_dereq_,module,exports){
+},{}],25:[function(_dereq_,module,exports){
 'use strict';
 
 var errorResponseAdapter = _dereq_('./error');
@@ -1835,7 +1907,8 @@ var cardTypeTransforms = {
     VISA: 'visa',
     MASTERCARD: 'mastercard',
     DISCOVER: 'discover',
-    AMERICAN_EXPRESS: 'amex'
+    AMERICAN_EXPRESS: 'amex',
+    INTERNATIONAL_MAESTRO: 'maestro'
   },
   visaCheckout: {
     VISA: 'Visa',
@@ -1942,6 +2015,7 @@ function adaptConfigurationResponseBody(body, ctx) {
       enabled: true,
       environment: configuration.googlePay.environment.toLowerCase(),
       googleAuthorizationFingerprint: configuration.googlePay.googleAuthorization,
+      paypalClientId: configuration.googlePay.paypalClientId,
       supportedNetworks: mapCardTypes(configuration.googlePay.supportedCardBrands, cardTypeTransforms.googlePay)
     };
   }
@@ -2011,7 +2085,7 @@ function mapCardTypes(cardTypes, cardTypeTransformMap) {
 
 module.exports = configurationResponseAdapter;
 
-},{"../../../../lib/assign":37,"./error":23}],22:[function(_dereq_,module,exports){
+},{"../../../../lib/assign":41,"./error":27}],26:[function(_dereq_,module,exports){
 'use strict';
 
 var errorResponseAdapter = _dereq_('./error');
@@ -2081,6 +2155,7 @@ function adaptTokenizeCreditCardResponseBody(body) {
         description: lastTwo ? 'ending in ' + lastTwo : '',
         nonce: data.token,
         details: {
+          cardholderName: creditCard.cardholderName,
           expirationMonth: creditCard.expirationMonth,
           expirationYear: creditCard.expirationYear,
           bin: creditCard.bin || '',
@@ -2106,7 +2181,7 @@ function adaptTokenizeCreditCardResponseBody(body) {
 
 module.exports = creditCardTokenizationResponseAdapter;
 
-},{"./error":23}],23:[function(_dereq_,module,exports){
+},{"./error":27}],27:[function(_dereq_,module,exports){
 'use strict';
 
 function errorResponseAdapter(responseBody) {
@@ -2195,7 +2270,7 @@ function getLegacyMessage(errors) {
 
 module.exports = errorResponseAdapter;
 
-},{}],24:[function(_dereq_,module,exports){
+},{}],28:[function(_dereq_,module,exports){
 'use strict';
 
 var CONFIGURATION_QUERY = 'query ClientConfiguration { ' +
@@ -2224,6 +2299,7 @@ var CONFIGURATION_QUERY = 'query ClientConfiguration { ' +
 '      supportedCardBrands ' +
 '      environment ' +
 '      googleAuthorization ' +
+'      paypalClientId ' +
 '    } ' +
 '    ideal { ' +
 '      routeId ' +
@@ -2285,7 +2361,7 @@ function configuration() {
 
 module.exports = configuration;
 
-},{}],25:[function(_dereq_,module,exports){
+},{}],29:[function(_dereq_,module,exports){
 'use strict';
 
 var assign = _dereq_('../../../../lib/assign').assign;
@@ -2305,6 +2381,7 @@ function createMutation(config) {
     '      bin ' +
     '      brandCode ' +
     '      last4 ' +
+    '      cardholderName ' +
     '      expirationMonth' +
     '      expirationYear' +
     '      binData { ' +
@@ -2400,7 +2477,7 @@ function creditCardTokenization(body) {
 
 module.exports = creditCardTokenization;
 
-},{"../../../../lib/assign":37}],26:[function(_dereq_,module,exports){
+},{"../../../../lib/assign":41}],30:[function(_dereq_,module,exports){
 'use strict';
 
 var browserDetection = _dereq_('../../browser-detection');
@@ -2469,7 +2546,7 @@ function containsDisallowedlistedKeys(body) {
 
 module.exports = GraphQL;
 
-},{"../../browser-detection":12}],27:[function(_dereq_,module,exports){
+},{"../../browser-detection":16}],31:[function(_dereq_,module,exports){
 'use strict';
 
 var BRAINTREE_VERSION = _dereq_('../../constants').BRAINTREE_VERSION;
@@ -2618,7 +2695,7 @@ function formatBodyKeys(originalBody) {
 
 module.exports = GraphQLRequest;
 
-},{"../../../lib/assign":37,"../../constants":14,"./adapters/configuration":21,"./adapters/credit-card-tokenization":22,"./generators/configuration":24,"./generators/credit-card-tokenization":25}],28:[function(_dereq_,module,exports){
+},{"../../../lib/assign":41,"../../constants":18,"./adapters/configuration":25,"./adapters/credit-card-tokenization":26,"./generators/configuration":28,"./generators/credit-card-tokenization":29}],32:[function(_dereq_,module,exports){
 'use strict';
 
 var ajaxIsAvaliable;
@@ -2649,21 +2726,18 @@ module.exports = function (options, cb) {
   }
 };
 
-},{"../../lib/once":50,"./ajax-driver":18,"./get-user-agent":20,"./is-http":29,"./jsonp-driver":30}],29:[function(_dereq_,module,exports){
-(function (global){
+},{"../../lib/once":54,"./ajax-driver":22,"./get-user-agent":24,"./is-http":33,"./jsonp-driver":34}],33:[function(_dereq_,module,exports){
 'use strict';
 
 module.exports = function () {
-  return global.location.protocol === 'http:';
+  return window.location.protocol === 'http:';
 };
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],30:[function(_dereq_,module,exports){
-(function (global){
+},{}],34:[function(_dereq_,module,exports){
 'use strict';
 
 var head;
-var uuid = _dereq_('../../lib/vendor/uuid');
+var uuid = _dereq_('@braintree/uuid');
 var querystring = _dereq_('../../lib/querystring');
 var timeouts = {};
 
@@ -2680,7 +2754,7 @@ function _createScriptTag(url, callbackName) {
   script.src = url;
   script.async = true;
   script.onerror = function () {
-    global[callbackName]({message: 'error', status: 500});
+    window[callbackName]({message: 'error', status: 500});
   };
 
   script.onload = script.onreadystatechange = function () {
@@ -2697,9 +2771,9 @@ function _createScriptTag(url, callbackName) {
 
 function _cleanupGlobal(callbackName) {
   try {
-    delete global[callbackName];
+    delete window[callbackName];
   } catch (_) {
-    global[callbackName] = null;
+    window[callbackName] = null;
   }
 }
 
@@ -2707,19 +2781,19 @@ function _setupTimeout(timeout, callbackName) {
   timeouts[callbackName] = setTimeout(function () {
     timeouts[callbackName] = null;
 
-    global[callbackName]({
+    window[callbackName]({
       error: 'timeout',
       status: -1
     });
 
-    global[callbackName] = function () {
+    window[callbackName] = function () {
       _cleanupGlobal(callbackName);
     };
   }, timeout);
 }
 
 function _setupGlobalCallback(script, callback, callbackName) {
-  global[callbackName] = function (response) {
+  window[callbackName] = function (response) {
     var status = response.status || 500;
     var err = null;
     var data = null;
@@ -2769,8 +2843,7 @@ module.exports = {
   request: request
 };
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../../lib/querystring":52,"../../lib/vendor/uuid":54}],31:[function(_dereq_,module,exports){
+},{"../../lib/querystring":56,"@braintree/uuid":10}],35:[function(_dereq_,module,exports){
 'use strict';
 
 module.exports = function (body) {
@@ -2781,7 +2854,7 @@ module.exports = function (body) {
   return body;
 };
 
-},{}],32:[function(_dereq_,module,exports){
+},{}],36:[function(_dereq_,module,exports){
 'use strict';
 
 module.exports = function (method, body) {
@@ -2796,14 +2869,13 @@ module.exports = function (method, body) {
   return body;
 };
 
-},{}],33:[function(_dereq_,module,exports){
-(function (global){
+},{}],37:[function(_dereq_,module,exports){
 'use strict';
 
-var isXHRAvailable = global.XMLHttpRequest && 'withCredentials' in new global.XMLHttpRequest();
+var isXHRAvailable = typeof window !== 'undefined' && window.XMLHttpRequest && 'withCredentials' in new window.XMLHttpRequest();
 
 function getRequestObject() {
-  return isXHRAvailable ? new global.XMLHttpRequest() : new global.XDomainRequest();
+  return isXHRAvailable ? new window.XMLHttpRequest() : new window.XDomainRequest();
 }
 
 module.exports = {
@@ -2811,8 +2883,7 @@ module.exports = {
   getRequestObject: getRequestObject
 };
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],34:[function(_dereq_,module,exports){
+},{}],38:[function(_dereq_,module,exports){
 'use strict';
 
 var createAuthorizationData = _dereq_('./create-authorization-data');
@@ -2846,7 +2917,7 @@ function addMetadata(configuration, data) {
 
 module.exports = addMetadata;
 
-},{"./constants":39,"./create-authorization-data":42,"./json-clone":48}],35:[function(_dereq_,module,exports){
+},{"./constants":43,"./create-authorization-data":46,"./json-clone":52}],39:[function(_dereq_,module,exports){
 'use strict';
 
 var Promise = _dereq_('./promise');
@@ -2882,7 +2953,7 @@ module.exports = {
   sendEvent: sendAnalyticsEvent
 };
 
-},{"./add-metadata":34,"./constants":39,"./promise":51}],36:[function(_dereq_,module,exports){
+},{"./add-metadata":38,"./constants":43,"./promise":55}],40:[function(_dereq_,module,exports){
 'use strict';
 
 var loadScript = _dereq_('@braintree/asset-loader/load-script');
@@ -2891,7 +2962,7 @@ module.exports = {
   loadScript: loadScript
 };
 
-},{"@braintree/asset-loader/load-script":2}],37:[function(_dereq_,module,exports){
+},{"@braintree/asset-loader/load-script":3}],41:[function(_dereq_,module,exports){
 'use strict';
 
 var assignNormalized = typeof Object.assign === 'function' ? Object.assign : assignPolyfill;
@@ -2916,7 +2987,7 @@ module.exports = {
   _assign: assignPolyfill
 };
 
-},{}],38:[function(_dereq_,module,exports){
+},{}],42:[function(_dereq_,module,exports){
 'use strict';
 
 var enumerate = _dereq_('./enumerate');
@@ -3001,10 +3072,10 @@ BraintreeError.findRootError = function (err) {
 
 module.exports = BraintreeError;
 
-},{"./enumerate":44}],39:[function(_dereq_,module,exports){
+},{"./enumerate":48}],43:[function(_dereq_,module,exports){
 'use strict';
 
-var VERSION = "3.59.0";
+var VERSION = "3.76.2";
 var PLATFORM = 'web';
 
 var CLIENT_API_URLS = {
@@ -3032,6 +3103,7 @@ module.exports = {
   FRAUDNET_SOURCE: 'BRAINTREE_SIGNIN',
   FRAUDNET_FNCLS: 'fnparams-dede7cc5-15fd-4c75-a9f4-36c430ee3a99',
   FRAUDNET_URL: 'https://c.paypal.com/da/r/fb.js',
+  BUS_CONFIGURATION_REQUEST_EVENT: 'BUS_CONFIGURATION_REQUEST',
   GRAPHQL_URLS: GRAPHQL_URLS,
   INTEGRATION_TIMEOUT_MS: 60000,
   VERSION: VERSION,
@@ -3041,7 +3113,7 @@ module.exports = {
   BRAINTREE_LIBRARY_VERSION: 'braintree/' + PLATFORM + '/' + VERSION
 };
 
-},{}],40:[function(_dereq_,module,exports){
+},{}],44:[function(_dereq_,module,exports){
 'use strict';
 
 var BraintreeError = _dereq_('./braintree-error');
@@ -3059,7 +3131,7 @@ module.exports = function (instance, methodNames) {
   });
 };
 
-},{"./braintree-error":38,"./errors":45}],41:[function(_dereq_,module,exports){
+},{"./braintree-error":42,"./errors":49}],45:[function(_dereq_,module,exports){
 'use strict';
 
 var BraintreeError = _dereq_('./braintree-error');
@@ -3081,7 +3153,7 @@ function convertToBraintreeError(originalErr, btErrorObject) {
 
 module.exports = convertToBraintreeError;
 
-},{"./braintree-error":38}],42:[function(_dereq_,module,exports){
+},{"./braintree-error":42}],46:[function(_dereq_,module,exports){
 'use strict';
 
 var atob = _dereq_('../lib/vendor/polyfill').atob;
@@ -3127,7 +3199,7 @@ function createAuthorizationData(authorization) {
 
 module.exports = createAuthorizationData;
 
-},{"../lib/constants":39,"../lib/vendor/polyfill":53}],43:[function(_dereq_,module,exports){
+},{"../lib/constants":43,"../lib/vendor/polyfill":57}],47:[function(_dereq_,module,exports){
 'use strict';
 
 module.exports = function (fn) {
@@ -3141,7 +3213,7 @@ module.exports = function (fn) {
   };
 };
 
-},{}],44:[function(_dereq_,module,exports){
+},{}],48:[function(_dereq_,module,exports){
 'use strict';
 
 function enumerate(values, prefix) {
@@ -3156,13 +3228,13 @@ function enumerate(values, prefix) {
 
 module.exports = enumerate;
 
-},{}],45:[function(_dereq_,module,exports){
+},{}],49:[function(_dereq_,module,exports){
 'use strict';
 
 /**
- * @name BraintreeError.Shared Interal Error Codes
+ * @name BraintreeError.Shared Internal Error Codes
  * @ignore
- * @description These codes should never be experienced by the mechant directly.
+ * @description These codes should never be experienced by the merchant directly.
  * @property {INTERNAL} INVALID_USE_OF_INTERNAL_FUNCTION Occurs when the client is created without a gateway configuration. Should never happen.
  */
 
@@ -3206,7 +3278,7 @@ module.exports = {
   }
 };
 
-},{"./braintree-error":38}],46:[function(_dereq_,module,exports){
+},{"./braintree-error":42}],50:[function(_dereq_,module,exports){
 'use strict';
 
 function convertDateStringToDate(dateString) {
@@ -3221,7 +3293,7 @@ function isDateStringBeforeOrOn(firstDate, secondDate) {
 
 module.exports = isDateStringBeforeOrOn;
 
-},{}],47:[function(_dereq_,module,exports){
+},{}],51:[function(_dereq_,module,exports){
 'use strict';
 
 var parser;
@@ -3256,14 +3328,14 @@ function isVerifiedDomain(url) {
 
 module.exports = isVerifiedDomain;
 
-},{}],48:[function(_dereq_,module,exports){
+},{}],52:[function(_dereq_,module,exports){
 'use strict';
 
 module.exports = function (value) {
   return JSON.parse(JSON.stringify(value));
 };
 
-},{}],49:[function(_dereq_,module,exports){
+},{}],53:[function(_dereq_,module,exports){
 'use strict';
 
 module.exports = function (obj) {
@@ -3272,23 +3344,37 @@ module.exports = function (obj) {
   });
 };
 
-},{}],50:[function(_dereq_,module,exports){
-arguments[4][8][0].apply(exports,arguments)
-},{"dup":8}],51:[function(_dereq_,module,exports){
-(function (global){
+},{}],54:[function(_dereq_,module,exports){
 'use strict';
 
-var Promise = global.Promise || _dereq_('promise-polyfill');
+function once(fn) {
+  var called = false;
+
+  return function () {
+    if (!called) {
+      called = true;
+      fn.apply(null, arguments);
+    }
+  };
+}
+
+module.exports = once;
+
+},{}],55:[function(_dereq_,module,exports){
+'use strict';
+
+var PromisePolyfill = _dereq_('promise-polyfill');
 var ExtendedPromise = _dereq_('@braintree/extended-promise');
 
+// eslint-disable-next-line no-undef
+var PromiseGlobal = typeof Promise !== 'undefined' ? Promise : PromisePolyfill;
+
 ExtendedPromise.suppressUnhandledPromiseMessage = true;
-ExtendedPromise.setPromise(Promise);
+ExtendedPromise.setPromise(PromiseGlobal);
 
-module.exports = Promise;
+module.exports = PromiseGlobal;
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"@braintree/extended-promise":6,"promise-polyfill":11}],52:[function(_dereq_,module,exports){
-(function (global){
+},{"@braintree/extended-promise":9,"promise-polyfill":15}],56:[function(_dereq_,module,exports){
 'use strict';
 
 function _notEmpty(obj) {
@@ -3308,12 +3394,18 @@ function _isArray(value) {
 }
 /* eslint-enable no-mixed-operators */
 
+function hasQueryParams(url) {
+  url = url || window.location.href;
+
+  return /\?/.test(url);
+}
+
 function parse(url) {
   var query, params;
 
-  url = url || global.location.href;
+  url = url || window.location.href;
 
-  if (!/\?/.test(url)) {
+  if (!hasQueryParams(url)) {
     return {};
   }
 
@@ -3377,17 +3469,16 @@ function queryify(url, params) {
 module.exports = {
   parse: parse,
   stringify: stringify,
-  queryify: queryify
+  queryify: queryify,
+  hasQueryParams: hasQueryParams
 };
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],53:[function(_dereq_,module,exports){
-(function (global){
+},{}],57:[function(_dereq_,module,exports){
 'use strict';
 
-var atobNormalized = typeof global.atob === 'function' ? global.atob : atob;
+var atobNormalized = typeof atob === 'function' ? window.atob : atobPolyfill;
 
-function atob(base64String) {
+function atobPolyfill(base64String) {
   var a, b, c, b1, b2, b3, b4, i;
   var base64Matcher = new RegExp('^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})([=]{1,2})?$');
   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
@@ -3416,30 +3507,15 @@ function atob(base64String) {
 
 module.exports = {
   atob: function (base64String) {
-    return atobNormalized.call(global, base64String);
+    return atobNormalized.call(window, base64String);
   },
-  _atob: atob
+  _atob: atobPolyfill
 };
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],54:[function(_dereq_,module,exports){
-'use strict';
-
-function uuid() {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-    var r = Math.random() * 16 | 0;
-    var v = c === 'x' ? r : r & 0x3 | 0x8;
-
-    return v.toString(16);
-  });
-}
-
-module.exports = uuid;
-
-},{}]},{},[17])(17)
+},{}]},{},[21])(21)
 });
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../../../timers-browserify/main.js */ "./node_modules/timers-browserify/main.js").setImmediate))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../timers-browserify/main.js */ "./node_modules/timers-browserify/main.js").setImmediate))
 
 /***/ }),
 
@@ -3450,324 +3526,306 @@ module.exports = uuid;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global, setImmediate) {var require;var require;(function(f){if(true){module.exports=f()}else { var g; }})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return require(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(_dereq_,module,exports){
-(function (global){
-'use strict';
-
-var PromisePolyfill = _dereq_('promise-polyfill');
-
-module.exports = global.Promise || PromisePolyfill;
-
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"promise-polyfill":8}],2:[function(_dereq_,module,exports){
-'use strict';
-
-var Promise = _dereq_('./lib/promise');
-var scriptPromiseCache = {};
-
-function loadScript(options) {
-  var attrs, container, script, scriptLoadPromise;
-  var stringifiedOptions = JSON.stringify(options);
-
-  if (!options.forceScriptReload) {
-    scriptLoadPromise = scriptPromiseCache[stringifiedOptions];
-
-    if (scriptLoadPromise) {
-      return scriptLoadPromise;
-    }
-  }
-
-  script = document.createElement('script');
-  attrs = options.dataAttributes || {};
-  container = options.container || document.head;
-
-  script.src = options.src;
-  script.id = options.id;
-  script.async = true;
-
-  if (options.crossorigin) {
-    script.setAttribute('crossorigin', options.crossorigin);
-  }
-
-  Object.keys(attrs).forEach(function (key) {
-    script.setAttribute('data-' + key, attrs[key]);
-  });
-
-  scriptLoadPromise = new Promise(function (resolve, reject) {
-    script.addEventListener('load', function () {
-      resolve(script);
-    });
-    script.addEventListener('error', function () {
-      reject(new Error(options.src + ' failed to load.'));
-    });
-    script.addEventListener('abort', function () {
-      reject(new Error(options.src + ' has aborted.'));
-    });
-    container.appendChild(script);
-  });
-
-  scriptPromiseCache[stringifiedOptions] = scriptLoadPromise;
-
-  return scriptLoadPromise;
-}
-
-loadScript.clearCache = function () {
-  scriptPromiseCache = {};
+/* WEBPACK VAR INJECTION */(function(setImmediate) {var require;var require;(function(f){if(true){module.exports=f()}else { var g; }})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return require(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(_dereq_,module,exports){
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PromiseGlobal = void 0;
+var promise_polyfill_1 = __importDefault(_dereq_("promise-polyfill"));
+var PromiseGlobal = 
+// eslint-disable-next-line no-undef
+typeof Promise !== "undefined" ? Promise : promise_polyfill_1.default;
+exports.PromiseGlobal = PromiseGlobal;
 
+},{"promise-polyfill":9}],2:[function(_dereq_,module,exports){
+"use strict";
+var promise_1 = _dereq_("./lib/promise");
+var scriptPromiseCache = {};
+function loadScript(options) {
+    var scriptLoadPromise;
+    var stringifiedOptions = JSON.stringify(options);
+    if (!options.forceScriptReload) {
+        scriptLoadPromise = scriptPromiseCache[stringifiedOptions];
+        if (scriptLoadPromise) {
+            return scriptLoadPromise;
+        }
+    }
+    var script = document.createElement("script");
+    var attrs = options.dataAttributes || {};
+    var container = options.container || document.head;
+    script.src = options.src;
+    script.id = options.id || "";
+    script.async = true;
+    if (options.crossorigin) {
+        script.setAttribute("crossorigin", "" + options.crossorigin);
+    }
+    Object.keys(attrs).forEach(function (key) {
+        script.setAttribute("data-" + key, "" + attrs[key]);
+    });
+    scriptLoadPromise = new promise_1.PromiseGlobal(function (resolve, reject) {
+        script.addEventListener("load", function () {
+            resolve(script);
+        });
+        script.addEventListener("error", function () {
+            reject(new Error(options.src + " failed to load."));
+        });
+        script.addEventListener("abort", function () {
+            reject(new Error(options.src + " has aborted."));
+        });
+        container.appendChild(script);
+    });
+    scriptPromiseCache[stringifiedOptions] = scriptLoadPromise;
+    return scriptLoadPromise;
+}
+loadScript.clearCache = function () {
+    scriptPromiseCache = {};
+};
 module.exports = loadScript;
 
 },{"./lib/promise":1}],3:[function(_dereq_,module,exports){
-(function (global){
-'use strict';
+module.exports = _dereq_("./dist/load-script");
 
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#Methods
-var PROMISE_METHODS = [
-  'all',
-  'allSettled',
-  'race',
-  'reject',
-  'resolve'
-];
-
-function shouldCatchExceptions(options) {
-  if (options.hasOwnProperty('suppressUnhandledPromiseMessage')) {
-    return Boolean(options.suppressUnhandledPromiseMessage);
-  }
-
-  return Boolean(ExtendedPromise.suppressUnhandledPromiseMessage);
-}
-
-function ExtendedPromise(options) {
-  var self = this;
-
-  if (typeof options === 'function') {
-    return new ExtendedPromise.Promise(options);
-  }
-
-  this._promise = new ExtendedPromise.Promise(function (resolve, reject) {
-    self._resolveFunction = resolve;
-    self._rejectFunction = reject;
-  });
-
-  options = options || {};
-  this._onResolve = options.onResolve || ExtendedPromise.defaultOnResolve;
-  this._onReject = options.onReject || ExtendedPromise.defaultOnReject;
-
-  if (shouldCatchExceptions(options)) {
-    this._promise.catch(function () {
-      // prevents unhandled promise rejection warning
-      // in the console for extended promises that
-      // that catch the error in an asynchronous manner
-    });
-  }
-
-  this._resetState();
-
-  this._promise.resolve = this.resolve.bind(this);
-  this._promise.reject = this.reject.bind(this);
-
-  return this._promise;
-}
-
-PROMISE_METHODS.forEach(function (method) {
-  ExtendedPromise[method] = function () {
-    var args = Array.prototype.slice.call(arguments);
-
-    return ExtendedPromise.Promise[method].apply(ExtendedPromise.Promise, args);
-  };
-});
-
-ExtendedPromise.setPromise = function (PromiseClass) {
-  ExtendedPromise.Promise = PromiseClass;
-};
-
-// default to system level Promise, but allow it to be overwritten
-ExtendedPromise.setPromise(global.Promise);
-
-ExtendedPromise.defaultOnResolve = function (result) {
-  return ExtendedPromise.Promise.resolve(result);
-};
-
-ExtendedPromise.defaultOnReject = function (err) {
-  return ExtendedPromise.Promise.reject(err);
-};
-
-ExtendedPromise.prototype.resolve = function (arg) {
-  var self = this;
-
-  if (this._promise.isFulfilled) {
-    return this._promise;
-  }
-  this._setResolved();
-
-  ExtendedPromise.Promise.resolve().then(function () {
-    return self._onResolve(arg);
-  }).then(this._resolveFunction).catch(function (err) {
-    self._resetState();
-
-    self._promise.reject(err);
-  });
-
-  return this._promise;
-};
-
-ExtendedPromise.prototype.reject = function (arg) {
-  var self = this;
-
-  if (this._promise.isFulfilled) {
-    return this._promise;
-  }
-  this._setRejected();
-
-  ExtendedPromise.Promise.resolve().then(function () {
-    return self._onReject(arg);
-  }).then(function (result) {
-    self._setResolved();
-
-    self._resolveFunction(result);
-  }).catch(this._rejectFunction);
-
-  return this._promise;
-};
-
-ExtendedPromise.prototype._resetState = function () {
-  this._promise.isFulfilled = false;
-  this._promise.isResolved = false;
-  this._promise.isRejected = false;
-};
-
-ExtendedPromise.prototype._setResolved = function () {
-  this._promise.isFulfilled = true;
-  this._promise.isResolved = true;
-  this._promise.isRejected = false;
-};
-
-ExtendedPromise.prototype._setRejected = function () {
-  this._promise.isFulfilled = true;
-  this._promise.isResolved = false;
-  this._promise.isRejected = true;
-};
-
+},{"./dist/load-script":2}],4:[function(_dereq_,module,exports){
+"use strict";
+var GlobalPromise = (typeof Promise !== "undefined"
+    ? Promise // eslint-disable-line no-undef
+    : null);
+var ExtendedPromise = /** @class */ (function () {
+    function ExtendedPromise(options) {
+        var _this = this;
+        if (typeof options === "function") {
+            this._promise = new ExtendedPromise.Promise(options);
+            return;
+        }
+        this._promise = new ExtendedPromise.Promise(function (resolve, reject) {
+            _this._resolveFunction = resolve;
+            _this._rejectFunction = reject;
+        });
+        options = options || {};
+        this._onResolve = options.onResolve || ExtendedPromise.defaultOnResolve;
+        this._onReject = options.onReject || ExtendedPromise.defaultOnReject;
+        if (ExtendedPromise.shouldCatchExceptions(options)) {
+            this._promise.catch(function () {
+                // prevents unhandled promise rejection warning
+                // in the console for extended promises that
+                // that catch the error in an asynchronous manner
+            });
+        }
+        this._resetState();
+    }
+    ExtendedPromise.defaultOnResolve = function (result) {
+        return ExtendedPromise.Promise.resolve(result);
+    };
+    ExtendedPromise.defaultOnReject = function (err) {
+        return ExtendedPromise.Promise.reject(err);
+    };
+    ExtendedPromise.setPromise = function (PromiseClass) {
+        ExtendedPromise.Promise = PromiseClass;
+    };
+    ExtendedPromise.shouldCatchExceptions = function (options) {
+        if (options.hasOwnProperty("suppressUnhandledPromiseMessage")) {
+            return Boolean(options.suppressUnhandledPromiseMessage);
+        }
+        return Boolean(ExtendedPromise.suppressUnhandledPromiseMessage);
+    };
+    // start Promise methods documented in:
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#Methods
+    ExtendedPromise.all = function (args) {
+        return ExtendedPromise.Promise.all(args);
+    };
+    ExtendedPromise.allSettled = function (args) {
+        return ExtendedPromise.Promise.allSettled(args);
+    };
+    ExtendedPromise.race = function (args) {
+        return ExtendedPromise.Promise.race(args);
+    };
+    ExtendedPromise.reject = function (arg) {
+        return ExtendedPromise.Promise.reject(arg);
+    };
+    ExtendedPromise.resolve = function (arg) {
+        return ExtendedPromise.Promise.resolve(arg);
+    };
+    ExtendedPromise.prototype.then = function () {
+        var _a;
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        return (_a = this._promise).then.apply(_a, args);
+    };
+    ExtendedPromise.prototype.catch = function () {
+        var _a;
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        return (_a = this._promise).catch.apply(_a, args);
+    };
+    ExtendedPromise.prototype.resolve = function (arg) {
+        var _this = this;
+        if (this.isFulfilled) {
+            return this;
+        }
+        this._setResolved();
+        ExtendedPromise.Promise.resolve()
+            .then(function () {
+            return _this._onResolve(arg);
+        })
+            .then(function (argForResolveFunction) {
+            _this._resolveFunction(argForResolveFunction);
+        })
+            .catch(function (err) {
+            _this._resetState();
+            _this.reject(err);
+        });
+        return this;
+    };
+    ExtendedPromise.prototype.reject = function (arg) {
+        var _this = this;
+        if (this.isFulfilled) {
+            return this;
+        }
+        this._setRejected();
+        ExtendedPromise.Promise.resolve()
+            .then(function () {
+            return _this._onReject(arg);
+        })
+            .then(function (result) {
+            _this._setResolved();
+            _this._resolveFunction(result);
+        })
+            .catch(function (err) {
+            return _this._rejectFunction(err);
+        });
+        return this;
+    };
+    ExtendedPromise.prototype._resetState = function () {
+        this.isFulfilled = false;
+        this.isResolved = false;
+        this.isRejected = false;
+    };
+    ExtendedPromise.prototype._setResolved = function () {
+        this.isFulfilled = true;
+        this.isResolved = true;
+        this.isRejected = false;
+    };
+    ExtendedPromise.prototype._setRejected = function () {
+        this.isFulfilled = true;
+        this.isResolved = false;
+        this.isRejected = true;
+    };
+    ExtendedPromise.Promise = GlobalPromise;
+    return ExtendedPromise;
+}());
 module.exports = ExtendedPromise;
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],4:[function(_dereq_,module,exports){
-'use strict';
-
-function deferred(fn) {
-  return function () {
-    // IE9 doesn't support passing arguments to setTimeout so we have to emulate it.
-    var args = arguments;
-
-    setTimeout(function () {
-      try {
-        fn.apply(null, args);
-      } catch (err) {
-        /* eslint-disable no-console */
-        console.log('Error in callback function');
-        console.log(err);
-        /* eslint-enable no-console */
-      }
-    }, 1);
-  };
-}
-
-module.exports = deferred;
-
 },{}],5:[function(_dereq_,module,exports){
-'use strict';
-
-function once(fn) {
-  var called = false;
-
-  return function () {
-    if (!called) {
-      called = true;
-      fn.apply(null, arguments);
-    }
-  };
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+function deferred(fn) {
+    return function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        setTimeout(function () {
+            try {
+                fn.apply(void 0, args);
+            }
+            catch (err) {
+                /* eslint-disable no-console */
+                console.log("Error in callback function");
+                console.log(err);
+                /* eslint-enable no-console */
+            }
+        }, 1);
+    };
 }
-
-module.exports = once;
+exports.deferred = deferred;
 
 },{}],6:[function(_dereq_,module,exports){
-'use strict';
-
-function promiseOrCallback(promise, callback) { // eslint-disable-line consistent-return
-  if (callback) {
-    promise
-      .then(function (data) {
-        callback(null, data);
-      })
-      .catch(function (err) {
-        callback(err);
-      });
-  } else {
-    return promise;
-  }
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+function once(fn) {
+    var called = false;
+    return function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        if (!called) {
+            called = true;
+            fn.apply(void 0, args);
+        }
+    };
 }
-
-module.exports = promiseOrCallback;
+exports.once = once;
 
 },{}],7:[function(_dereq_,module,exports){
-'use strict';
-
-var deferred = _dereq_('./lib/deferred');
-var once = _dereq_('./lib/once');
-var promiseOrCallback = _dereq_('./lib/promise-or-callback');
-
-function wrapPromise(fn) {
-  return function () {
-    var callback;
-    var args = Array.prototype.slice.call(arguments);
-    var lastArg = args[args.length - 1];
-
-    if (typeof lastArg === 'function') {
-      callback = args.pop();
-      callback = once(deferred(callback));
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/* eslint-disable consistent-return */
+function promiseOrCallback(promise, callback) {
+    if (!callback) {
+        return promise;
     }
-
-    return promiseOrCallback(fn.apply(this, args), callback); // eslint-disable-line no-invalid-this
-  };
+    promise.then(function (data) { return callback(null, data); }).catch(function (err) { return callback(err); });
 }
+exports.promiseOrCallback = promiseOrCallback;
 
+},{}],8:[function(_dereq_,module,exports){
+"use strict";
+var deferred_1 = _dereq_("./lib/deferred");
+var once_1 = _dereq_("./lib/once");
+var promise_or_callback_1 = _dereq_("./lib/promise-or-callback");
+function wrapPromise(fn) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        var callback;
+        var lastArg = args[args.length - 1];
+        if (typeof lastArg === "function") {
+            callback = args.pop();
+            callback = once_1.once(deferred_1.deferred(callback));
+        }
+        // I know, I know, this looks bad. But it's a quirk of the library that
+        // we need to allow passing the this context to the original function
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore: this has an implicit any
+        return promise_or_callback_1.promiseOrCallback(fn.apply(this, args), callback); // eslint-disable-line no-invalid-this
+    };
+}
 wrapPromise.wrapPrototype = function (target, options) {
-  var methods, ignoreMethods, includePrivateMethods;
-
-  options = options || {};
-  ignoreMethods = options.ignoreMethods || [];
-  includePrivateMethods = options.transformPrivateMethods === true;
-
-  methods = Object.getOwnPropertyNames(target.prototype).filter(function (method) {
-    var isNotPrivateMethod;
-    var isNonConstructorFunction = method !== 'constructor' &&
-      typeof target.prototype[method] === 'function';
-    var isNotAnIgnoredMethod = ignoreMethods.indexOf(method) === -1;
-
-    if (includePrivateMethods) {
-      isNotPrivateMethod = true;
-    } else {
-      isNotPrivateMethod = method.charAt(0) !== '_';
-    }
-
-    return isNonConstructorFunction &&
-      isNotPrivateMethod &&
-      isNotAnIgnoredMethod;
-  });
-
-  methods.forEach(function (method) {
-    var original = target.prototype[method];
-
-    target.prototype[method] = wrapPromise(original);
-  });
-
-  return target;
+    if (options === void 0) { options = {}; }
+    var ignoreMethods = options.ignoreMethods || [];
+    var includePrivateMethods = options.transformPrivateMethods === true;
+    var methods = Object.getOwnPropertyNames(target.prototype).filter(function (method) {
+        var isNotPrivateMethod;
+        var isNonConstructorFunction = method !== "constructor" &&
+            typeof target.prototype[method] === "function";
+        var isNotAnIgnoredMethod = ignoreMethods.indexOf(method) === -1;
+        if (includePrivateMethods) {
+            isNotPrivateMethod = true;
+        }
+        else {
+            isNotPrivateMethod = method.charAt(0) !== "_";
+        }
+        return (isNonConstructorFunction && isNotPrivateMethod && isNotAnIgnoredMethod);
+    });
+    methods.forEach(function (method) {
+        var original = target.prototype[method];
+        target.prototype[method] = wrapPromise(original);
+    });
+    return target;
 };
-
 module.exports = wrapPromise;
 
-},{"./lib/deferred":4,"./lib/once":5,"./lib/promise-or-callback":6}],8:[function(_dereq_,module,exports){
+},{"./lib/deferred":5,"./lib/once":6,"./lib/promise-or-callback":7}],9:[function(_dereq_,module,exports){
 'use strict';
 
 /**
@@ -3790,6 +3848,54 @@ function finallyConstructor(callback) {
       });
     }
   );
+}
+
+function allSettled(arr) {
+  var P = this;
+  return new P(function(resolve, reject) {
+    if (!(arr && typeof arr.length !== 'undefined')) {
+      return reject(
+        new TypeError(
+          typeof arr +
+            ' ' +
+            arr +
+            ' is not iterable(cannot read property Symbol(Symbol.iterator))'
+        )
+      );
+    }
+    var args = Array.prototype.slice.call(arr);
+    if (args.length === 0) return resolve([]);
+    var remaining = args.length;
+
+    function res(i, val) {
+      if (val && (typeof val === 'object' || typeof val === 'function')) {
+        var then = val.then;
+        if (typeof then === 'function') {
+          then.call(
+            val,
+            function(val) {
+              res(i, val);
+            },
+            function(e) {
+              args[i] = { status: 'rejected', reason: e };
+              if (--remaining === 0) {
+                resolve(args);
+              }
+            }
+          );
+          return;
+        }
+      }
+      args[i] = { status: 'fulfilled', value: val };
+      if (--remaining === 0) {
+        resolve(args);
+      }
+    }
+
+    for (var i = 0; i < args.length; i++) {
+      res(i, args[i]);
+    }
+  });
 }
 
 // Store setTimeout reference so promise-polyfill will be unaffected by
@@ -3995,6 +4101,8 @@ Promise.all = function(arr) {
   });
 };
 
+Promise.allSettled = allSettled;
+
 Promise.resolve = function(value) {
   if (value && typeof value === 'object' && value.constructor === Promise) {
     return value;
@@ -4043,12 +4151,12 @@ Promise._unhandledRejectionFn = function _unhandledRejectionFn(err) {
 
 module.exports = Promise;
 
-},{}],9:[function(_dereq_,module,exports){
+},{}],10:[function(_dereq_,module,exports){
 'use strict';
 
 /**
  * @name BraintreeError.Data Collector - Creation Error Codes
- * @description Errors that occur when [creating the Data Collector component](/current/module-braintree-web_data-collector.html#.create).
+ * @description Errors that occur when [creating the Data Collector component](./module-braintree-web_data-collector.html#.create).
  * @property {MERCHANT} DATA_COLLECTOR_KOUNT_NOT_ENABLED Occurs when Kount is enabled in creation options but is not enabled on the Braintree control panel.
  * @property {MERCHANT} DATA_COLLECTOR_KOUNT_ERROR Occurs when Kount errors while setting up.
  * @property {MERCHANT} DATA_COLLECTOR_REQUIRES_CREATE_OPTIONS Occurs when Kount or PayPal Fraudnet could not be enabled.
@@ -4073,7 +4181,7 @@ module.exports = {
   }
 };
 
-},{"../lib/braintree-error":16}],10:[function(_dereq_,module,exports){
+},{"../lib/braintree-error":17}],11:[function(_dereq_,module,exports){
 'use strict';
 
 var FRAUDNET_FNCLS = _dereq_('../lib/constants').FRAUDNET_FNCLS;
@@ -4084,7 +4192,7 @@ var Promise = _dereq_('../lib/promise');
 
 var cachedSessionId;
 
-function setup() {
+function setup(environment) {
   var fraudNet = new Fraudnet();
 
   if (cachedSessionId) {
@@ -4093,7 +4201,7 @@ function setup() {
     return Promise.resolve(fraudNet);
   }
 
-  return fraudNet.initialize();
+  return fraudNet.initialize(environment);
 }
 
 function clearSessionIdCache() {
@@ -4103,12 +4211,12 @@ function clearSessionIdCache() {
 function Fraudnet() {
 }
 
-Fraudnet.prototype.initialize = function () {
+Fraudnet.prototype.initialize = function (environment) {
   var self = this;
 
   this.sessionId = cachedSessionId = _generateSessionId();
   this._beaconId = _generateBeaconId(this.sessionId);
-  this._parameterBlock = _createParameterBlock(this.sessionId, this._beaconId);
+  this._parameterBlock = _createParameterBlock(this.sessionId, this._beaconId, environment);
 
   return loadScript({
     src: FRAUDNET_URL
@@ -4159,16 +4267,26 @@ function _generateBeaconId(sessionId) {
     '&a=14';
 }
 
-function _createParameterBlock(sessionId, beaconId) {
+function _createParameterBlock(sessionId, beaconId, environment) {
   var el = document.body.appendChild(document.createElement('script'));
-
-  el.type = 'application/json';
-  el.setAttribute('fncls', FRAUDNET_FNCLS);
-  el.text = JSON.stringify({
+  var config = {
     f: sessionId,
     s: FRAUDNET_SOURCE,
     b: beaconId
-  });
+  };
+
+  // for some reason, the presence of the sandbox
+  // attribute in a production environment causes
+  // some weird behavior with what url paths are
+  // hit, so instead, we only apply this attribute
+  // when it is not a production environment
+  if (environment !== 'production') {
+    config.sandbox = true;
+  }
+
+  el.type = 'application/json';
+  el.setAttribute('fncls', FRAUDNET_FNCLS);
+  el.text = JSON.stringify(config);
 
   return el;
 }
@@ -4178,7 +4296,7 @@ module.exports = {
   clearSessionIdCache: clearSessionIdCache
 };
 
-},{"../lib/assets":14,"../lib/constants":18,"../lib/promise":25}],11:[function(_dereq_,module,exports){
+},{"../lib/assets":15,"../lib/constants":19,"../lib/promise":26}],12:[function(_dereq_,module,exports){
 'use strict';
 /** @module braintree-web/data-collector */
 
@@ -4190,7 +4308,7 @@ var createDeferredClient = _dereq_('../lib/create-deferred-client');
 var createAssetsUrl = _dereq_('../lib/create-assets-url');
 var methods = _dereq_('../lib/methods');
 var convertMethodsToError = _dereq_('../lib/convert-methods-to-error');
-var VERSION = "3.59.0";
+var VERSION = "3.76.2";
 var Promise = _dereq_('../lib/promise');
 var wrapPromise = _dereq_('@braintree/wrap-promise');
 var errors = _dereq_('./errors');
@@ -4269,7 +4387,7 @@ var errors = _dereq_('./errors');
  * @param {object} options Creation options:
  * @param {Client} [options.client] A {@link Client} instance.
  * @param {string} [options.authorization] A tokenizationKey or clientToken. Can be used in place of `options.client`.
- * @param {boolean} [options.useDeferredClient] Used in conjunction with `authorization`, allows the Data Collector instance to be available right away by allowing the client configuration to happen in the background. When this option is used, {@link GooglePayment#getDeviceData} must be used to collect the device data.
+ * @param {boolean} [options.useDeferredClient] Used in conjunction with `authorization`, allows the Data Collector instance to be available right away by fetching the client configuration in the background. When this option is used, {@link GooglePayment#getDeviceData} must be used to collect the device data.
  * @param {boolean} [options.kount] Kount fraud data collection will occur if the merchant configuration has it enabled.
  * **Note:** the data sent to Kount is asynchronous and may not have completed by the time the data collector create call is complete. In most cases, this will not matter, but if you create the data collector instance and immediately navigate away from the page, the device information may fail to be sent to Kount.
  * @param {boolean} [options.paypal] *Deprecated:* PayPal fraud data collection will occur when the DataCollector instance is created.
@@ -4319,9 +4437,9 @@ function create(options) {
         data = {};
       }
 
-      return Promise.resolve();
-    }).then(function () {
-      return fraudnet.setup().then(function (fraudnetInstance) {
+      return Promise.resolve(client);
+    }).then(function (client) {
+      return fraudnet.setup(client.getConfiguration().gatewayConfiguration.environment).then(function (fraudnetInstance) {
         if (fraudnetInstance) {
           data.correlation_id = fraudnetInstance.sessionId; // eslint-disable-line camelcase
           result._instances.push(fraudnetInstance);
@@ -4392,7 +4510,7 @@ module.exports = {
   VERSION: VERSION
 };
 
-},{"../lib/basic-component-verification":15,"../lib/braintree-error":16,"../lib/convert-methods-to-error":19,"../lib/create-assets-url":20,"../lib/create-deferred-client":21,"../lib/methods":24,"../lib/promise":25,"./errors":9,"./fraudnet":10,"./kount":12,"@braintree/wrap-promise":7}],12:[function(_dereq_,module,exports){
+},{"../lib/basic-component-verification":16,"../lib/braintree-error":17,"../lib/convert-methods-to-error":20,"../lib/create-assets-url":21,"../lib/create-deferred-client":22,"../lib/methods":25,"../lib/promise":26,"./errors":10,"./fraudnet":11,"./kount":13,"@braintree/wrap-promise":8}],13:[function(_dereq_,module,exports){
 'use strict';
 
 var sjcl = _dereq_('./vendor/sjcl');
@@ -4519,7 +4637,7 @@ module.exports = {
   environmentUrls: environmentUrls
 };
 
-},{"../lib/camel-case-to-snake-case":17,"./vendor/sjcl":13}],13:[function(_dereq_,module,exports){
+},{"../lib/camel-case-to-snake-case":18,"./vendor/sjcl":14}],14:[function(_dereq_,module,exports){
 "use strict";var sjcl={cipher:{},hash:{},keyexchange:{},mode:{},misc:{},codec:{},exception:{corrupt:function(a){this.toString=function(){return"CORRUPT: "+this.message};this.message=a},invalid:function(a){this.toString=function(){return"INVALID: "+this.message};this.message=a},bug:function(a){this.toString=function(){return"BUG: "+this.message};this.message=a},notReady:function(a){this.toString=function(){return"NOT READY: "+this.message};this.message=a}}};
 sjcl.cipher.aes=function(a){this.l[0][0][0]||this.G();var b,c,d,e,f=this.l[0][4],g=this.l[1];b=a.length;var k=1;if(4!==b&&6!==b&&8!==b)throw new sjcl.exception.invalid("invalid aes key size");this.b=[d=a.slice(0),e=[]];for(a=b;a<4*b+28;a++){c=d[a-1];if(0===a%b||8===b&&4===a%b)c=f[c>>>24]<<24^f[c>>16&255]<<16^f[c>>8&255]<<8^f[c&255],0===a%b&&(c=c<<8^c>>>24^k<<24,k=k<<1^283*(k>>7));d[a]=d[a-b]^c}for(b=0;a;b++,a--)c=d[b&3?a:a-4],e[b]=4>=a||4>b?c:g[0][f[c>>>24]]^g[1][f[c>>16&255]]^g[2][f[c>>8&255]]^g[3][f[c&
 255]]};
@@ -4551,7 +4669,7 @@ function B(a,b){return function(){b.apply(a,arguments)}}sjcl.random=new sjcl.prn
 a:try{var D,E,F,G;if(G="undefined"!==typeof module&&module.exports){var H;try{H=_dereq_("crypto")}catch(a){H=null}G=E=H}if(G&&E.randomBytes)D=E.randomBytes(128),D=new Uint32Array((new Uint8Array(D)).buffer),sjcl.random.addEntropy(D,1024,"crypto['randomBytes']");else if("undefined"!==typeof window&&"undefined"!==typeof Uint32Array){F=new Uint32Array(32);if(window.crypto&&window.crypto.getRandomValues)window.crypto.getRandomValues(F);else if(window.msCrypto&&window.msCrypto.getRandomValues)window.msCrypto.getRandomValues(F);
 else break a;sjcl.random.addEntropy(F,1024,"crypto['getRandomValues']")}}catch(a){"undefined"!==typeof window&&window.console&&(console.log("There was an error collecting entropy from the browser:"),console.log(a))}"undefined"!==typeof module&&module.exports&&(module.exports=sjcl);"function"===typeof define&&define([],function(){return sjcl});
 
-},{"crypto":undefined}],14:[function(_dereq_,module,exports){
+},{"crypto":undefined}],15:[function(_dereq_,module,exports){
 'use strict';
 
 var loadScript = _dereq_('@braintree/asset-loader/load-script');
@@ -4560,13 +4678,13 @@ module.exports = {
   loadScript: loadScript
 };
 
-},{"@braintree/asset-loader/load-script":2}],15:[function(_dereq_,module,exports){
+},{"@braintree/asset-loader/load-script":3}],16:[function(_dereq_,module,exports){
 'use strict';
 
 var BraintreeError = _dereq_('./braintree-error');
 var Promise = _dereq_('./promise');
 var sharedErrors = _dereq_('./errors');
-var VERSION = "3.59.0";
+var VERSION = "3.76.2";
 
 function basicComponentVerification(options) {
   var client, authorization, name;
@@ -4608,7 +4726,7 @@ module.exports = {
   verify: basicComponentVerification
 };
 
-},{"./braintree-error":16,"./errors":23,"./promise":25}],16:[function(_dereq_,module,exports){
+},{"./braintree-error":17,"./errors":24,"./promise":26}],17:[function(_dereq_,module,exports){
 'use strict';
 
 var enumerate = _dereq_('./enumerate');
@@ -4693,7 +4811,7 @@ BraintreeError.findRootError = function (err) {
 
 module.exports = BraintreeError;
 
-},{"./enumerate":22}],17:[function(_dereq_,module,exports){
+},{"./enumerate":23}],18:[function(_dereq_,module,exports){
 'use strict';
 
 // Taken from https://github.com/sindresorhus/decamelize/blob/95980ab6fb44c40eaca7792bdf93aff7c210c805/index.js
@@ -4713,10 +4831,10 @@ module.exports = function (obj) {
   }, {});
 };
 
-},{}],18:[function(_dereq_,module,exports){
+},{}],19:[function(_dereq_,module,exports){
 'use strict';
 
-var VERSION = "3.59.0";
+var VERSION = "3.76.2";
 var PLATFORM = 'web';
 
 var CLIENT_API_URLS = {
@@ -4744,6 +4862,7 @@ module.exports = {
   FRAUDNET_SOURCE: 'BRAINTREE_SIGNIN',
   FRAUDNET_FNCLS: 'fnparams-dede7cc5-15fd-4c75-a9f4-36c430ee3a99',
   FRAUDNET_URL: 'https://c.paypal.com/da/r/fb.js',
+  BUS_CONFIGURATION_REQUEST_EVENT: 'BUS_CONFIGURATION_REQUEST',
   GRAPHQL_URLS: GRAPHQL_URLS,
   INTEGRATION_TIMEOUT_MS: 60000,
   VERSION: VERSION,
@@ -4753,7 +4872,7 @@ module.exports = {
   BRAINTREE_LIBRARY_VERSION: 'braintree/' + PLATFORM + '/' + VERSION
 };
 
-},{}],19:[function(_dereq_,module,exports){
+},{}],20:[function(_dereq_,module,exports){
 'use strict';
 
 var BraintreeError = _dereq_('./braintree-error');
@@ -4771,7 +4890,7 @@ module.exports = function (instance, methodNames) {
   });
 };
 
-},{"./braintree-error":16,"./errors":23}],20:[function(_dereq_,module,exports){
+},{"./braintree-error":17,"./errors":24}],21:[function(_dereq_,module,exports){
 'use strict';
 
 // endRemoveIf(production)
@@ -4788,8 +4907,7 @@ module.exports = {
   create: createAssetsUrl
 };
 
-},{"./constants":18}],21:[function(_dereq_,module,exports){
-(function (global){
+},{"./constants":19}],22:[function(_dereq_,module,exports){
 'use strict';
 
 var BraintreeError = _dereq_('./braintree-error');
@@ -4797,7 +4915,7 @@ var Promise = _dereq_('./promise');
 var assets = _dereq_('./assets');
 var sharedErrors = _dereq_('./errors');
 
-var VERSION = "3.59.0";
+var VERSION = "3.76.2";
 
 function createDeferredClient(options) {
   var promise = Promise.resolve();
@@ -4806,7 +4924,7 @@ function createDeferredClient(options) {
     return Promise.resolve(options.client);
   }
 
-  if (!(global.braintree && global.braintree.client)) {
+  if (!(window.braintree && window.braintree.client)) {
     promise = assets.loadScript({
       src: options.assetsUrl + '/web/' + VERSION + '/js/client.min.js'
     }).catch(function (err) {
@@ -4822,15 +4940,15 @@ function createDeferredClient(options) {
   }
 
   return promise.then(function () {
-    if (global.braintree.client.VERSION !== VERSION) {
+    if (window.braintree.client.VERSION !== VERSION) {
       return Promise.reject(new BraintreeError({
         type: sharedErrors.INCOMPATIBLE_VERSIONS.type,
         code: sharedErrors.INCOMPATIBLE_VERSIONS.code,
-        message: 'Client (version ' + global.braintree.client.VERSION + ') and ' + options.name + ' (version ' + VERSION + ') components must be from the same SDK version.'
+        message: 'Client (version ' + window.braintree.client.VERSION + ') and ' + options.name + ' (version ' + VERSION + ') components must be from the same SDK version.'
       }));
     }
 
-    return global.braintree.client.create({
+    return window.braintree.client.create({
       authorization: options.authorization,
       debug: options.debug
     });
@@ -4841,8 +4959,7 @@ module.exports = {
   create: createDeferredClient
 };
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./assets":14,"./braintree-error":16,"./errors":23,"./promise":25}],22:[function(_dereq_,module,exports){
+},{"./assets":15,"./braintree-error":17,"./errors":24,"./promise":26}],23:[function(_dereq_,module,exports){
 'use strict';
 
 function enumerate(values, prefix) {
@@ -4857,13 +4974,13 @@ function enumerate(values, prefix) {
 
 module.exports = enumerate;
 
-},{}],23:[function(_dereq_,module,exports){
+},{}],24:[function(_dereq_,module,exports){
 'use strict';
 
 /**
- * @name BraintreeError.Shared Interal Error Codes
+ * @name BraintreeError.Shared Internal Error Codes
  * @ignore
- * @description These codes should never be experienced by the mechant directly.
+ * @description These codes should never be experienced by the merchant directly.
  * @property {INTERNAL} INVALID_USE_OF_INTERNAL_FUNCTION Occurs when the client is created without a gateway configuration. Should never happen.
  */
 
@@ -4907,7 +5024,7 @@ module.exports = {
   }
 };
 
-},{"./braintree-error":16}],24:[function(_dereq_,module,exports){
+},{"./braintree-error":17}],25:[function(_dereq_,module,exports){
 'use strict';
 
 module.exports = function (obj) {
@@ -4916,23 +5033,24 @@ module.exports = function (obj) {
   });
 };
 
-},{}],25:[function(_dereq_,module,exports){
-(function (global){
+},{}],26:[function(_dereq_,module,exports){
 'use strict';
 
-var Promise = global.Promise || _dereq_('promise-polyfill');
+var PromisePolyfill = _dereq_('promise-polyfill');
 var ExtendedPromise = _dereq_('@braintree/extended-promise');
 
+// eslint-disable-next-line no-undef
+var PromiseGlobal = typeof Promise !== 'undefined' ? Promise : PromisePolyfill;
+
 ExtendedPromise.suppressUnhandledPromiseMessage = true;
-ExtendedPromise.setPromise(Promise);
+ExtendedPromise.setPromise(PromiseGlobal);
 
-module.exports = Promise;
+module.exports = PromiseGlobal;
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"@braintree/extended-promise":3,"promise-polyfill":8}]},{},[11])(11)
+},{"@braintree/extended-promise":4,"promise-polyfill":9}]},{},[12])(12)
 });
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../../../timers-browserify/main.js */ "./node_modules/timers-browserify/main.js").setImmediate))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../timers-browserify/main.js */ "./node_modules/timers-browserify/main.js").setImmediate))
 
 /***/ }),
 
@@ -4943,1325 +5061,499 @@ module.exports = Promise;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global, setImmediate) {var require;var require;(function(f){if(true){module.exports=f()}else { var g; }})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return require(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(_dereq_,module,exports){
-(function (global){
-'use strict';
-
-var PromisePolyfill = _dereq_('promise-polyfill');
-
-module.exports = global.Promise || PromisePolyfill;
-
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"promise-polyfill":34}],2:[function(_dereq_,module,exports){
-'use strict';
-
-var Promise = _dereq_('./lib/promise');
-var scriptPromiseCache = {};
-
-function loadScript(options) {
-  var attrs, container, script, scriptLoadPromise;
-  var stringifiedOptions = JSON.stringify(options);
-
-  if (!options.forceScriptReload) {
-    scriptLoadPromise = scriptPromiseCache[stringifiedOptions];
-
-    if (scriptLoadPromise) {
-      return scriptLoadPromise;
-    }
-  }
-
-  script = document.createElement('script');
-  attrs = options.dataAttributes || {};
-  container = options.container || document.head;
-
-  script.src = options.src;
-  script.id = options.id;
-  script.async = true;
-
-  if (options.crossorigin) {
-    script.setAttribute('crossorigin', options.crossorigin);
-  }
-
-  Object.keys(attrs).forEach(function (key) {
-    script.setAttribute('data-' + key, attrs[key]);
-  });
-
-  scriptLoadPromise = new Promise(function (resolve, reject) {
-    script.addEventListener('load', function () {
-      resolve(script);
-    });
-    script.addEventListener('error', function () {
-      reject(new Error(options.src + ' failed to load.'));
-    });
-    script.addEventListener('abort', function () {
-      reject(new Error(options.src + ' has aborted.'));
-    });
-    container.appendChild(script);
-  });
-
-  scriptPromiseCache[stringifiedOptions] = scriptLoadPromise;
-
-  return scriptLoadPromise;
-}
-
-loadScript.clearCache = function () {
-  scriptPromiseCache = {};
+/* WEBPACK VAR INJECTION */(function(setImmediate) {var require;var require;(function(f){if(true){module.exports=f()}else { var g; }})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return require(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(_dereq_,module,exports){
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PromiseGlobal = void 0;
+var promise_polyfill_1 = __importDefault(_dereq_("promise-polyfill"));
+var PromiseGlobal = 
+// eslint-disable-next-line no-undef
+typeof Promise !== "undefined" ? Promise : promise_polyfill_1.default;
+exports.PromiseGlobal = PromiseGlobal;
 
+},{"promise-polyfill":59}],2:[function(_dereq_,module,exports){
+"use strict";
+var promise_1 = _dereq_("./lib/promise");
+var scriptPromiseCache = {};
+function loadScript(options) {
+    var scriptLoadPromise;
+    var stringifiedOptions = JSON.stringify(options);
+    if (!options.forceScriptReload) {
+        scriptLoadPromise = scriptPromiseCache[stringifiedOptions];
+        if (scriptLoadPromise) {
+            return scriptLoadPromise;
+        }
+    }
+    var script = document.createElement("script");
+    var attrs = options.dataAttributes || {};
+    var container = options.container || document.head;
+    script.src = options.src;
+    script.id = options.id || "";
+    script.async = true;
+    if (options.crossorigin) {
+        script.setAttribute("crossorigin", "" + options.crossorigin);
+    }
+    Object.keys(attrs).forEach(function (key) {
+        script.setAttribute("data-" + key, "" + attrs[key]);
+    });
+    scriptLoadPromise = new promise_1.PromiseGlobal(function (resolve, reject) {
+        script.addEventListener("load", function () {
+            resolve(script);
+        });
+        script.addEventListener("error", function () {
+            reject(new Error(options.src + " failed to load."));
+        });
+        script.addEventListener("abort", function () {
+            reject(new Error(options.src + " has aborted."));
+        });
+        container.appendChild(script);
+    });
+    scriptPromiseCache[stringifiedOptions] = scriptLoadPromise;
+    return scriptLoadPromise;
+}
+loadScript.clearCache = function () {
+    scriptPromiseCache = {};
+};
 module.exports = loadScript;
 
 },{"./lib/promise":1}],3:[function(_dereq_,module,exports){
-(function (global){
-'use strict';
+module.exports = _dereq_("./dist/load-script");
 
+},{"./dist/load-script":2}],4:[function(_dereq_,module,exports){
+"use strict";
 module.exports = function isAndroid(ua) {
-  ua = ua || global.navigator.userAgent;
-
-  return /Android/.test(ua);
+    ua = ua || window.navigator.userAgent;
+    return /Android/.test(ua);
 };
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],4:[function(_dereq_,module,exports){
-(function (global){
-'use strict';
-
-module.exports = function isChromeOS(ua) {
-  ua = ua || global.navigator.userAgent;
-
-  return /CrOS/i.test(ua);
-};
-
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],5:[function(_dereq_,module,exports){
-'use strict';
+"use strict";
+module.exports = function isChromeOS(ua) {
+    ua = ua || window.navigator.userAgent;
+    return /CrOS/i.test(ua);
+};
 
-var isEdge = _dereq_('./is-edge');
-var isSamsung = _dereq_('./is-samsung');
-
+},{}],6:[function(_dereq_,module,exports){
+"use strict";
+var isEdge = _dereq_("./is-edge");
+var isSamsung = _dereq_("./is-samsung");
 module.exports = function isChrome(ua) {
-  ua = ua || navigator.userAgent;
-
-  return (ua.indexOf('Chrome') !== -1 || ua.indexOf('CriOS') !== -1) && !isEdge(ua) && !isSamsung(ua);
+    ua = ua || window.navigator.userAgent;
+    return ((ua.indexOf("Chrome") !== -1 || ua.indexOf("CriOS") !== -1) &&
+        !isEdge(ua) &&
+        !isSamsung(ua));
 };
 
-},{"./is-edge":6,"./is-samsung":14}],6:[function(_dereq_,module,exports){
-'use strict';
-
+},{"./is-edge":7,"./is-samsung":15}],7:[function(_dereq_,module,exports){
+"use strict";
 module.exports = function isEdge(ua) {
-  ua = ua || navigator.userAgent;
-
-  return ua.indexOf('Edge/') !== -1;
+    ua = ua || window.navigator.userAgent;
+    return ua.indexOf("Edge/") !== -1;
 };
 
-},{}],7:[function(_dereq_,module,exports){
-(function (global){
-'use strict';
-
-module.exports = function isFirefox(ua) {
-  ua = ua || global.navigator.userAgent;
-
-  return /Firefox/i.test(ua);
-};
-
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],8:[function(_dereq_,module,exports){
-(function (global){
-'use strict';
+"use strict";
+module.exports = function isFirefox(ua) {
+    ua = ua || window.navigator.userAgent;
+    return /Firefox/i.test(ua);
+};
 
-var isIE11 = _dereq_('./is-ie11');
-
+},{}],9:[function(_dereq_,module,exports){
+"use strict";
+var isIE11 = _dereq_("./is-ie11");
 module.exports = function isIE(ua) {
-  ua = ua || global.navigator.userAgent;
-
-  return ua.indexOf('MSIE') !== -1 || isIE11(ua);
+    ua = ua || window.navigator.userAgent;
+    return ua.indexOf("MSIE") !== -1 || isIE11(ua);
 };
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./is-ie11":10}],9:[function(_dereq_,module,exports){
-'use strict';
-
+},{"./is-ie11":11}],10:[function(_dereq_,module,exports){
+"use strict";
 module.exports = function isIe10(ua) {
-  ua = ua || navigator.userAgent;
-
-  return ua.indexOf('MSIE 10') !== -1;
-};
-
-},{}],10:[function(_dereq_,module,exports){
-'use strict';
-
-module.exports = function isIe11(ua) {
-  ua = ua || navigator.userAgent;
-
-  return ua.indexOf('Trident/7') !== -1;
+    ua = ua || window.navigator.userAgent;
+    return ua.indexOf("MSIE 10") !== -1;
 };
 
 },{}],11:[function(_dereq_,module,exports){
-'use strict';
-
-module.exports = function isIe9(ua) {
-  ua = ua || navigator.userAgent;
-
-  return ua.indexOf('MSIE 9') !== -1;
+"use strict";
+module.exports = function isIe11(ua) {
+    ua = ua || window.navigator.userAgent;
+    return ua.indexOf("Trident/7") !== -1;
 };
 
 },{}],12:[function(_dereq_,module,exports){
-(function (global){
-'use strict';
+"use strict";
+module.exports = function isIe9(ua) {
+    ua = ua || window.navigator.userAgent;
+    return ua.indexOf("MSIE 9") !== -1;
+};
 
-var isIos = _dereq_('./is-ios');
-
+},{}],13:[function(_dereq_,module,exports){
+"use strict";
+var isIos = _dereq_("./is-ios");
 // The Google Search iOS app is technically a webview and doesn't support popups.
 function isGoogleSearchApp(ua) {
-  return /\bGSA\b/.test(ua);
+    return /\bGSA\b/.test(ua);
 }
-
 module.exports = function isIosWebview(ua) {
-  ua = ua || global.navigator.userAgent;
-  if (isIos(ua)) {
-    if (isGoogleSearchApp(ua)) {
-      return true;
+    ua = ua || window.navigator.userAgent;
+    if (isIos(ua)) {
+        if (isGoogleSearchApp(ua)) {
+            return true;
+        }
+        return /.+AppleWebKit(?!.*Safari)/.test(ua);
     }
-
-    return /.+AppleWebKit(?!.*Safari)/.test(ua);
-  }
-
-  return false;
+    return false;
 };
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./is-ios":13}],13:[function(_dereq_,module,exports){
-(function (global){
-'use strict';
-
+},{"./is-ios":14}],14:[function(_dereq_,module,exports){
+"use strict";
 module.exports = function isIos(ua) {
-  ua = ua || global.navigator.userAgent;
-
-  return /iPhone|iPod|iPad/i.test(ua);
+    ua = ua || window.navigator.userAgent;
+    return /iPhone|iPod|iPad/i.test(ua);
 };
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],14:[function(_dereq_,module,exports){
-(function (global){
-'use strict';
-
-module.exports = function isSamsungBrowser(ua) {
-  ua = ua || global.navigator.userAgent;
-
-  return /SamsungBrowser/i.test(ua);
-};
-
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],15:[function(_dereq_,module,exports){
-'use strict';
-
-function _classesOf(element) {
-  return element.className.trim().split(/\s+/);
-}
-
-function add(element) {
-  var toAdd = Array.prototype.slice.call(arguments, 1);
-  var className = _classesOf(element).filter(function (classname) {
-    return toAdd.indexOf(classname) === -1;
-  }).concat(toAdd).join(' ');
-
-  element.className = className;
-}
-
-function remove(element) {
-  var toRemove = Array.prototype.slice.call(arguments, 1);
-  var className = _classesOf(element).filter(function (classname) {
-    return toRemove.indexOf(classname) === -1;
-  }).join(' ');
-
-  element.className = className;
-}
-
-function toggle(element, classname, adding) {
-  if (adding) {
-    add(element, classname);
-  } else {
-    remove(element, classname);
-  }
-}
-
-module.exports = {
-  add: add,
-  remove: remove,
-  toggle: toggle
+"use strict";
+module.exports = function isSamsungBrowser(ua) {
+    ua = ua || window.navigator.userAgent;
+    return /SamsungBrowser/i.test(ua);
 };
 
 },{}],16:[function(_dereq_,module,exports){
-'use strict';
+module.exports = _dereq_("./dist/is-android");
 
-function EventEmitter() {
-  this._events = {};
+},{"./dist/is-android":4}],17:[function(_dereq_,module,exports){
+module.exports = _dereq_("./dist/is-chrome-os");
+
+},{"./dist/is-chrome-os":5}],18:[function(_dereq_,module,exports){
+module.exports = _dereq_("./dist/is-chrome");
+
+},{"./dist/is-chrome":6}],19:[function(_dereq_,module,exports){
+module.exports = _dereq_("./dist/is-edge");
+
+},{"./dist/is-edge":7}],20:[function(_dereq_,module,exports){
+module.exports = _dereq_("./dist/is-firefox");
+
+},{"./dist/is-firefox":8}],21:[function(_dereq_,module,exports){
+module.exports = _dereq_("./dist/is-ie");
+
+},{"./dist/is-ie":9}],22:[function(_dereq_,module,exports){
+module.exports = _dereq_("./dist/is-ie10");
+
+},{"./dist/is-ie10":10}],23:[function(_dereq_,module,exports){
+module.exports = _dereq_("./dist/is-ie9");
+
+},{"./dist/is-ie9":12}],24:[function(_dereq_,module,exports){
+module.exports = _dereq_("./dist/is-ios-webview");
+
+},{"./dist/is-ios-webview":13}],25:[function(_dereq_,module,exports){
+module.exports = _dereq_("./dist/is-ios");
+
+},{"./dist/is-ios":14}],26:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.toggle = exports.remove = exports.add = void 0;
+function _classesOf(element) {
+    return element.className.trim().split(/\s+/);
 }
+function add(element) {
+    var toAdd = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        toAdd[_i - 1] = arguments[_i];
+    }
+    element.className = _classesOf(element)
+        .filter(function (classname) { return toAdd.indexOf(classname) === -1; })
+        .concat(toAdd)
+        .join(" ");
+}
+exports.add = add;
+function remove(element) {
+    var toRemove = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        toRemove[_i - 1] = arguments[_i];
+    }
+    element.className = _classesOf(element)
+        .filter(function (classname) { return toRemove.indexOf(classname) === -1; })
+        .join(" ");
+}
+exports.remove = remove;
+function toggle(element, classname, adding) {
+    if (adding) {
+        add(element, classname);
+    }
+    else {
+        remove(element, classname);
+    }
+}
+exports.toggle = toggle;
 
-EventEmitter.prototype.on = function (event, callback) {
-  if (this._events[event]) {
-    this._events[event].push(callback);
-  } else {
-    this._events[event] = [callback];
-  }
-};
-
-EventEmitter.prototype.off = function (event, callback) {
-  var eventCallbacks = this._events[event];
-  var indexOfCallback;
-
-  if (!eventCallbacks) {
-    return;
-  }
-
-  indexOfCallback = eventCallbacks.indexOf(callback);
-
-  eventCallbacks.splice(indexOfCallback, 1);
-};
-
-EventEmitter.prototype._emit = function (event) {
-  var args;
-  var eventCallbacks = this._events[event];
-
-  if (!eventCallbacks) { return; }
-
-  args = Array.prototype.slice.call(arguments, 1);
-
-  eventCallbacks.forEach(function (callback) {
-    callback.apply(null, args);
-  });
-};
-
-EventEmitter.prototype.hasListener = function (event) {
-  var eventCallbacks = this._events[event];
-
-  if (!eventCallbacks) {
-    return false;
-  }
-
-  return eventCallbacks.length > 0;
-};
-
-EventEmitter.createChild = function (ChildObject) {
-  ChildObject.prototype = Object.create(EventEmitter.prototype, {
-    constructor: ChildObject
-  });
-};
-
+},{}],27:[function(_dereq_,module,exports){
+"use strict";
+var EventEmitter = /** @class */ (function () {
+    function EventEmitter() {
+        this._events = {};
+    }
+    EventEmitter.prototype.on = function (event, callback) {
+        if (this._events[event]) {
+            this._events[event].push(callback);
+        }
+        else {
+            this._events[event] = [callback];
+        }
+    };
+    EventEmitter.prototype.off = function (event, callback) {
+        var eventCallbacks = this._events[event];
+        if (!eventCallbacks) {
+            return;
+        }
+        var indexOfCallback = eventCallbacks.indexOf(callback);
+        eventCallbacks.splice(indexOfCallback, 1);
+    };
+    EventEmitter.prototype._emit = function (event) {
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
+        var eventCallbacks = this._events[event];
+        if (!eventCallbacks) {
+            return;
+        }
+        eventCallbacks.forEach(function (callback) {
+            callback.apply(void 0, args);
+        });
+    };
+    EventEmitter.prototype.hasListener = function (event) {
+        var eventCallbacks = this._events[event];
+        if (!eventCallbacks) {
+            return false;
+        }
+        return eventCallbacks.length > 0;
+    };
+    EventEmitter.createChild = function (ChildObject) {
+        ChildObject.prototype = Object.create(EventEmitter.prototype, {
+            constructor: ChildObject,
+        });
+    };
+    return EventEmitter;
+}());
 module.exports = EventEmitter;
 
-},{}],17:[function(_dereq_,module,exports){
-(function (global){
-'use strict';
-
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#Methods
-var PROMISE_METHODS = [
-  'all',
-  'allSettled',
-  'race',
-  'reject',
-  'resolve'
-];
-
-function shouldCatchExceptions(options) {
-  if (options.hasOwnProperty('suppressUnhandledPromiseMessage')) {
-    return Boolean(options.suppressUnhandledPromiseMessage);
-  }
-
-  return Boolean(ExtendedPromise.suppressUnhandledPromiseMessage);
-}
-
-function ExtendedPromise(options) {
-  var self = this;
-
-  if (typeof options === 'function') {
-    return new ExtendedPromise.Promise(options);
-  }
-
-  this._promise = new ExtendedPromise.Promise(function (resolve, reject) {
-    self._resolveFunction = resolve;
-    self._rejectFunction = reject;
-  });
-
-  options = options || {};
-  this._onResolve = options.onResolve || ExtendedPromise.defaultOnResolve;
-  this._onReject = options.onReject || ExtendedPromise.defaultOnReject;
-
-  if (shouldCatchExceptions(options)) {
-    this._promise.catch(function () {
-      // prevents unhandled promise rejection warning
-      // in the console for extended promises that
-      // that catch the error in an asynchronous manner
-    });
-  }
-
-  this._resetState();
-
-  this._promise.resolve = this.resolve.bind(this);
-  this._promise.reject = this.reject.bind(this);
-
-  return this._promise;
-}
-
-PROMISE_METHODS.forEach(function (method) {
-  ExtendedPromise[method] = function () {
-    var args = Array.prototype.slice.call(arguments);
-
-    return ExtendedPromise.Promise[method].apply(ExtendedPromise.Promise, args);
-  };
-});
-
-ExtendedPromise.setPromise = function (PromiseClass) {
-  ExtendedPromise.Promise = PromiseClass;
-};
-
-// default to system level Promise, but allow it to be overwritten
-ExtendedPromise.setPromise(global.Promise);
-
-ExtendedPromise.defaultOnResolve = function (result) {
-  return ExtendedPromise.Promise.resolve(result);
-};
-
-ExtendedPromise.defaultOnReject = function (err) {
-  return ExtendedPromise.Promise.reject(err);
-};
-
-ExtendedPromise.prototype.resolve = function (arg) {
-  var self = this;
-
-  if (this._promise.isFulfilled) {
-    return this._promise;
-  }
-  this._setResolved();
-
-  ExtendedPromise.Promise.resolve().then(function () {
-    return self._onResolve(arg);
-  }).then(this._resolveFunction).catch(function (err) {
-    self._resetState();
-
-    self._promise.reject(err);
-  });
-
-  return this._promise;
-};
-
-ExtendedPromise.prototype.reject = function (arg) {
-  var self = this;
-
-  if (this._promise.isFulfilled) {
-    return this._promise;
-  }
-  this._setRejected();
-
-  ExtendedPromise.Promise.resolve().then(function () {
-    return self._onReject(arg);
-  }).then(function (result) {
-    self._setResolved();
-
-    self._resolveFunction(result);
-  }).catch(this._rejectFunction);
-
-  return this._promise;
-};
-
-ExtendedPromise.prototype._resetState = function () {
-  this._promise.isFulfilled = false;
-  this._promise.isResolved = false;
-  this._promise.isRejected = false;
-};
-
-ExtendedPromise.prototype._setResolved = function () {
-  this._promise.isFulfilled = true;
-  this._promise.isResolved = true;
-  this._promise.isRejected = false;
-};
-
-ExtendedPromise.prototype._setRejected = function () {
-  this._promise.isFulfilled = true;
-  this._promise.isResolved = false;
-  this._promise.isRejected = true;
-};
-
+},{}],28:[function(_dereq_,module,exports){
+"use strict";
+var GlobalPromise = (typeof Promise !== "undefined"
+    ? Promise // eslint-disable-line no-undef
+    : null);
+var ExtendedPromise = /** @class */ (function () {
+    function ExtendedPromise(options) {
+        var _this = this;
+        if (typeof options === "function") {
+            this._promise = new ExtendedPromise.Promise(options);
+            return;
+        }
+        this._promise = new ExtendedPromise.Promise(function (resolve, reject) {
+            _this._resolveFunction = resolve;
+            _this._rejectFunction = reject;
+        });
+        options = options || {};
+        this._onResolve = options.onResolve || ExtendedPromise.defaultOnResolve;
+        this._onReject = options.onReject || ExtendedPromise.defaultOnReject;
+        if (ExtendedPromise.shouldCatchExceptions(options)) {
+            this._promise.catch(function () {
+                // prevents unhandled promise rejection warning
+                // in the console for extended promises that
+                // that catch the error in an asynchronous manner
+            });
+        }
+        this._resetState();
+    }
+    ExtendedPromise.defaultOnResolve = function (result) {
+        return ExtendedPromise.Promise.resolve(result);
+    };
+    ExtendedPromise.defaultOnReject = function (err) {
+        return ExtendedPromise.Promise.reject(err);
+    };
+    ExtendedPromise.setPromise = function (PromiseClass) {
+        ExtendedPromise.Promise = PromiseClass;
+    };
+    ExtendedPromise.shouldCatchExceptions = function (options) {
+        if (options.hasOwnProperty("suppressUnhandledPromiseMessage")) {
+            return Boolean(options.suppressUnhandledPromiseMessage);
+        }
+        return Boolean(ExtendedPromise.suppressUnhandledPromiseMessage);
+    };
+    // start Promise methods documented in:
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#Methods
+    ExtendedPromise.all = function (args) {
+        return ExtendedPromise.Promise.all(args);
+    };
+    ExtendedPromise.allSettled = function (args) {
+        return ExtendedPromise.Promise.allSettled(args);
+    };
+    ExtendedPromise.race = function (args) {
+        return ExtendedPromise.Promise.race(args);
+    };
+    ExtendedPromise.reject = function (arg) {
+        return ExtendedPromise.Promise.reject(arg);
+    };
+    ExtendedPromise.resolve = function (arg) {
+        return ExtendedPromise.Promise.resolve(arg);
+    };
+    ExtendedPromise.prototype.then = function () {
+        var _a;
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        return (_a = this._promise).then.apply(_a, args);
+    };
+    ExtendedPromise.prototype.catch = function () {
+        var _a;
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        return (_a = this._promise).catch.apply(_a, args);
+    };
+    ExtendedPromise.prototype.resolve = function (arg) {
+        var _this = this;
+        if (this.isFulfilled) {
+            return this;
+        }
+        this._setResolved();
+        ExtendedPromise.Promise.resolve()
+            .then(function () {
+            return _this._onResolve(arg);
+        })
+            .then(function (argForResolveFunction) {
+            _this._resolveFunction(argForResolveFunction);
+        })
+            .catch(function (err) {
+            _this._resetState();
+            _this.reject(err);
+        });
+        return this;
+    };
+    ExtendedPromise.prototype.reject = function (arg) {
+        var _this = this;
+        if (this.isFulfilled) {
+            return this;
+        }
+        this._setRejected();
+        ExtendedPromise.Promise.resolve()
+            .then(function () {
+            return _this._onReject(arg);
+        })
+            .then(function (result) {
+            _this._setResolved();
+            _this._resolveFunction(result);
+        })
+            .catch(function (err) {
+            return _this._rejectFunction(err);
+        });
+        return this;
+    };
+    ExtendedPromise.prototype._resetState = function () {
+        this.isFulfilled = false;
+        this.isResolved = false;
+        this.isRejected = false;
+    };
+    ExtendedPromise.prototype._setResolved = function () {
+        this.isFulfilled = true;
+        this.isResolved = true;
+        this.isRejected = false;
+    };
+    ExtendedPromise.prototype._setRejected = function () {
+        this.isFulfilled = true;
+        this.isResolved = false;
+        this.isRejected = true;
+    };
+    ExtendedPromise.Promise = GlobalPromise;
+    return ExtendedPromise;
+}());
 module.exports = ExtendedPromise;
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],18:[function(_dereq_,module,exports){
-'use strict';
-
-var setAttributes = _dereq_('./lib/set-attributes');
-var defaultAttributes = _dereq_('./lib/default-attributes');
-var assign = _dereq_('./lib/assign');
-
-module.exports = function createFrame(options) {
-  var iframe = document.createElement('iframe');
-  var config = assign({}, defaultAttributes, options);
-
-  if (config.style && typeof config.style !== 'string') {
-    assign(iframe.style, config.style);
-    delete config.style;
-  }
-
-  setAttributes(iframe, config);
-
-  if (!iframe.getAttribute('id')) {
-    iframe.id = iframe.name;
-  }
-
-  return iframe;
-};
-
-},{"./lib/assign":19,"./lib/default-attributes":20,"./lib/set-attributes":21}],19:[function(_dereq_,module,exports){
-'use strict';
-
-module.exports = function assign(target) {
-  var objs = Array.prototype.slice.call(arguments, 1);
-
-  objs.forEach(function (obj) {
-    if (typeof obj !== 'object') { return; }
-
-    Object.keys(obj).forEach(function (key) {
-      target[key] = obj[key];
-    });
-  });
-
-  return target;
-}
-
-},{}],20:[function(_dereq_,module,exports){
-'use strict';
-
-module.exports = {
-  src: 'about:blank',
-  frameBorder: 0,
-  allowtransparency: true,
-  scrolling: 'no'
-};
-
-},{}],21:[function(_dereq_,module,exports){
-'use strict';
-
-module.exports = function setAttributes(element, attributes) {
-  var value;
-
-  for (var key in attributes) {
-    if (attributes.hasOwnProperty(key)) {
-      value = attributes[key];
-
-      if (value == null) {
-        element.removeAttribute(key);
-      } else {
-        element.setAttribute(key, value);
-      }
-    }
-  }
-};
-
-},{}],22:[function(_dereq_,module,exports){
-'use strict';
-
-function deferred(fn) {
-  return function () {
-    // IE9 doesn't support passing arguments to setTimeout so we have to emulate it.
-    var args = arguments;
-
-    setTimeout(function () {
-      try {
-        fn.apply(null, args);
-      } catch (err) {
-        /* eslint-disable no-console */
-        console.log('Error in callback function');
-        console.log(err);
-        /* eslint-enable no-console */
-      }
-    }, 1);
-  };
-}
-
-module.exports = deferred;
-
-},{}],23:[function(_dereq_,module,exports){
-'use strict';
-
-function once(fn) {
-  var called = false;
-
-  return function () {
-    if (!called) {
-      called = true;
-      fn.apply(null, arguments);
-    }
-  };
-}
-
-module.exports = once;
-
-},{}],24:[function(_dereq_,module,exports){
-'use strict';
-
-function promiseOrCallback(promise, callback) { // eslint-disable-line consistent-return
-  if (callback) {
-    promise
-      .then(function (data) {
-        callback(null, data);
-      })
-      .catch(function (err) {
-        callback(err);
-      });
-  } else {
-    return promise;
-  }
-}
-
-module.exports = promiseOrCallback;
-
-},{}],25:[function(_dereq_,module,exports){
-'use strict';
-
-var deferred = _dereq_('./lib/deferred');
-var once = _dereq_('./lib/once');
-var promiseOrCallback = _dereq_('./lib/promise-or-callback');
-
-function wrapPromise(fn) {
-  return function () {
-    var callback;
-    var args = Array.prototype.slice.call(arguments);
-    var lastArg = args[args.length - 1];
-
-    if (typeof lastArg === 'function') {
-      callback = args.pop();
-      callback = once(deferred(callback));
-    }
-
-    return promiseOrCallback(fn.apply(this, args), callback); // eslint-disable-line no-invalid-this
-  };
-}
-
-wrapPromise.wrapPrototype = function (target, options) {
-  var methods, ignoreMethods, includePrivateMethods;
-
-  options = options || {};
-  ignoreMethods = options.ignoreMethods || [];
-  includePrivateMethods = options.transformPrivateMethods === true;
-
-  methods = Object.getOwnPropertyNames(target.prototype).filter(function (method) {
-    var isNotPrivateMethod;
-    var isNonConstructorFunction = method !== 'constructor' &&
-      typeof target.prototype[method] === 'function';
-    var isNotAnIgnoredMethod = ignoreMethods.indexOf(method) === -1;
-
-    if (includePrivateMethods) {
-      isNotPrivateMethod = true;
-    } else {
-      isNotPrivateMethod = method.charAt(0) !== '_';
-    }
-
-    return isNonConstructorFunction &&
-      isNotPrivateMethod &&
-      isNotAnIgnoredMethod;
-  });
-
-  methods.forEach(function (method) {
-    var original = target.prototype[method];
-
-    target.prototype[method] = wrapPromise(original);
-  });
-
-  return target;
-};
-
-module.exports = wrapPromise;
-
-},{"./lib/deferred":22,"./lib/once":23,"./lib/promise-or-callback":24}],26:[function(_dereq_,module,exports){
-'use strict';
-
-var types = _dereq_('./lib/card-types');
-var clone = _dereq_('./lib/clone');
-var findBestMatch = _dereq_('./lib/find-best-match');
-var isValidInputType = _dereq_('./lib/is-valid-input-type');
-var addMatchingCardsToResults = _dereq_('./lib/add-matching-cards-to-results');
-
-var testOrder;
-var customCards = {};
-
-var cardNames = {
-  VISA: 'visa',
-  MASTERCARD: 'mastercard',
-  AMERICAN_EXPRESS: 'american-express',
-  DINERS_CLUB: 'diners-club',
-  DISCOVER: 'discover',
-  JCB: 'jcb',
-  UNIONPAY: 'unionpay',
-  MAESTRO: 'maestro',
-  ELO: 'elo',
-  MIR: 'mir',
-  HIPER: 'hiper',
-  HIPERCARD: 'hipercard'
-};
-
-var ORIGINAL_TEST_ORDER = [
-  cardNames.VISA,
-  cardNames.MASTERCARD,
-  cardNames.AMERICAN_EXPRESS,
-  cardNames.DINERS_CLUB,
-  cardNames.DISCOVER,
-  cardNames.JCB,
-  cardNames.UNIONPAY,
-  cardNames.MAESTRO,
-  cardNames.ELO,
-  cardNames.MIR,
-  cardNames.HIPER,
-  cardNames.HIPERCARD
-];
-
-testOrder = clone(ORIGINAL_TEST_ORDER);
-
-function findType(type) {
-  return customCards[type] || types[type];
-}
-
-function getAllCardTypes() {
-  return testOrder.map(function (type) {
-    return clone(findType(type));
-  });
-}
-
-function getCardPosition(name, ignoreErrorForNotExisting) {
-  var position = testOrder.indexOf(name);
-
-  if (!ignoreErrorForNotExisting && position === -1) {
-    throw new Error('"' + name + '" is not a supported card type.');
-  }
-
-  return position;
-}
-
-function creditCardType(cardNumber) {
-  var bestMatch;
-  var results = [];
-
-  if (!isValidInputType(cardNumber)) {
-    return [];
-  }
-
-  if (cardNumber.length === 0) {
-    return getAllCardTypes(testOrder);
-  }
-
-  testOrder.forEach(function (type) {
-    var cardConfiguration = findType(type);
-
-    addMatchingCardsToResults(cardNumber, cardConfiguration, results);
-  });
-
-  bestMatch = findBestMatch(results);
-
-  if (bestMatch) {
-    return [bestMatch];
-  }
-
-  return results;
-}
-
-creditCardType.getTypeInfo = function (type) {
-  return clone(findType(type));
-};
-
-creditCardType.removeCard = function (name) {
-  var position = getCardPosition(name);
-
-  testOrder.splice(position, 1);
-};
-
-creditCardType.addCard = function (config) {
-  var existingCardPosition = getCardPosition(config.type, true);
-
-  customCards[config.type] = config;
-
-  if (existingCardPosition === -1) {
-    testOrder.push(config.type);
-  }
-};
-
-creditCardType.updateCard = function (cardType, updates) {
-  var clonedCard;
-  var originalObject = customCards[cardType] || types[cardType];
-
-  if (!originalObject) {
-    throw new Error('"' + cardType + '" is not a recognized type. Use `addCard` instead.');
-  }
-
-  if (updates.type && originalObject.type !== updates.type) {
-    throw new Error('Cannot overwrite type parameter.');
-  }
-
-  clonedCard = clone(originalObject, true);
-
-  Object.keys(clonedCard).forEach(function (key) {
-    if (updates[key]) {
-      clonedCard[key] = updates[key];
-    }
-  });
-
-  customCards[clonedCard.type] = clonedCard;
-};
-
-creditCardType.changeOrder = function (name, position) {
-  var currentPosition = getCardPosition(name);
-
-  testOrder.splice(currentPosition, 1);
-  testOrder.splice(position, 0, name);
-};
-
-creditCardType.resetModifications = function () {
-  testOrder = clone(ORIGINAL_TEST_ORDER);
-  customCards = {};
-};
-
-creditCardType.types = cardNames;
-
-module.exports = creditCardType;
-
-},{"./lib/add-matching-cards-to-results":27,"./lib/card-types":28,"./lib/clone":29,"./lib/find-best-match":30,"./lib/is-valid-input-type":31}],27:[function(_dereq_,module,exports){
-'use strict';
-
-var clone = _dereq_('./clone');
-var matches = _dereq_('./matches');
-
-function addMatchingCardsToResults(cardNumber, cardConfiguration, results) {
-  var i, pattern, patternLength, clonedCardConfiguration;
-
-  for (i = 0; i < cardConfiguration.patterns.length; i++) {
-    pattern = cardConfiguration.patterns[i];
-
-    if (!matches(cardNumber, pattern)) {
-      continue;
-    }
-
-    clonedCardConfiguration = clone(cardConfiguration);
-
-    if (Array.isArray(pattern)) {
-      patternLength = String(pattern[0]).length;
-    } else {
-      patternLength = String(pattern).length;
-    }
-
-    if (cardNumber.length >= patternLength) {
-      clonedCardConfiguration.matchStrength = patternLength;
-    }
-
-    results.push(clonedCardConfiguration);
-    break;
-  }
-}
-
-module.exports = addMatchingCardsToResults;
-
-},{"./clone":29,"./matches":32}],28:[function(_dereq_,module,exports){
-'use strict';
-
-var cardTypes = {
-  visa: {
-    niceType: 'Visa',
-    type: 'visa',
-    patterns: [
-      4
-    ],
-    gaps: [4, 8, 12],
-    lengths: [16, 18, 19],
-    code: {
-      name: 'CVV',
-      size: 3
-    }
-  },
-  mastercard: {
-    niceType: 'Mastercard',
-    type: 'mastercard',
-    patterns: [
-      [51, 55],
-      [2221, 2229],
-      [223, 229],
-      [23, 26],
-      [270, 271],
-      2720
-    ],
-    gaps: [4, 8, 12],
-    lengths: [16],
-    code: {
-      name: 'CVC',
-      size: 3
-    }
-  },
-  'american-express': {
-    niceType: 'American Express',
-    type: 'american-express',
-    patterns: [
-      34,
-      37
-    ],
-    gaps: [4, 10],
-    lengths: [15],
-    code: {
-      name: 'CID',
-      size: 4
-    }
-  },
-  'diners-club': {
-    niceType: 'Diners Club',
-    type: 'diners-club',
-    patterns: [
-      [300, 305],
-      36,
-      38,
-      39
-    ],
-    gaps: [4, 10],
-    lengths: [14, 16, 19],
-    code: {
-      name: 'CVV',
-      size: 3
-    }
-  },
-  discover: {
-    niceType: 'Discover',
-    type: 'discover',
-    patterns: [
-      6011,
-      [644, 649],
-      65
-    ],
-    gaps: [4, 8, 12],
-    lengths: [16, 19],
-    code: {
-      name: 'CID',
-      size: 3
-    }
-  },
-  jcb: {
-    niceType: 'JCB',
-    type: 'jcb',
-    patterns: [
-      2131,
-      1800,
-      [3528, 3589]
-    ],
-    gaps: [4, 8, 12],
-    lengths: [16, 17, 18, 19],
-    code: {
-      name: 'CVV',
-      size: 3
-    }
-  },
-  unionpay: {
-    niceType: 'UnionPay',
-    type: 'unionpay',
-    patterns: [
-      620,
-      [624, 626],
-      [62100, 62182],
-      [62184, 62187],
-      [62185, 62197],
-      [62200, 62205],
-      [622010, 622999],
-      622018,
-      [622019, 622999],
-      [62207, 62209],
-      [622126, 622925],
-      [623, 626],
-      6270,
-      6272,
-      6276,
-      [627700, 627779],
-      [627781, 627799],
-      [6282, 6289],
-      6291,
-      6292,
-      810,
-      [8110, 8131],
-      [8132, 8151],
-      [8152, 8163],
-      [8164, 8171]
-    ],
-    gaps: [4, 8, 12],
-    lengths: [14, 15, 16, 17, 18, 19],
-    code: {
-      name: 'CVN',
-      size: 3
-    }
-  },
-  maestro: {
-    niceType: 'Maestro',
-    type: 'maestro',
-    patterns: [
-      493698,
-      [500000, 506698],
-      [506779, 508999],
-      [56, 59],
-      63,
-      67,
-      6
-    ],
-    gaps: [4, 8, 12],
-    lengths: [12, 13, 14, 15, 16, 17, 18, 19],
-    code: {
-      name: 'CVC',
-      size: 3
-    }
-  },
-  elo: {
-    niceType: 'Elo',
-    type: 'elo',
-    patterns: [
-      401178,
-      401179,
-      438935,
-      457631,
-      457632,
-      431274,
-      451416,
-      457393,
-      504175,
-      [506699, 506778],
-      [509000, 509999],
-      627780,
-      636297,
-      636368,
-      [650031, 650033],
-      [650035, 650051],
-      [650405, 650439],
-      [650485, 650538],
-      [650541, 650598],
-      [650700, 650718],
-      [650720, 650727],
-      [650901, 650978],
-      [651652, 651679],
-      [655000, 655019],
-      [655021, 655058]
-    ],
-    gaps: [4, 8, 12],
-    lengths: [16],
-    code: {
-      name: 'CVE',
-      size: 3
-    }
-  },
-  mir: {
-    niceType: 'Mir',
-    type: 'mir',
-    patterns: [
-      [2200, 2204]
-    ],
-    gaps: [4, 8, 12],
-    lengths: [16, 17, 18, 19],
-    code: {
-      name: 'CVP2',
-      size: 3
-    }
-  },
-  hiper: {
-    niceType: 'Hiper',
-    type: 'hiper',
-    patterns: [
-      637095,
-      637568,
-      637599,
-      637609,
-      637612
-    ],
-    gaps: [4, 8, 12],
-    lengths: [16],
-    code: {
-      name: 'CVC',
-      size: 3
-    }
-  },
-  hipercard: {
-    niceType: 'Hipercard',
-    type: 'hipercard',
-    patterns: [
-      606282
-    ],
-    gaps: [4, 8, 12],
-    lengths: [16],
-    code: {
-      name: 'CVC',
-      size: 3
-    }
-  }
-};
-
-module.exports = cardTypes;
-
 },{}],29:[function(_dereq_,module,exports){
-'use strict';
-
-function clone(originalObject) {
-  var dupe;
-
-  if (!originalObject) { return null; }
-
-  dupe = JSON.parse(JSON.stringify(originalObject));
-
-  return dupe;
-}
-
-module.exports = clone;
-
-},{}],30:[function(_dereq_,module,exports){
-'use strict';
-
-function hasEnoughResultsToDetermineBestMatch(results) {
-  var numberOfResultsWithMaxStrengthProperty = results.filter(function (result) {
-    return result.matchStrength;
-  }).length;
-
-  // if all possible results have a maxStrength property
-  // that means the card number is sufficiently long
-  // enough to determine conclusively what the type is
-  return numberOfResultsWithMaxStrengthProperty > 0 &&
-    numberOfResultsWithMaxStrengthProperty === results.length;
-}
-
-function findBestMatch(results) {
-  if (!hasEnoughResultsToDetermineBestMatch(results)) {
-    return;
-  }
-
-  return results.reduce(function (bestMatch, result) { // eslint-disable-line consistent-return
-    if (!bestMatch) {
-      return result;
+"use strict";
+var set_attributes_1 = _dereq_("./lib/set-attributes");
+var default_attributes_1 = _dereq_("./lib/default-attributes");
+var assign_1 = _dereq_("./lib/assign");
+module.exports = function createFrame(options) {
+    if (options === void 0) { options = {}; }
+    var iframe = document.createElement("iframe");
+    var config = assign_1.assign({}, default_attributes_1.defaultAttributes, options);
+    if (config.style && typeof config.style !== "string") {
+        assign_1.assign(iframe.style, config.style);
+        delete config.style;
     }
-
-    // if the current best match pattern is less specific
-    // than this result, set the result as the new best match
-    if (bestMatch.matchStrength < result.matchStrength) {
-      return result;
+    set_attributes_1.setAttributes(iframe, config);
+    if (!iframe.getAttribute("id")) {
+        iframe.id = iframe.name;
     }
+    return iframe;
+};
 
-    return bestMatch;
-  });
+},{"./lib/assign":30,"./lib/default-attributes":31,"./lib/set-attributes":32}],30:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.assign = void 0;
+function assign(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+target) {
+    var objs = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        objs[_i - 1] = arguments[_i];
+    }
+    objs.forEach(function (obj) {
+        if (typeof obj !== "object") {
+            return;
+        }
+        Object.keys(obj).forEach(function (key) {
+            target[key] = obj[key];
+        });
+    });
+    return target;
 }
-
-module.exports = findBestMatch;
+exports.assign = assign;
 
 },{}],31:[function(_dereq_,module,exports){
-'use strict';
-
-function isValidInputType(cardNumber) {
-  return typeof cardNumber === 'string' || cardNumber instanceof String;
-}
-
-module.exports = isValidInputType;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.defaultAttributes = void 0;
+exports.defaultAttributes = {
+    src: "about:blank",
+    frameBorder: 0,
+    allowtransparency: true,
+    scrolling: "no",
+};
 
 },{}],32:[function(_dereq_,module,exports){
-'use strict';
-
-// Adapted from https://github.com/polvo-labs/card-type/blob/aaab11f80fa1939bccc8f24905a06ae3cd864356/src/cardType.js#L37-L42
-function matchesRange(cardNumber, min, max) {
-  var maxLengthToCheck = String(min).length;
-  var substr = cardNumber.substr(0, maxLengthToCheck);
-  var integerRepresentationOfCardNumber = parseInt(substr, 10);
-
-  min = parseInt(String(min).substr(0, substr.length), 10);
-  max = parseInt(String(max).substr(0, substr.length), 10);
-
-  return integerRepresentationOfCardNumber >= min && integerRepresentationOfCardNumber <= max;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.setAttributes = void 0;
+function setAttributes(element, 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+attributes) {
+    for (var key in attributes) {
+        if (attributes.hasOwnProperty(key)) {
+            var value = attributes[key];
+            if (value == null) {
+                element.removeAttribute(key);
+            }
+            else {
+                element.setAttribute(key, value);
+            }
+        }
+    }
 }
-
-function matchesPattern(cardNumber, pattern) {
-  pattern = String(pattern);
-
-  return pattern.substring(0, cardNumber.length) === cardNumber.substring(0, pattern.length);
-}
-
-function matches(cardNumber, pattern) {
-  if (Array.isArray(pattern)) {
-    return matchesRange(cardNumber, pattern[0], pattern[1]);
-  }
-
-  return matchesPattern(cardNumber, pattern);
-}
-
-module.exports = matches;
+exports.setAttributes = setAttributes;
 
 },{}],33:[function(_dereq_,module,exports){
-(function (global){
 'use strict';
 
-var win, framebus;
-var popups = [];
-var subscribers = {};
-var prefix = '/*framebus*/';
-
-function include(popup) {
-  if (popup == null) { return false; }
-  if (popup.Window == null) { return false; }
-  if (popup.constructor !== popup.Window) { return false; }
-
-  popups.push(popup);
-  return true;
-}
-
-function target(origin) {
-  var key;
-  var targetedFramebus = {};
-
-  for (key in framebus) {
-    if (!framebus.hasOwnProperty(key)) { continue; }
-
-    targetedFramebus[key] = framebus[key];
-  }
-
-  targetedFramebus._origin = origin || '*';
-
-  return targetedFramebus;
-}
-
-function publish(event) {
-  var payload, args;
-  var origin = _getOrigin(this); // eslint-disable-line no-invalid-this
-
-  if (_isntString(event)) { return false; }
-  if (_isntString(origin)) { return false; }
-
-  args = Array.prototype.slice.call(arguments, 1);
-
-  payload = _packagePayload(event, args, origin);
-  if (payload === false) { return false; }
-
-  _broadcast(win.top || win.self, payload, origin);
-
-  return true;
-}
-
-function subscribe(event, fn) {
-  var origin = _getOrigin(this); // eslint-disable-line no-invalid-this
-
-  if (_subscriptionArgsInvalid(event, fn, origin)) { return false; }
-
-  subscribers[origin] = subscribers[origin] || {};
-  subscribers[origin][event] = subscribers[origin][event] || [];
-  subscribers[origin][event].push(fn);
-
-  return true;
-}
-
-function unsubscribe(event, fn) {
-  var i, subscriberList;
-  var origin = _getOrigin(this); // eslint-disable-line no-invalid-this
-
-  if (_subscriptionArgsInvalid(event, fn, origin)) { return false; }
-
-  subscriberList = subscribers[origin] && subscribers[origin][event];
-  if (!subscriberList) { return false; }
-
-  for (i = 0; i < subscriberList.length; i++) {
-    if (subscriberList[i] === fn) {
-      subscriberList.splice(i, 1);
-      return true;
-    }
-  }
-
-  return false;
-}
-
-function _getOrigin(scope) {
-  return scope && scope._origin || '*';
-}
-
-function _isntString(string) {
-  return typeof string !== 'string';
-}
-
-function _packagePayload(event, args, origin) {
-  var packaged = false;
-  var payload = {
-    event: event,
-    origin: origin
-  };
-  var reply = args[args.length - 1];
-
-  if (typeof reply === 'function') {
-    payload.reply = _subscribeReplier(reply, origin);
-    args = args.slice(0, -1);
-  }
-
-  payload.args = args;
-
-  try {
-    packaged = prefix + JSON.stringify(payload);
-  } catch (e) {
-    throw new Error('Could not stringify event: ' + e.message);
-  }
-  return packaged;
-}
-
-function _unpackPayload(e) {
-  var payload, replyOrigin, replySource, replyEvent;
-
-  if (e.data.slice(0, prefix.length) !== prefix) { return false; }
-
-  try {
-    payload = JSON.parse(e.data.slice(prefix.length));
-  } catch (err) {
-    return false;
-  }
-
-  if (payload.reply != null) {
-    replyOrigin = e.origin;
-    replySource = e.source;
-    replyEvent = payload.reply;
-
-    payload.reply = function reply(data) { // eslint-disable-line consistent-return
-      var replyPayload;
-
-      if (!replySource) { return false; }
-
-      replyPayload = _packagePayload(replyEvent, [data], replyOrigin);
-
-      if (replyPayload === false) { return false; }
-
-      replySource.postMessage(replyPayload, replyOrigin);
-    };
-
-    payload.args.push(payload.reply);
-  }
-
-  return payload;
-}
-
-function _attach(w) {
-  if (win) { return; }
-  win = w || global;
-
-  if (win.addEventListener) {
-    win.addEventListener('message', _onmessage, false);
-  } else if (win.attachEvent) {
-    win.attachEvent('onmessage', _onmessage);
-  } else if (win.onmessage === null) {
-    win.onmessage = _onmessage;
-  } else {
-    win = null;
-  }
-}
-
-// removeIf(production)
-function _detach() {
-  if (win == null) { return; }
-
-  if (win.removeEventListener) {
-    win.removeEventListener('message', _onmessage, false);
-  } else if (win.detachEvent) {
-    win.detachEvent('onmessage', _onmessage);
-  } else if (win.onmessage === _onmessage) {
-    win.onmessage = null;
-  }
-
-  win = null;
-  popups = [];
-  subscribers = {};
-}
-// endRemoveIf(production)
-
-function _uuid() {
+function uuid() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
     var r = Math.random() * 16 | 0;
     var v = c === 'x' ? r : r & 0x3 | 0x8;
@@ -6270,133 +5562,998 @@ function _uuid() {
   });
 }
 
-function _onmessage(e) {
-  var payload;
+module.exports = uuid;
 
-  if (_isntString(e.data)) { return; }
-
-  payload = _unpackPayload(e);
-  if (!payload) { return; }
-
-  _dispatch('*', payload.event, payload.args, e);
-  _dispatch(e.origin, payload.event, payload.args, e);
-  _broadcastPopups(e.data, payload.origin, e.source);
-}
-
-function _dispatch(origin, event, args, e) {
-  var i;
-
-  if (!subscribers[origin]) { return; }
-  if (!subscribers[origin][event]) { return; }
-
-  for (i = 0; i < subscribers[origin][event].length; i++) {
-    subscribers[origin][event][i].apply(e, args);
-  }
-}
-
-function _hasOpener(frame) {
-  if (frame.top !== frame) { return false; }
-  if (frame.opener == null) { return false; }
-  if (frame.opener === frame) { return false; }
-  if (frame.opener.closed === true) { return false; }
-
-  return true;
-}
-
-function _broadcast(frame, payload, origin) {
-  var i = 0;
-  var frameToBroadcastTo;
-
-  try {
-    frame.postMessage(payload, origin);
-
-    if (_hasOpener(frame)) {
-      _broadcast(frame.opener.top, payload, origin);
-    }
-
-    // previously, our max value was frame.frames.length
-    // but frames.length inherits from window.length
-    // which can be overwritten if a developer does
-    // `var length = value;` outside of a function
-    // scope, it'll prevent us from looping through
-    // all the frames. With this, we loop through
-    // until there are no longer any frames
-    while (frameToBroadcastTo = frame.frames[i]) { // eslint-disable-line no-cond-assign
-      _broadcast(frameToBroadcastTo, payload, origin);
-      i++;
-    }
-  } catch (_) { /* ignored */ }
-}
-
-function _broadcastPopups(payload, origin, source) {
-  var i, popup;
-
-  for (i = popups.length - 1; i >= 0; i--) {
-    popup = popups[i];
-
-    if (popup.closed === true) {
-      popups = popups.slice(i, 1);
-    } else if (source !== popup) {
-      _broadcast(popup.top, payload, origin);
-    }
-  }
-}
-
-function _subscribeReplier(fn, origin) {
-  var uuid = _uuid();
-
-  function replier(d, o) {
-    fn(d, o);
-    framebus.target(origin).unsubscribe(uuid, replier);
-  }
-
-  framebus.target(origin).subscribe(uuid, replier);
-  return uuid;
-}
-
-function _subscriptionArgsInvalid(event, fn, origin) {
-  if (_isntString(event)) { return true; }
-  if (typeof fn !== 'function') { return true; }
-  if (_isntString(origin)) { return true; }
-
-  return false;
-}
-
-_attach();
-
-framebus = {
-  target: target,
-  // removeIf(production)
-  _packagePayload: _packagePayload,
-  _unpackPayload: _unpackPayload,
-  _attach: _attach,
-  _detach: _detach,
-  _dispatch: _dispatch,
-  _broadcast: _broadcast,
-  _subscribeReplier: _subscribeReplier,
-  _subscriptionArgsInvalid: _subscriptionArgsInvalid,
-  _onmessage: _onmessage,
-  _uuid: _uuid,
-  _getSubscribers: function () { return subscribers; },
-  _win: function () { return win; },
-  // endRemoveIf(production)
-  include: include,
-  publish: publish,
-  pub: publish,
-  trigger: publish,
-  emit: publish,
-  subscribe: subscribe,
-  sub: subscribe,
-  on: subscribe,
-  unsubscribe: unsubscribe,
-  unsub: unsubscribe,
-  off: unsubscribe
-};
-
-module.exports = framebus;
-
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],34:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+function deferred(fn) {
+    return function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        setTimeout(function () {
+            try {
+                fn.apply(void 0, args);
+            }
+            catch (err) {
+                /* eslint-disable no-console */
+                console.log("Error in callback function");
+                console.log(err);
+                /* eslint-enable no-console */
+            }
+        }, 1);
+    };
+}
+exports.deferred = deferred;
+
+},{}],35:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+function once(fn) {
+    var called = false;
+    return function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        if (!called) {
+            called = true;
+            fn.apply(void 0, args);
+        }
+    };
+}
+exports.once = once;
+
+},{}],36:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/* eslint-disable consistent-return */
+function promiseOrCallback(promise, callback) {
+    if (!callback) {
+        return promise;
+    }
+    promise.then(function (data) { return callback(null, data); }).catch(function (err) { return callback(err); });
+}
+exports.promiseOrCallback = promiseOrCallback;
+
+},{}],37:[function(_dereq_,module,exports){
+"use strict";
+var deferred_1 = _dereq_("./lib/deferred");
+var once_1 = _dereq_("./lib/once");
+var promise_or_callback_1 = _dereq_("./lib/promise-or-callback");
+function wrapPromise(fn) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        var callback;
+        var lastArg = args[args.length - 1];
+        if (typeof lastArg === "function") {
+            callback = args.pop();
+            callback = once_1.once(deferred_1.deferred(callback));
+        }
+        // I know, I know, this looks bad. But it's a quirk of the library that
+        // we need to allow passing the this context to the original function
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore: this has an implicit any
+        return promise_or_callback_1.promiseOrCallback(fn.apply(this, args), callback); // eslint-disable-line no-invalid-this
+    };
+}
+wrapPromise.wrapPrototype = function (target, options) {
+    if (options === void 0) { options = {}; }
+    var ignoreMethods = options.ignoreMethods || [];
+    var includePrivateMethods = options.transformPrivateMethods === true;
+    var methods = Object.getOwnPropertyNames(target.prototype).filter(function (method) {
+        var isNotPrivateMethod;
+        var isNonConstructorFunction = method !== "constructor" &&
+            typeof target.prototype[method] === "function";
+        var isNotAnIgnoredMethod = ignoreMethods.indexOf(method) === -1;
+        if (includePrivateMethods) {
+            isNotPrivateMethod = true;
+        }
+        else {
+            isNotPrivateMethod = method.charAt(0) !== "_";
+        }
+        return (isNonConstructorFunction && isNotPrivateMethod && isNotAnIgnoredMethod);
+    });
+    methods.forEach(function (method) {
+        var original = target.prototype[method];
+        target.prototype[method] = wrapPromise(original);
+    });
+    return target;
+};
+module.exports = wrapPromise;
+
+},{"./lib/deferred":34,"./lib/once":35,"./lib/promise-or-callback":36}],38:[function(_dereq_,module,exports){
+"use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var cardTypes = _dereq_("./lib/card-types");
+var add_matching_cards_to_results_1 = _dereq_("./lib/add-matching-cards-to-results");
+var is_valid_input_type_1 = _dereq_("./lib/is-valid-input-type");
+var find_best_match_1 = _dereq_("./lib/find-best-match");
+var clone_1 = _dereq_("./lib/clone");
+var customCards = {};
+var cardNames = {
+    VISA: "visa",
+    MASTERCARD: "mastercard",
+    AMERICAN_EXPRESS: "american-express",
+    DINERS_CLUB: "diners-club",
+    DISCOVER: "discover",
+    JCB: "jcb",
+    UNIONPAY: "unionpay",
+    MAESTRO: "maestro",
+    ELO: "elo",
+    MIR: "mir",
+    HIPER: "hiper",
+    HIPERCARD: "hipercard",
+};
+var ORIGINAL_TEST_ORDER = [
+    cardNames.VISA,
+    cardNames.MASTERCARD,
+    cardNames.AMERICAN_EXPRESS,
+    cardNames.DINERS_CLUB,
+    cardNames.DISCOVER,
+    cardNames.JCB,
+    cardNames.UNIONPAY,
+    cardNames.MAESTRO,
+    cardNames.ELO,
+    cardNames.MIR,
+    cardNames.HIPER,
+    cardNames.HIPERCARD,
+];
+var testOrder = clone_1.clone(ORIGINAL_TEST_ORDER);
+function findType(cardType) {
+    return customCards[cardType] || cardTypes[cardType];
+}
+function getAllCardTypes() {
+    return testOrder.map(function (cardType) { return clone_1.clone(findType(cardType)); });
+}
+function getCardPosition(name, ignoreErrorForNotExisting) {
+    if (ignoreErrorForNotExisting === void 0) { ignoreErrorForNotExisting = false; }
+    var position = testOrder.indexOf(name);
+    if (!ignoreErrorForNotExisting && position === -1) {
+        throw new Error('"' + name + '" is not a supported card type.');
+    }
+    return position;
+}
+function creditCardType(cardNumber) {
+    var results = [];
+    if (!is_valid_input_type_1.isValidInputType(cardNumber)) {
+        return results;
+    }
+    if (cardNumber.length === 0) {
+        return getAllCardTypes();
+    }
+    testOrder.forEach(function (cardType) {
+        var cardConfiguration = findType(cardType);
+        add_matching_cards_to_results_1.addMatchingCardsToResults(cardNumber, cardConfiguration, results);
+    });
+    var bestMatch = find_best_match_1.findBestMatch(results);
+    if (bestMatch) {
+        return [bestMatch];
+    }
+    return results;
+}
+creditCardType.getTypeInfo = function (cardType) {
+    return clone_1.clone(findType(cardType));
+};
+creditCardType.removeCard = function (name) {
+    var position = getCardPosition(name);
+    testOrder.splice(position, 1);
+};
+creditCardType.addCard = function (config) {
+    var existingCardPosition = getCardPosition(config.type, true);
+    customCards[config.type] = config;
+    if (existingCardPosition === -1) {
+        testOrder.push(config.type);
+    }
+};
+creditCardType.updateCard = function (cardType, updates) {
+    var originalObject = customCards[cardType] || cardTypes[cardType];
+    if (!originalObject) {
+        throw new Error("\"" + cardType + "\" is not a recognized type. Use `addCard` instead.'");
+    }
+    if (updates.type && originalObject.type !== updates.type) {
+        throw new Error("Cannot overwrite type parameter.");
+    }
+    var clonedCard = clone_1.clone(originalObject);
+    clonedCard = __assign(__assign({}, clonedCard), updates);
+    customCards[clonedCard.type] = clonedCard;
+};
+creditCardType.changeOrder = function (name, position) {
+    var currentPosition = getCardPosition(name);
+    testOrder.splice(currentPosition, 1);
+    testOrder.splice(position, 0, name);
+};
+creditCardType.resetModifications = function () {
+    testOrder = clone_1.clone(ORIGINAL_TEST_ORDER);
+    customCards = {};
+};
+creditCardType.types = cardNames;
+module.exports = creditCardType;
+
+},{"./lib/add-matching-cards-to-results":39,"./lib/card-types":40,"./lib/clone":41,"./lib/find-best-match":42,"./lib/is-valid-input-type":43}],39:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.addMatchingCardsToResults = void 0;
+var clone_1 = _dereq_("./clone");
+var matches_1 = _dereq_("./matches");
+function addMatchingCardsToResults(cardNumber, cardConfiguration, results) {
+    var i, patternLength;
+    for (i = 0; i < cardConfiguration.patterns.length; i++) {
+        var pattern = cardConfiguration.patterns[i];
+        if (!matches_1.matches(cardNumber, pattern)) {
+            continue;
+        }
+        var clonedCardConfiguration = clone_1.clone(cardConfiguration);
+        if (Array.isArray(pattern)) {
+            patternLength = String(pattern[0]).length;
+        }
+        else {
+            patternLength = String(pattern).length;
+        }
+        if (cardNumber.length >= patternLength) {
+            clonedCardConfiguration.matchStrength = patternLength;
+        }
+        results.push(clonedCardConfiguration);
+        break;
+    }
+}
+exports.addMatchingCardsToResults = addMatchingCardsToResults;
+
+},{"./clone":41,"./matches":44}],40:[function(_dereq_,module,exports){
+"use strict";
+var cardTypes = {
+    visa: {
+        niceType: "Visa",
+        type: "visa",
+        patterns: [4],
+        gaps: [4, 8, 12],
+        lengths: [16, 18, 19],
+        code: {
+            name: "CVV",
+            size: 3,
+        },
+    },
+    mastercard: {
+        niceType: "Mastercard",
+        type: "mastercard",
+        patterns: [[51, 55], [2221, 2229], [223, 229], [23, 26], [270, 271], 2720],
+        gaps: [4, 8, 12],
+        lengths: [16],
+        code: {
+            name: "CVC",
+            size: 3,
+        },
+    },
+    "american-express": {
+        niceType: "American Express",
+        type: "american-express",
+        patterns: [34, 37],
+        gaps: [4, 10],
+        lengths: [15],
+        code: {
+            name: "CID",
+            size: 4,
+        },
+    },
+    "diners-club": {
+        niceType: "Diners Club",
+        type: "diners-club",
+        patterns: [[300, 305], 36, 38, 39],
+        gaps: [4, 10],
+        lengths: [14, 16, 19],
+        code: {
+            name: "CVV",
+            size: 3,
+        },
+    },
+    discover: {
+        niceType: "Discover",
+        type: "discover",
+        patterns: [6011, [644, 649], 65],
+        gaps: [4, 8, 12],
+        lengths: [16, 19],
+        code: {
+            name: "CID",
+            size: 3,
+        },
+    },
+    jcb: {
+        niceType: "JCB",
+        type: "jcb",
+        patterns: [2131, 1800, [3528, 3589]],
+        gaps: [4, 8, 12],
+        lengths: [16, 17, 18, 19],
+        code: {
+            name: "CVV",
+            size: 3,
+        },
+    },
+    unionpay: {
+        niceType: "UnionPay",
+        type: "unionpay",
+        patterns: [
+            620,
+            [624, 626],
+            [62100, 62182],
+            [62184, 62187],
+            [62185, 62197],
+            [62200, 62205],
+            [622010, 622999],
+            622018,
+            [622019, 622999],
+            [62207, 62209],
+            [622126, 622925],
+            [623, 626],
+            6270,
+            6272,
+            6276,
+            [627700, 627779],
+            [627781, 627799],
+            [6282, 6289],
+            6291,
+            6292,
+            810,
+            [8110, 8131],
+            [8132, 8151],
+            [8152, 8163],
+            [8164, 8171],
+        ],
+        gaps: [4, 8, 12],
+        lengths: [14, 15, 16, 17, 18, 19],
+        code: {
+            name: "CVN",
+            size: 3,
+        },
+    },
+    maestro: {
+        niceType: "Maestro",
+        type: "maestro",
+        patterns: [
+            493698,
+            [500000, 504174],
+            [504176, 506698],
+            [506779, 508999],
+            [56, 59],
+            63,
+            67,
+            6,
+        ],
+        gaps: [4, 8, 12],
+        lengths: [12, 13, 14, 15, 16, 17, 18, 19],
+        code: {
+            name: "CVC",
+            size: 3,
+        },
+    },
+    elo: {
+        niceType: "Elo",
+        type: "elo",
+        patterns: [
+            401178,
+            401179,
+            438935,
+            457631,
+            457632,
+            431274,
+            451416,
+            457393,
+            504175,
+            [506699, 506778],
+            [509000, 509999],
+            627780,
+            636297,
+            636368,
+            [650031, 650033],
+            [650035, 650051],
+            [650405, 650439],
+            [650485, 650538],
+            [650541, 650598],
+            [650700, 650718],
+            [650720, 650727],
+            [650901, 650978],
+            [651652, 651679],
+            [655000, 655019],
+            [655021, 655058],
+        ],
+        gaps: [4, 8, 12],
+        lengths: [16],
+        code: {
+            name: "CVE",
+            size: 3,
+        },
+    },
+    mir: {
+        niceType: "Mir",
+        type: "mir",
+        patterns: [[2200, 2204]],
+        gaps: [4, 8, 12],
+        lengths: [16, 17, 18, 19],
+        code: {
+            name: "CVP2",
+            size: 3,
+        },
+    },
+    hiper: {
+        niceType: "Hiper",
+        type: "hiper",
+        patterns: [637095, 63737423, 63743358, 637568, 637599, 637609, 637612],
+        gaps: [4, 8, 12],
+        lengths: [16],
+        code: {
+            name: "CVC",
+            size: 3,
+        },
+    },
+    hipercard: {
+        niceType: "Hipercard",
+        type: "hipercard",
+        patterns: [606282],
+        gaps: [4, 8, 12],
+        lengths: [16],
+        code: {
+            name: "CVC",
+            size: 3,
+        },
+    },
+};
+module.exports = cardTypes;
+
+},{}],41:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.clone = void 0;
+function clone(originalObject) {
+    if (!originalObject) {
+        return null;
+    }
+    return JSON.parse(JSON.stringify(originalObject));
+}
+exports.clone = clone;
+
+},{}],42:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.findBestMatch = void 0;
+function hasEnoughResultsToDetermineBestMatch(results) {
+    var numberOfResultsWithMaxStrengthProperty = results.filter(function (result) { return result.matchStrength; }).length;
+    /*
+     * if all possible results have a maxStrength property that means the card
+     * number is sufficiently long enough to determine conclusively what the card
+     * type is
+     * */
+    return (numberOfResultsWithMaxStrengthProperty > 0 &&
+        numberOfResultsWithMaxStrengthProperty === results.length);
+}
+function findBestMatch(results) {
+    if (!hasEnoughResultsToDetermineBestMatch(results)) {
+        return null;
+    }
+    return results.reduce(function (bestMatch, result) {
+        if (!bestMatch) {
+            return result;
+        }
+        /*
+         * If the current best match pattern is less specific than this result, set
+         * the result as the new best match
+         * */
+        if (Number(bestMatch.matchStrength) < Number(result.matchStrength)) {
+            return result;
+        }
+        return bestMatch;
+    });
+}
+exports.findBestMatch = findBestMatch;
+
+},{}],43:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.isValidInputType = void 0;
+function isValidInputType(cardNumber) {
+    return typeof cardNumber === "string" || cardNumber instanceof String;
+}
+exports.isValidInputType = isValidInputType;
+
+},{}],44:[function(_dereq_,module,exports){
+"use strict";
+/*
+ * Adapted from https://github.com/polvo-labs/card-type/blob/aaab11f80fa1939bccc8f24905a06ae3cd864356/src/cardType.js#L37-L42
+ * */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.matches = void 0;
+function matchesRange(cardNumber, min, max) {
+    var maxLengthToCheck = String(min).length;
+    var substr = cardNumber.substr(0, maxLengthToCheck);
+    var integerRepresentationOfCardNumber = parseInt(substr, 10);
+    min = parseInt(String(min).substr(0, substr.length), 10);
+    max = parseInt(String(max).substr(0, substr.length), 10);
+    return (integerRepresentationOfCardNumber >= min &&
+        integerRepresentationOfCardNumber <= max);
+}
+function matchesPattern(cardNumber, pattern) {
+    pattern = String(pattern);
+    return (pattern.substring(0, cardNumber.length) ===
+        cardNumber.substring(0, pattern.length));
+}
+function matches(cardNumber, pattern) {
+    if (Array.isArray(pattern)) {
+        return matchesRange(cardNumber, pattern[0], pattern[1]);
+    }
+    return matchesPattern(cardNumber, pattern);
+}
+exports.matches = matches;
+
+},{}],45:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Framebus = void 0;
+var is_not_string_1 = _dereq_("./lib/is-not-string");
+var subscription_args_invalid_1 = _dereq_("./lib/subscription-args-invalid");
+var broadcast_1 = _dereq_("./lib/broadcast");
+var package_payload_1 = _dereq_("./lib/package-payload");
+var constants_1 = _dereq_("./lib/constants");
+var DefaultPromise = (typeof window !== "undefined" &&
+    window.Promise);
+var Framebus = /** @class */ (function () {
+    function Framebus(options) {
+        if (options === void 0) { options = {}; }
+        this.origin = options.origin || "*";
+        this.channel = options.channel || "";
+        this.verifyDomain = options.verifyDomain;
+        this.isDestroyed = false;
+        this.listeners = [];
+    }
+    Framebus.setPromise = function (PromiseGlobal) {
+        Framebus.Promise = PromiseGlobal;
+    };
+    Framebus.target = function (options) {
+        return new Framebus(options);
+    };
+    Framebus.prototype.include = function (childWindow) {
+        if (childWindow == null) {
+            return false;
+        }
+        if (childWindow.Window == null) {
+            return false;
+        }
+        if (childWindow.constructor !== childWindow.Window) {
+            return false;
+        }
+        constants_1.childWindows.push(childWindow);
+        return true;
+    };
+    Framebus.prototype.target = function (options) {
+        return Framebus.target(options);
+    };
+    Framebus.prototype.emit = function (eventName, data, reply) {
+        if (this.isDestroyed) {
+            return false;
+        }
+        var origin = this.origin;
+        eventName = this.namespaceEvent(eventName);
+        if (is_not_string_1.isntString(eventName)) {
+            return false;
+        }
+        if (is_not_string_1.isntString(origin)) {
+            return false;
+        }
+        if (typeof data === "function") {
+            reply = data;
+            data = undefined; // eslint-disable-line no-undefined
+        }
+        var payload = package_payload_1.packagePayload(eventName, origin, data, reply);
+        if (!payload) {
+            return false;
+        }
+        broadcast_1.broadcast(window.top || window.self, payload, origin);
+        return true;
+    };
+    Framebus.prototype.emitAsPromise = function (eventName, data) {
+        var _this = this;
+        return new Framebus.Promise(function (resolve, reject) {
+            var didAttachListener = _this.emit(eventName, data, function (payload) {
+                resolve(payload);
+            });
+            if (!didAttachListener) {
+                reject(new Error("Listener not added for \"" + eventName + "\""));
+            }
+        });
+    };
+    Framebus.prototype.on = function (eventName, originalHandler) {
+        if (this.isDestroyed) {
+            return false;
+        }
+        // eslint-disable-next-line @typescript-eslint/no-this-alias
+        var self = this;
+        var origin = this.origin;
+        var handler = originalHandler;
+        eventName = this.namespaceEvent(eventName);
+        if (subscription_args_invalid_1.subscriptionArgsInvalid(eventName, handler, origin)) {
+            return false;
+        }
+        if (this.verifyDomain) {
+            /* eslint-disable no-invalid-this, @typescript-eslint/ban-ts-comment */
+            handler = function () {
+                var args = [];
+                for (var _i = 0; _i < arguments.length; _i++) {
+                    args[_i] = arguments[_i];
+                }
+                // @ts-ignore
+                if (self.checkOrigin(this && this.origin)) {
+                    originalHandler.apply(void 0, args);
+                }
+            };
+            /* eslint-enable no-invalid-this, @typescript-eslint/ban-ts-comment */
+        }
+        this.listeners.push({
+            eventName: eventName,
+            handler: handler,
+            originalHandler: originalHandler,
+        });
+        constants_1.subscribers[origin] = constants_1.subscribers[origin] || {};
+        constants_1.subscribers[origin][eventName] = constants_1.subscribers[origin][eventName] || [];
+        constants_1.subscribers[origin][eventName].push(handler);
+        return true;
+    };
+    Framebus.prototype.off = function (eventName, originalHandler) {
+        var handler = originalHandler;
+        if (this.isDestroyed) {
+            return false;
+        }
+        if (this.verifyDomain) {
+            for (var i = 0; i < this.listeners.length; i++) {
+                var listener = this.listeners[i];
+                if (listener.originalHandler === originalHandler) {
+                    handler = listener.handler;
+                }
+            }
+        }
+        eventName = this.namespaceEvent(eventName);
+        var origin = this.origin;
+        if (subscription_args_invalid_1.subscriptionArgsInvalid(eventName, handler, origin)) {
+            return false;
+        }
+        var subscriberList = constants_1.subscribers[origin] && constants_1.subscribers[origin][eventName];
+        if (!subscriberList) {
+            return false;
+        }
+        for (var i = 0; i < subscriberList.length; i++) {
+            if (subscriberList[i] === handler) {
+                subscriberList.splice(i, 1);
+                return true;
+            }
+        }
+        return false;
+    };
+    Framebus.prototype.teardown = function () {
+        if (this.isDestroyed) {
+            return;
+        }
+        this.isDestroyed = true;
+        for (var i = 0; i < this.listeners.length; i++) {
+            var listener = this.listeners[i];
+            this.off(listener.eventName, listener.handler);
+        }
+        this.listeners.length = 0;
+    };
+    Framebus.prototype.checkOrigin = function (postMessageOrigin) {
+        var merchantHost;
+        var a = document.createElement("a");
+        a.href = location.href;
+        if (a.protocol === "https:") {
+            merchantHost = a.host.replace(/:443$/, "");
+        }
+        else if (a.protocol === "http:") {
+            merchantHost = a.host.replace(/:80$/, "");
+        }
+        else {
+            merchantHost = a.host;
+        }
+        var merchantOrigin = a.protocol + "//" + merchantHost;
+        if (merchantOrigin === postMessageOrigin) {
+            return true;
+        }
+        if (this.verifyDomain) {
+            return this.verifyDomain(postMessageOrigin);
+        }
+        return true;
+    };
+    Framebus.prototype.namespaceEvent = function (eventName) {
+        if (!this.channel) {
+            return eventName;
+        }
+        return this.channel + ":" + eventName;
+    };
+    Framebus.Promise = DefaultPromise;
+    return Framebus;
+}());
+exports.Framebus = Framebus;
+
+},{"./lib/broadcast":49,"./lib/constants":50,"./lib/is-not-string":53,"./lib/package-payload":55,"./lib/subscription-args-invalid":57}],46:[function(_dereq_,module,exports){
+"use strict";
+var attach_1 = _dereq_("./lib/attach");
+var framebus_1 = _dereq_("./framebus");
+attach_1.attach();
+module.exports = framebus_1.Framebus;
+
+},{"./framebus":45,"./lib/attach":47}],47:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.detach = exports.attach = void 0;
+var message_1 = _dereq_("./message");
+var isAttached = false;
+function attach() {
+    if (isAttached || typeof window === "undefined") {
+        return;
+    }
+    isAttached = true;
+    window.addEventListener("message", message_1.onmessage, false);
+}
+exports.attach = attach;
+// removeIf(production)
+function detach() {
+    isAttached = false;
+    window.removeEventListener("message", message_1.onmessage, false);
+}
+exports.detach = detach;
+// endRemoveIf(production)
+
+},{"./message":54}],48:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.broadcastToChildWindows = void 0;
+var broadcast_1 = _dereq_("./broadcast");
+var constants_1 = _dereq_("./constants");
+function broadcastToChildWindows(payload, origin, source) {
+    for (var i = constants_1.childWindows.length - 1; i >= 0; i--) {
+        var childWindow = constants_1.childWindows[i];
+        if (childWindow.closed) {
+            constants_1.childWindows.splice(i, 1);
+        }
+        else if (source !== childWindow) {
+            broadcast_1.broadcast(childWindow.top, payload, origin);
+        }
+    }
+}
+exports.broadcastToChildWindows = broadcastToChildWindows;
+
+},{"./broadcast":49,"./constants":50}],49:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.broadcast = void 0;
+var has_opener_1 = _dereq_("./has-opener");
+function broadcast(frame, payload, origin) {
+    var i = 0;
+    var frameToBroadcastTo;
+    try {
+        frame.postMessage(payload, origin);
+        if (has_opener_1.hasOpener(frame) && frame.opener.top !== window.top) {
+            broadcast(frame.opener.top, payload, origin);
+        }
+        // previously, our max value was frame.frames.length
+        // but frames.length inherits from window.length
+        // which can be overwritten if a developer does
+        // `var length = value;` outside of a function
+        // scope, it'll prevent us from looping through
+        // all the frames. With this, we loop through
+        // until there are no longer any frames
+        // eslint-disable-next-line no-cond-assign
+        while ((frameToBroadcastTo = frame.frames[i])) {
+            broadcast(frameToBroadcastTo, payload, origin);
+            i++;
+        }
+    }
+    catch (_) {
+        /* ignored */
+    }
+}
+exports.broadcast = broadcast;
+
+},{"./has-opener":52}],50:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.subscribers = exports.childWindows = exports.prefix = void 0;
+exports.prefix = "/*framebus*/";
+exports.childWindows = [];
+exports.subscribers = {};
+
+},{}],51:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.dispatch = void 0;
+var constants_1 = _dereq_("./constants");
+function dispatch(origin, event, data, reply, e) {
+    if (!constants_1.subscribers[origin]) {
+        return;
+    }
+    if (!constants_1.subscribers[origin][event]) {
+        return;
+    }
+    var args = [];
+    if (data) {
+        args.push(data);
+    }
+    if (reply) {
+        args.push(reply);
+    }
+    for (var i = 0; i < constants_1.subscribers[origin][event].length; i++) {
+        constants_1.subscribers[origin][event][i].apply(e, args);
+    }
+}
+exports.dispatch = dispatch;
+
+},{"./constants":50}],52:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.hasOpener = void 0;
+function hasOpener(frame) {
+    if (frame.top !== frame) {
+        return false;
+    }
+    if (frame.opener == null) {
+        return false;
+    }
+    if (frame.opener === frame) {
+        return false;
+    }
+    if (frame.opener.closed === true) {
+        return false;
+    }
+    return true;
+}
+exports.hasOpener = hasOpener;
+
+},{}],53:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.isntString = void 0;
+function isntString(str) {
+    return typeof str !== "string";
+}
+exports.isntString = isntString;
+
+},{}],54:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.onmessage = void 0;
+var is_not_string_1 = _dereq_("./is-not-string");
+var unpack_payload_1 = _dereq_("./unpack-payload");
+var dispatch_1 = _dereq_("./dispatch");
+var broadcast_to_child_windows_1 = _dereq_("./broadcast-to-child-windows");
+function onmessage(e) {
+    if (is_not_string_1.isntString(e.data)) {
+        return;
+    }
+    var payload = unpack_payload_1.unpackPayload(e);
+    if (!payload) {
+        return;
+    }
+    var data = payload.eventData;
+    var reply = payload.reply;
+    dispatch_1.dispatch("*", payload.event, data, reply, e);
+    dispatch_1.dispatch(e.origin, payload.event, data, reply, e);
+    broadcast_to_child_windows_1.broadcastToChildWindows(e.data, payload.origin, e.source);
+}
+exports.onmessage = onmessage;
+
+},{"./broadcast-to-child-windows":48,"./dispatch":51,"./is-not-string":53,"./unpack-payload":58}],55:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.packagePayload = void 0;
+var subscribe_replier_1 = _dereq_("./subscribe-replier");
+var constants_1 = _dereq_("./constants");
+function packagePayload(event, origin, data, reply) {
+    var packaged;
+    var payload = {
+        event: event,
+        origin: origin,
+    };
+    if (typeof reply === "function") {
+        payload.reply = subscribe_replier_1.subscribeReplier(reply, origin);
+    }
+    payload.eventData = data;
+    try {
+        packaged = constants_1.prefix + JSON.stringify(payload);
+    }
+    catch (e) {
+        throw new Error("Could not stringify event: " + e.message);
+    }
+    return packaged;
+}
+exports.packagePayload = packagePayload;
+
+},{"./constants":50,"./subscribe-replier":56}],56:[function(_dereq_,module,exports){
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.subscribeReplier = void 0;
+var framebus_1 = _dereq_("../framebus");
+var uuid_1 = __importDefault(_dereq_("@braintree/uuid"));
+function subscribeReplier(fn, origin) {
+    var uuid = uuid_1.default();
+    function replier(data, replyOriginHandler) {
+        fn(data, replyOriginHandler);
+        framebus_1.Framebus.target({
+            origin: origin,
+        }).off(uuid, replier);
+    }
+    framebus_1.Framebus.target({
+        origin: origin,
+    }).on(uuid, replier);
+    return uuid;
+}
+exports.subscribeReplier = subscribeReplier;
+
+},{"../framebus":45,"@braintree/uuid":33}],57:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.subscriptionArgsInvalid = void 0;
+var is_not_string_1 = _dereq_("./is-not-string");
+function subscriptionArgsInvalid(event, fn, origin) {
+    if (is_not_string_1.isntString(event)) {
+        return true;
+    }
+    if (typeof fn !== "function") {
+        return true;
+    }
+    return is_not_string_1.isntString(origin);
+}
+exports.subscriptionArgsInvalid = subscriptionArgsInvalid;
+
+},{"./is-not-string":53}],58:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.unpackPayload = void 0;
+var constants_1 = _dereq_("./constants");
+var package_payload_1 = _dereq_("./package-payload");
+function unpackPayload(e) {
+    var payload;
+    if (e.data.slice(0, constants_1.prefix.length) !== constants_1.prefix) {
+        return false;
+    }
+    try {
+        payload = JSON.parse(e.data.slice(constants_1.prefix.length));
+    }
+    catch (err) {
+        return false;
+    }
+    if (payload.reply) {
+        var replyOrigin_1 = e.origin;
+        var replySource_1 = e.source;
+        var replyEvent_1 = payload.reply;
+        payload.reply = function reply(replyData) {
+            if (!replySource_1) {
+                return;
+            }
+            var replyPayload = package_payload_1.packagePayload(replyEvent_1, replyOrigin_1, replyData);
+            if (!replyPayload) {
+                return;
+            }
+            replySource_1.postMessage(replyPayload, replyOrigin_1);
+        };
+    }
+    return payload;
+}
+exports.unpackPayload = unpackPayload;
+
+},{"./constants":50,"./package-payload":55}],59:[function(_dereq_,module,exports){
 'use strict';
 
 /**
@@ -6419,6 +6576,54 @@ function finallyConstructor(callback) {
       });
     }
   );
+}
+
+function allSettled(arr) {
+  var P = this;
+  return new P(function(resolve, reject) {
+    if (!(arr && typeof arr.length !== 'undefined')) {
+      return reject(
+        new TypeError(
+          typeof arr +
+            ' ' +
+            arr +
+            ' is not iterable(cannot read property Symbol(Symbol.iterator))'
+        )
+      );
+    }
+    var args = Array.prototype.slice.call(arr);
+    if (args.length === 0) return resolve([]);
+    var remaining = args.length;
+
+    function res(i, val) {
+      if (val && (typeof val === 'object' || typeof val === 'function')) {
+        var then = val.then;
+        if (typeof then === 'function') {
+          then.call(
+            val,
+            function(val) {
+              res(i, val);
+            },
+            function(e) {
+              args[i] = { status: 'rejected', reason: e };
+              if (--remaining === 0) {
+                resolve(args);
+              }
+            }
+          );
+          return;
+        }
+      }
+      args[i] = { status: 'fulfilled', value: val };
+      if (--remaining === 0) {
+        resolve(args);
+      }
+    }
+
+    for (var i = 0; i < args.length; i++) {
+      res(i, args[i]);
+    }
+  });
 }
 
 // Store setTimeout reference so promise-polyfill will be unaffected by
@@ -6624,6 +6829,8 @@ Promise.all = function(arr) {
   });
 };
 
+Promise.allSettled = allSettled;
+
 Promise.resolve = function(value) {
   if (value && typeof value === 'object' && value.constructor === Promise) {
     return value;
@@ -6672,64 +6879,63 @@ Promise._unhandledRejectionFn = function _unhandledRejectionFn(err) {
 
 module.exports = Promise;
 
-},{}],35:[function(_dereq_,module,exports){
-(function (global){
-'use strict';
-
-var UA = global.navigator && global.navigator.userAgent;
-
-var isAndroid = _dereq_('@braintree/browser-detection/is-android');
-var isChromeOs = _dereq_('@braintree/browser-detection/is-chrome-os');
-var isChrome = _dereq_('@braintree/browser-detection/is-chrome');
-var isIos = _dereq_('@braintree/browser-detection/is-ios');
-var isIE9 = _dereq_('@braintree/browser-detection/is-ie9');
-
+},{}],60:[function(_dereq_,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.isIos = exports.isIE9 = exports.isSamsungBrowser = exports.isAndroidChrome = exports.isKitKatWebview = void 0;
+// server side rendering check
+var UA = (typeof window !== "undefined" &&
+    window.navigator &&
+    window.navigator.userAgent);
+// TODO remove this when browser detection is converted to typescript
+/* eslint-disable @typescript-eslint/ban-ts-ignore */
+// @ts-ignore
+var isAndroid = _dereq_("@braintree/browser-detection/is-android");
+// @ts-ignore
+var isChromeOs = _dereq_("@braintree/browser-detection/is-chrome-os");
+// @ts-ignore
+var isChrome = _dereq_("@braintree/browser-detection/is-chrome");
+// @ts-ignore
+var isIos = _dereq_("@braintree/browser-detection/is-ios");
+exports.isIos = isIos;
+// @ts-ignore
+var isIE9 = _dereq_("@braintree/browser-detection/is-ie9");
+exports.isIE9 = isIE9;
+/* eslint-enable @typescript-eslint/ban-ts-ignore */
 // Old Android Webviews used specific versions of Chrome with 0.0.0 as their version suffix
 // https://developer.chrome.com/multidevice/user-agent#webview_user_agent
 var KITKAT_WEBVIEW_REGEX = /Version\/\d\.\d* Chrome\/\d*\.0\.0\.0/;
-
-function _isOldSamsungBrowserOrSamsungWebview(ua) {
-  return !isChrome(ua) && ua.indexOf('Samsung') > -1;
+function isOldSamsungBrowserOrSamsungWebview(ua) {
+    return !isChrome(ua) && ua.indexOf("Samsung") > -1;
 }
-
-function isKitKatWebview(uaArg) {
-  var ua = uaArg || UA;
-
-  return isAndroid(ua) && KITKAT_WEBVIEW_REGEX.test(ua);
+function isKitKatWebview(ua) {
+    if (ua === void 0) { ua = UA; }
+    return isAndroid(ua) && KITKAT_WEBVIEW_REGEX.test(ua);
 }
-
-function isAndroidChrome(uaArg) {
-  var ua = uaArg || UA;
-
-  return (isAndroid(ua) || isChromeOs(ua)) && isChrome(ua);
+exports.isKitKatWebview = isKitKatWebview;
+function isAndroidChrome(ua) {
+    if (ua === void 0) { ua = UA; }
+    return (isAndroid(ua) || isChromeOs(ua)) && isChrome(ua);
 }
-
+exports.isAndroidChrome = isAndroidChrome;
 function isSamsungBrowser(ua) {
-  ua = ua || UA;
-
-  return /SamsungBrowser/.test(ua) || _isOldSamsungBrowserOrSamsungWebview(ua);
+    if (ua === void 0) { ua = UA; }
+    return /SamsungBrowser/.test(ua) || isOldSamsungBrowserOrSamsungWebview(ua);
 }
+exports.isSamsungBrowser = isSamsungBrowser;
 
-module.exports = {
-  isIE9: isIE9,
-  isAndroidChrome: isAndroidChrome,
-  isIos: isIos,
-  isKitKatWebview: isKitKatWebview,
-  isSamsungBrowser: isSamsungBrowser
+},{"@braintree/browser-detection/is-android":16,"@braintree/browser-detection/is-chrome":18,"@braintree/browser-detection/is-chrome-os":17,"@braintree/browser-detection/is-ie9":23,"@braintree/browser-detection/is-ios":25}],61:[function(_dereq_,module,exports){
+"use strict";
+var device_1 = _dereq_("./lib/device");
+module.exports = function supportsInputFormatting() {
+    // Digits get dropped in samsung browser
+    return !device_1.isSamsungBrowser();
 };
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"@braintree/browser-detection/is-android":3,"@braintree/browser-detection/is-chrome":5,"@braintree/browser-detection/is-chrome-os":4,"@braintree/browser-detection/is-ie9":11,"@braintree/browser-detection/is-ios":13}],36:[function(_dereq_,module,exports){
-'use strict';
+},{"./lib/device":60}],62:[function(_dereq_,module,exports){
+module.exports = _dereq_("./dist/supports-input-formatting");
 
-var device = _dereq_('./lib/device');
-
-module.exports = function () {
-  // Digits get dropped in samsung browser
-  return !device.isSamsungBrowser();
-};
-
-},{"./lib/device":35}],37:[function(_dereq_,module,exports){
+},{"./dist/supports-input-formatting":61}],63:[function(_dereq_,module,exports){
 'use strict';
 
 var BraintreeError = _dereq_('../../lib/braintree-error');
@@ -6768,7 +6974,7 @@ function _isValid(attribute, value) {
 
 module.exports = attributeValidationError;
 
-},{"../../lib/braintree-error":56,"../shared/constants":45,"../shared/errors":46}],38:[function(_dereq_,module,exports){
+},{"../../lib/braintree-error":82,"../shared/constants":71,"../shared/errors":72}],64:[function(_dereq_,module,exports){
 'use strict';
 
 var constants = _dereq_('../shared/constants');
@@ -6782,7 +6988,7 @@ module.exports = function composeUrl(assetsUrl, componentId, isDebug) {
     componentId;
 };
 
-},{"../../lib/use-min":73,"../shared/constants":45}],39:[function(_dereq_,module,exports){
+},{"../../lib/use-min":98,"../shared/constants":71}],65:[function(_dereq_,module,exports){
 'use strict';
 
 var directions = _dereq_('../shared/constants').navigationDirections;
@@ -6867,10 +7073,10 @@ module.exports = {
     });
   },
 
-  createFocusChangeHandler: function (callbacks) {
-    return function (type, direction) {
+  createFocusChangeHandler: function (hostedFieldsId, callbacks) {
+    return function (data) {
       var currentIndex, targetElement, checkoutForm, navHelper;
-      var sourceElement = document.getElementById('bt-' + type + '-' + direction);
+      var sourceElement = document.getElementById('bt-' + data.field + '-' + data.direction + '-' + hostedFieldsId);
 
       if (!sourceElement) {
         return;
@@ -6886,7 +7092,7 @@ module.exports = {
 
       checkoutForm = [].slice.call(checkoutForm.elements);
       currentIndex = checkoutForm.indexOf(sourceElement);
-      navHelper = _createNavigationHelper(direction, checkoutForm.length);
+      navHelper = _createNavigationHelper(data.direction, checkoutForm.length);
 
       do {
         currentIndex += navHelper.indexChange;
@@ -6905,7 +7111,7 @@ module.exports = {
   }
 };
 
-},{"../shared/browser-detection":44,"../shared/constants":45,"../shared/find-parent-tags":47,"../shared/focus-intercept":48}],40:[function(_dereq_,module,exports){
+},{"../shared/browser-detection":70,"../shared/constants":71,"../shared/find-parent-tags":73,"../shared/focus-intercept":74}],66:[function(_dereq_,module,exports){
 'use strict';
 
 var allowedStyles = _dereq_('../shared/constants').allowedStyles;
@@ -6941,16 +7147,16 @@ module.exports = function getStylesFromClass(cssClass) {
   return styles;
 };
 
-},{"../shared/constants":45}],41:[function(_dereq_,module,exports){
-(function (global){
+},{"../shared/constants":71}],67:[function(_dereq_,module,exports){
 'use strict';
 
 var assign = _dereq_('../../lib/assign').assign;
 var createAssetsUrl = _dereq_('../../lib/create-assets-url');
+var isVerifiedDomain = _dereq_('../../lib/is-verified-domain');
 var Destructor = _dereq_('../../lib/destructor');
 var classList = _dereq_('@braintree/class-list');
 var iFramer = _dereq_('@braintree/iframer');
-var Bus = _dereq_('../../lib/bus');
+var Bus = _dereq_('framebus');
 var createDeferredClient = _dereq_('../../lib/create-deferred-client');
 var BraintreeError = _dereq_('../../lib/braintree-error');
 var composeUrl = _dereq_('./compose-url');
@@ -6958,7 +7164,7 @@ var getStylesFromClass = _dereq_('./get-styles-from-class');
 var constants = _dereq_('../shared/constants');
 var errors = _dereq_('../shared/errors');
 var INTEGRATION_TIMEOUT_MS = _dereq_('../../lib/constants').INTEGRATION_TIMEOUT_MS;
-var uuid = _dereq_('../../lib/vendor/uuid');
+var uuid = _dereq_('@braintree/uuid');
 var findParentTags = _dereq_('../shared/find-parent-tags');
 var browserDetection = _dereq_('../shared/browser-detection');
 var events = constants.events;
@@ -6967,6 +7173,8 @@ var injectFrame = _dereq_('./inject-frame');
 var analytics = _dereq_('../../lib/analytics');
 var allowedFields = constants.allowedFields;
 var methods = _dereq_('../../lib/methods');
+var shadow = _dereq_('../../lib/shadow');
+var findRootNode = _dereq_('../../lib/find-root-node');
 var convertMethodsToError = _dereq_('../../lib/convert-methods-to-error');
 var sharedErrors = _dereq_('../../lib/errors');
 var getCardTypes = _dereq_('../shared/get-card-types');
@@ -6988,6 +7196,7 @@ var SAFARI_FOCUS_TIMEOUT = 5;
  * @property {string} details.cardType Type of card, ex: Visa, MasterCard.
  * @property {string} details.expirationMonth The expiration month of the card.
  * @property {string} details.expirationYear The expiration year of the card.
+ * @property {string} details.cardholderName The cardholder name tokenized with the card.
  * @property {string} details.lastFour Last four digits of card number.
  * @property {string} details.lastTwo Last two digits of card number.
  * @property {string} description A human-readable description.
@@ -7019,6 +7228,7 @@ var SAFARI_FOCUS_TIMEOUT = 5;
  * - `"expirationMonth"`
  * - `"expirationYear"`
  * - `"postalCode"`
+ * - `"cardholderName"`
  * @property {object} fields
  * @property {?HostedFields~hostedFieldsFieldData} fields.number {@link HostedFields~hostedFieldsFieldData|hostedFieldsFieldData} for the number field, if it is present.
  * @property {?HostedFields~hostedFieldsFieldData} fields.cvv {@link HostedFields~hostedFieldsFieldData|hostedFieldsFieldData} for the CVV field, if it is present.
@@ -7026,6 +7236,7 @@ var SAFARI_FOCUS_TIMEOUT = 5;
  * @property {?HostedFields~hostedFieldsFieldData} fields.expirationMonth {@link HostedFields~hostedFieldsFieldData|hostedFieldsFieldData} for the expiration month field, if it is present.
  * @property {?HostedFields~hostedFieldsFieldData} fields.expirationYear {@link HostedFields~hostedFieldsFieldData|hostedFieldsFieldData} for the expiration year field, if it is present.
  * @property {?HostedFields~hostedFieldsFieldData} fields.postalCode {@link HostedFields~hostedFieldsFieldData|hostedFieldsFieldData} for the postal code field, if it is present.
+ * @property {?HostedFields~hostedFieldsFieldData} fields.cardholderName {@link HostedFields~hostedFieldsFieldData|hostedFieldsFieldData} for the cardholder name field, if it is present.
  */
 
 /**
@@ -7318,10 +7529,10 @@ function isVisibleEnough(node) {
   var horizontalMidpoint = Math.floor(boundingBox.width / 2);
 
   return (
-    boundingBox.top < (global.innerHeight - verticalMidpoint || document.documentElement.clientHeight - verticalMidpoint) &&
+    boundingBox.top < (window.innerHeight - verticalMidpoint || document.documentElement.clientHeight - verticalMidpoint) &&
     boundingBox.right > horizontalMidpoint &&
     boundingBox.bottom > verticalMidpoint &&
-    boundingBox.left < (global.innerWidth - horizontalMidpoint || document.documentElement.clientWidth - horizontalMidpoint)
+    boundingBox.left < (window.innerWidth - horizontalMidpoint || document.documentElement.clientWidth - horizontalMidpoint)
   );
 }
 
@@ -7380,7 +7591,7 @@ function HostedFields(options) {
 
   this._bus = new Bus({
     channel: componentId,
-    merchantUrl: location.href
+    verifyDomain: isVerifiedDomain
   });
 
   this._destructor.registerFunctionForTeardown(function () {
@@ -7395,7 +7606,7 @@ function HostedFields(options) {
   }
 
   Object.keys(options.fields).forEach(function (key) {
-    var field, container, frame, frameReadyPromise;
+    var field, externalContainer, internalContainer, frame, frameReadyPromise;
 
     if (!constants.allowedFields.hasOwnProperty(key)) {
       throw new BraintreeError({
@@ -7408,13 +7619,13 @@ function HostedFields(options) {
     field = options.fields[key];
     // NEXT_MAJOR_VERSION remove selector as an option
     // and simply make the API take a container
-    container = field.container || field.selector;
+    externalContainer = field.container || field.selector;
 
-    if (typeof container === 'string') {
-      container = document.querySelector(container);
+    if (typeof externalContainer === 'string') {
+      externalContainer = document.querySelector(externalContainer);
     }
 
-    if (!container || container.nodeType !== 1) {
+    if (!externalContainer || externalContainer.nodeType !== 1) {
       throw new BraintreeError({
         type: errors.HOSTED_FIELDS_INVALID_FIELD_SELECTOR.type,
         code: errors.HOSTED_FIELDS_INVALID_FIELD_SELECTOR.code,
@@ -7425,7 +7636,7 @@ function HostedFields(options) {
           fieldKey: key
         }
       });
-    } else if (container.querySelector('iframe[name^="braintree-"]')) {
+    } else if (externalContainer.querySelector('iframe[name^="braintree-"]')) {
       throw new BraintreeError({
         type: errors.HOSTED_FIELDS_FIELD_DUPLICATE_IFRAME.type,
         code: errors.HOSTED_FIELDS_FIELD_DUPLICATE_IFRAME.code,
@@ -7436,6 +7647,12 @@ function HostedFields(options) {
           fieldKey: key
         }
       });
+    }
+
+    internalContainer = externalContainer;
+
+    if (shadow.isShadowElement(internalContainer)) {
+      internalContainer = shadow.transformToSlot(internalContainer, 'height: 100%');
     }
 
     if (field.maxlength && typeof field.maxlength !== 'number') {
@@ -7467,14 +7684,16 @@ function HostedFields(options) {
       title: 'Secure Credit Card Frame - ' + constants.allowedFields[key].label
     });
 
-    this._injectedNodes.push.apply(this._injectedNodes, injectFrame(frame, container, function () {
-      self._bus.emit(events.TRIGGER_INPUT_FOCUS, key);
+    this._injectedNodes.push.apply(this._injectedNodes, injectFrame(componentId, frame, internalContainer, function () {
+      self._bus.emit(events.TRIGGER_INPUT_FOCUS, {
+        field: key
+      });
     }));
 
-    this._setupLabelFocus(key, container);
+    this._setupLabelFocus(key, externalContainer);
     fields[key] = {
       frameElement: frame,
-      containerElement: container
+      containerElement: externalContainer
     };
     frameReadyPromise = new Promise(function (resolve) {
       frameReadyPromiseResolveFunctions[key] = resolve;
@@ -7486,7 +7705,7 @@ function HostedFields(options) {
       isValid: false,
       isPotentiallyValid: true,
       isFocused: false,
-      container: container
+      container: externalContainer
     };
 
     setTimeout(function () {
@@ -7519,14 +7738,20 @@ function HostedFields(options) {
     });
   }
 
-  this._bus.on(events.REMOVE_FOCUS_INTERCEPTS, destroyFocusIntercept);
+  this._bus.on(events.REMOVE_FOCUS_INTERCEPTS, function (data) {
+    destroyFocusIntercept(data && data.id);
+  });
 
-  this._bus.on(events.TRIGGER_FOCUS_CHANGE, focusChange.createFocusChangeHandler({
+  this._bus.on(events.TRIGGER_FOCUS_CHANGE, focusChange.createFocusChangeHandler(componentId, {
     onRemoveFocusIntercepts: function (element) {
-      self._bus.emit(events.REMOVE_FOCUS_INTERCEPTS, element);
+      self._bus.emit(events.REMOVE_FOCUS_INTERCEPTS, {
+        id: element
+      });
     },
     onTriggerInputFocus: function (targetType) {
-      self._bus.emit(events.TRIGGER_INPUT_FOCUS, targetType);
+      self._bus.emit(events.TRIGGER_INPUT_FOCUS, {
+        field: targetType
+      });
     }
   }));
 
@@ -7572,8 +7797,8 @@ function HostedFields(options) {
   );
 
   if (browserDetection.isIos()) {
-    this._bus.on(events.TRIGGER_INPUT_FOCUS, function (fieldName) {
-      var container = fields[fieldName].containerElement;
+    this._bus.on(events.TRIGGER_INPUT_FOCUS, function (data) {
+      var container = fields[data.field].containerElement;
 
       // Inputs outside of the viewport don't always scroll into view on
       // focus in iOS Safari. 5ms timeout gives the browser a chance to
@@ -7621,16 +7846,29 @@ HostedFields.prototype._setupLabelFocus = function (type, container) {
   var labels, i;
   var shouldSkipLabelFocus = browserDetection.isIos();
   var bus = this._bus;
+  var rootNode = findRootNode(container);
 
   if (shouldSkipLabelFocus) { return; }
   if (container.id == null) { return; }
 
   function triggerFocus() {
-    bus.emit(events.TRIGGER_INPUT_FOCUS, type);
+    bus.emit(events.TRIGGER_INPUT_FOCUS, {
+      field: type
+    });
   }
 
+  // find any labels in the normal DOM
   labels = Array.prototype.slice.call(document.querySelectorAll('label[for="' + container.id + '"]'));
+  if (rootNode !== document) {
+    // find any labels within the shadow dom
+    labels = labels.concat(Array.prototype.slice.call(rootNode.querySelectorAll('label[for="' + container.id + '"]')));
+  }
+  // find any labels surrounding the container that don't also have the `for` attribute
   labels = labels.concat(findParentTags(container, 'label'));
+  // filter out any accidental duplicates
+  labels = labels.filter(function (label, index, arr) {
+    return arr.indexOf(label) === index;
+  });
 
   for (i = 0; i < labels.length; i++) {
     labels[i].addEventListener('click', triggerFocus, false);
@@ -7662,7 +7900,9 @@ HostedFields.prototype._cleanUpFocusIntercepts = function () {
 
     if (checkoutForm) {
       focusChange.removeExtraFocusElements(checkoutForm, function (id) {
-        this._bus.emit(events.REMOVE_FOCUS_INTERCEPTS, id);
+        this._bus.emit(events.REMOVE_FOCUS_INTERCEPTS, {
+          id: id
+        });
       }.bind(this));
     } else {
       this._bus.emit(events.REMOVE_FOCUS_INTERCEPTS);
@@ -7760,7 +8000,7 @@ HostedFields.prototype.teardown = function () {
  * @param {boolean} [options.vault=false] When true, will vault the tokenized card. Cards will only be vaulted when using a client created with a client token that includes a customer ID. Note: merchants using Advanced Fraud Tools should not use this option, as device data will not be included.
  * @param {object} [options.authenticationInsight] Options for checking authentication insight - the [regulatory environment](https://developers.braintreepayments.com/guides/3d-secure/advanced-options/javascript/v3#authentication-insight) of the tokenized card.
  * @param {string} options.authenticationInsight.merchantAccountId The Braintree merchant account id to use to look up the authentication insight information.
- * @param {array} [options.fieldsToTokenize] By default, all fields will be tokenized. You may specify which fields specifically you wish to tokenize with this property. Valid options are `'number'`, `'cvv'`, `'expirationDate'`, `'expirationMonth'`, `'expirationYear'`, `'postalCode'`.
+ * @param {array} [options.fieldsToTokenize] By default, all fields will be tokenized. You may specify which fields specifically you wish to tokenize with this property. Valid options are `'number'`, `'cvv'`, `'expirationDate'`, `'expirationMonth'`, `'expirationYear'`, `'postalCode'`, `'cardholderName'`.
  * @param {string} [options.cardholderName] When supplied, the cardholder name to be tokenized with the contents of the fields.
  * @param {string} [options.billingAddress.postalCode] When supplied, this postal code will be tokenized along with the contents of the fields. If a postal code is provided as part of the Hosted Fields configuration, the value of the field will be tokenized and this value will be ignored.
  * @param {string} [options.billingAddress.firstName] When supplied, this customer first name will be tokenized along with the contents of the fields.
@@ -7788,7 +8028,7 @@ HostedFields.prototype.teardown = function () {
  *         // occurs when certain fields do not pass client side validation
  *         console.error('Some fields are invalid:', tokenizeErr.details.invalidFieldKeys);
  *
- *         // you can also programtically access the field containers for the invalid fields
+ *         // you can also programmatically access the field containers for the invalid fields
  *         tokenizeErr.details.invalidFields.forEach(function (fieldContainer) {
  *           fieldContainer.className = 'invalid';
  *         });
@@ -7808,7 +8048,7 @@ HostedFields.prototype.teardown = function () {
  *         //     with a customer ID and the verify card option is set to true
  *         //     and you have credit card verification turned on in the Braintree
  *         //     control panel
- *         //   * the cvv does not pass verfication (https://developers.braintreepayments.com/reference/general/testing/#avs-and-cvv/cid-responses)
+ *         //   * the cvv does not pass verification (https://developers.braintreepayments.com/reference/general/testing/#avs-and-cvv/cid-responses)
  *         // See: https://developers.braintreepayments.com/reference/request/client-token/generate/#options.verify_card
  *         console.error('CVV did not pass verification');
  *         break;
@@ -7837,7 +8077,7 @@ HostedFields.prototype.teardown = function () {
  *     console.log('Got nonce:', payload.nonce);
  *   }
  * });
- * @example <caption>Tokenize a card with cardholder name</caption>
+ * @example <caption>Tokenize a card with non-Hosted Fields cardholder name</caption>
  * hostedFieldsInstance.tokenize({
  *   cardholderName: 'First Last'
  * }, function (tokenizeErr, payload) {
@@ -7847,7 +8087,7 @@ HostedFields.prototype.teardown = function () {
  *     console.log('Got nonce:', payload.nonce);
  *   }
  * });
- * @example <caption>Tokenize a card with the postal code option</caption>
+ * @example <caption>Tokenize a card with non-Hosted Fields postal code option</caption>
  * hostedFieldsInstance.tokenize({
  *   billingAddress: {
  *     postalCode: '11111'
@@ -7876,6 +8116,30 @@ HostedFields.prototype.teardown = function () {
  *     countryCodeAlpha3: 'USA',
  *     countryCodeNumeric: '840'
  *   }
+ * }, function (tokenizeErr, payload) {
+ *   if (tokenizeErr) {
+ *     console.error(tokenizeErr);
+ *   } else {
+ *     console.log('Got nonce:', payload.nonce);
+ *   }
+ * });
+ * @example <caption>Allow tokenization with empty cardholder name field</caption>
+ * var state = hostedFieldsInstance.getState();
+ * var fields = Object.keys(state.fields);
+ *
+ * // normally, if you tried to tokenize an empty cardholder name field
+ * // you would get an error, to allow making this field optional,
+ * // tokenize all the fields except for the cardholder name field
+ * // when the cardholder name field is empty. Otherwise, tokenize
+ * // all the fields
+ * if (state.fields.cardholderName.isEmpty) {
+ *  fields = fields.filter(function (field) {
+ *    return field !== 'cardholderName';
+ *  });
+ * }
+ *
+ * hostedFieldsInstance.tokenize({
+ *  fieldsToTokenize: fields
  * }, function (tokenizeErr, payload) {
  *   if (tokenizeErr) {
  *     console.error(tokenizeErr);
@@ -7938,7 +8202,10 @@ HostedFields.prototype.addClass = function (field, classname) {
       message: 'Cannot add class to "' + field + '" field because it is not part of the current Hosted Fields options.'
     });
   } else {
-    this._bus.emit(events.ADD_CLASS, field, classname);
+    this._bus.emit(events.ADD_CLASS, {
+      field: field,
+      classname: classname
+    });
   }
 
   if (err) {
@@ -7983,7 +8250,10 @@ HostedFields.prototype.removeClass = function (field, classname) {
       message: 'Cannot remove class from "' + field + '" field because it is not part of the current Hosted Fields options.'
     });
   } else {
-    this._bus.emit(events.REMOVE_CLASS, field, classname);
+    this._bus.emit(events.REMOVE_CLASS, {
+      field: field,
+      classname: classname
+    });
   }
 
   if (err) {
@@ -8049,7 +8319,11 @@ HostedFields.prototype.setAttribute = function (options) {
     if (attributeErr) {
       err = attributeErr;
     } else {
-      this._bus.emit(events.SET_ATTRIBUTE, options.field, options.attribute, options.value);
+      this._bus.emit(events.SET_ATTRIBUTE, {
+        field: options.field,
+        attribute: options.attribute,
+        value: options.value
+      });
     }
   }
 
@@ -8065,7 +8339,7 @@ HostedFields.prototype.setAttribute = function (options) {
  *
  * @public
  * @param {array} options An array of 12 entries corresponding to the 12 months.
- * @param {callback} [callback] Callback executed on completion, containing an error if one occurred. No data is returned if the options are updated succesfully. Errors if expirationMonth is not configured on the Hosted Fields instance or if the expirationMonth field is not configured to be a select input.
+ * @param {callback} [callback] Callback executed on completion, containing an error if one occurred. No data is returned if the options are updated successfully. Errors if expirationMonth is not configured on the Hosted Fields instance or if the expirationMonth field is not configured to be a select input.
  *
  * @example <caption>Update the month options to spanish</caption>
  * hostedFieldsInstance.setMonthOptions([
@@ -8110,7 +8384,7 @@ HostedFields.prototype.setMonthOptions = function (options) {
 };
 
 /**
- * Sets a visually hidden message (for screenreaders) on a {@link module:braintree-web/hosted-fields~field field}.
+ * Sets a visually hidden message (for screen readers) on a {@link module:braintree-web/hosted-fields~field field}.
  *
  * @public
  * @param {object} options The options for the attribute you wish to set.
@@ -8132,7 +8406,10 @@ HostedFields.prototype.setMonthOptions = function (options) {
  * @returns {void}
  */
 HostedFields.prototype.setMessage = function (options) {
-  this._bus.emit(events.SET_MESSAGE, options.field, options.message);
+  this._bus.emit(events.SET_MESSAGE, {
+    field: options.field,
+    message: options.message
+  });
 };
 
 /**
@@ -8177,7 +8454,10 @@ HostedFields.prototype.removeAttribute = function (options) {
     if (attributeErr) {
       err = attributeErr;
     } else {
-      this._bus.emit(events.REMOVE_ATTRIBUTE, options.field, options.attribute);
+      this._bus.emit(events.REMOVE_ATTRIBUTE, {
+        field: options.field,
+        attribute: options.attribute
+      });
     }
   }
 
@@ -8240,7 +8520,9 @@ HostedFields.prototype.clear = function (field) {
       message: 'Cannot clear "' + field + '" field because it is not part of the current Hosted Fields options.'
     });
   } else {
-    this._bus.emit(events.CLEAR_FIELD, field);
+    this._bus.emit(events.CLEAR_FIELD, {
+      field: field
+    });
   }
 
   if (err) {
@@ -8268,7 +8550,7 @@ HostedFields.prototype.clear = function (field) {
  *   //   if the element has a tabindex property or the element
  *   //   is an anchor link with an href property.
  *   // In Mobile Safari, the focus method is unable to
- *   //   programatically open the keyboard, as only
+ *   //   programmatically open the keyboard, as only
  *   //   touch events are allowed to do so.
  *   e.preventDefault();
  *   hostedFieldsInstance.focus('number');
@@ -8290,7 +8572,9 @@ HostedFields.prototype.focus = function (field) {
       message: 'Cannot focus "' + field + '" field because it is not part of the current Hosted Fields options.'
     });
   } else {
-    this._bus.emit(events.TRIGGER_INPUT_FOCUS, field);
+    this._bus.emit(events.TRIGGER_INPUT_FOCUS, {
+      field: field
+    });
   }
 
   if (err) {
@@ -8334,19 +8618,18 @@ function formatMerchantConfigurationForIframes(config) {
 
 module.exports = wrapPromise.wrapPrototype(HostedFields);
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../../lib/analytics":51,"../../lib/assign":53,"../../lib/braintree-error":56,"../../lib/bus":59,"../../lib/constants":60,"../../lib/convert-methods-to-error":61,"../../lib/create-assets-url":62,"../../lib/create-deferred-client":64,"../../lib/destructor":65,"../../lib/errors":67,"../../lib/methods":70,"../../lib/promise":72,"../../lib/vendor/uuid":75,"../shared/browser-detection":44,"../shared/constants":45,"../shared/errors":46,"../shared/find-parent-tags":47,"../shared/focus-intercept":48,"../shared/get-card-types":49,"./attribute-validation-error":37,"./compose-url":38,"./focus-change":39,"./get-styles-from-class":40,"./inject-frame":42,"@braintree/class-list":15,"@braintree/event-emitter":16,"@braintree/iframer":18,"@braintree/wrap-promise":25}],42:[function(_dereq_,module,exports){
+},{"../../lib/analytics":77,"../../lib/assign":79,"../../lib/braintree-error":82,"../../lib/constants":83,"../../lib/convert-methods-to-error":84,"../../lib/create-assets-url":85,"../../lib/create-deferred-client":87,"../../lib/destructor":88,"../../lib/errors":90,"../../lib/find-root-node":91,"../../lib/is-verified-domain":92,"../../lib/methods":94,"../../lib/promise":96,"../../lib/shadow":97,"../shared/browser-detection":70,"../shared/constants":71,"../shared/errors":72,"../shared/find-parent-tags":73,"../shared/focus-intercept":74,"../shared/get-card-types":75,"./attribute-validation-error":63,"./compose-url":64,"./focus-change":65,"./get-styles-from-class":66,"./inject-frame":68,"@braintree/class-list":26,"@braintree/event-emitter":27,"@braintree/iframer":29,"@braintree/uuid":33,"@braintree/wrap-promise":37,"framebus":46}],68:[function(_dereq_,module,exports){
 'use strict';
 
 var focusIntercept = _dereq_('../shared/focus-intercept');
 var directions = _dereq_('../shared/constants').navigationDirections;
 
-module.exports = function injectFrame(frame, container, focusHandler) {
+module.exports = function injectFrame(id, frame, container, focusHandler) {
   var frameType = frame.getAttribute('type');
   var clearboth = document.createElement('div');
   var fragment = document.createDocumentFragment();
-  var focusInterceptBefore = focusIntercept.generate(frameType, directions.BACK, focusHandler);
-  var focusInterceptAfter = focusIntercept.generate(frameType, directions.FORWARD, focusHandler);
+  var focusInterceptBefore = focusIntercept.generate(id, frameType, directions.BACK, focusHandler);
+  var focusInterceptAfter = focusIntercept.generate(id, frameType, directions.FORWARD, focusHandler);
 
   clearboth.style.clear = 'both';
 
@@ -8360,7 +8643,7 @@ module.exports = function injectFrame(frame, container, focusHandler) {
   return [frame, clearboth];
 };
 
-},{"../shared/constants":45,"../shared/focus-intercept":48}],43:[function(_dereq_,module,exports){
+},{"../shared/constants":71,"../shared/focus-intercept":74}],69:[function(_dereq_,module,exports){
 'use strict';
 /** @module braintree-web/hosted-fields */
 
@@ -8371,7 +8654,7 @@ var supportsInputFormatting = _dereq_('restricted-input/supports-input-formattin
 var wrapPromise = _dereq_('@braintree/wrap-promise');
 var BraintreeError = _dereq_('../lib/braintree-error');
 var Promise = _dereq_('../lib/promise');
-var VERSION = "3.59.0";
+var VERSION = "3.76.2";
 
 /**
  * Fields used in {@link module:braintree-web/hosted-fields~fieldOptions fields options}
@@ -8380,6 +8663,14 @@ var VERSION = "3.59.0";
  * @property {(string|HTMLElement)} container A DOM node or CSS selector to find the container where the hosted field will be inserted.
  * @property {string} [placeholder] Will be used as the `placeholder` attribute of the input. If `placeholder` is not natively supported by the browser, it will be polyfilled.
  * @property {string} [type] Will be used as the `type` attribute of the input. To mask `cvv` input, for instance, `type: "password"` can be used.
+ * @property {string} [internalLabel] Each Hosted Field iframe has a hidden label that is used by screen readers to identify the input. The `internalLabel` property can be used to customize the field for localization purposes. The default values are:
+ * * number: Credit Card Number
+ * * cvv: CVV
+ * * expirationDate: Expiration Date
+ * * expirationMonth: Expiration Month
+ * * expirationYear: Expiration Year
+ * * postalCode: Postal Code
+ * * cardholderName: Cardholder Name
  * @property {boolean} [formatInput=true] Enable or disable automatic formatting on this field.
  * @property {(object|boolean)} [maskInput=false] Enable or disable input masking when input is not focused. If set to `true` instead of an object, the defaults for the `maskInput` parameters will be used.
  * @property {string} [maskInput.character=•] The character to use when masking the input. The default character ('•') uses a unicode symbol, so the webpage must support UTF-8 characters when using the default.
@@ -8387,7 +8678,7 @@ var VERSION = "3.59.0";
  * @property {(object|boolean)} [select] If truthy, this field becomes a `<select>` dropdown list. This can only be used for `expirationMonth` and `expirationYear` fields. If you do not use a `placeholder` property for the field, the current month/year will be the default selected value.
  * @property {string[]} [select.options] An array of 12 strings, one per month. This can only be used for the `expirationMonth` field. For example, the array can look like `['01 - January', '02 - February', ...]`.
  * @property {number} [maxCardLength] This option applies only to the number field. Allows a limit to the length of the card number, even if the card brand may support numbers of a greater length. If the value passed is greater than the max length for a card brand, the smaller number of the 2 values will be used. For example, is `maxCardLength` is set to 16, but an American Express card is entered (which has a max card length of 15), a max card length of 15 will be used.
- * @property {number} [maxlength] This option applies only to the CVV and postal code fields. Will be used as the `maxlength` attribute of the input if it is less than the default. The primary use cases for the `maxlength` option are: limiting the length of the CVV input for CVV-only verifications when the card type is known and limiting the length of the postal code input when cards are coming from a known region.
+ * @property {number} [maxlength] This option applies only to the CVV and postal code fields. Will be used as the `maxlength` attribute of the input. The primary use cases for the `maxlength` option are: limiting the length of the CVV input for CVV-only verifications when the card type is known and setting the length of the postal code input when cards are coming from a known region. The default `maxlength` for the postal code input is `10`.
  * @property {number} [minlength=3] This option applies only to the cvv and postal code fields. Will be used as the `minlength` attribute of the input.
  * For postal code fields, the default value is 3, representing the Icelandic postal code length. This option's primary use case is to increase the `minlength`, e.g. for US customers, the postal code `minlength` can be set to 5.
  * For cvv fields, the default value is 3. The `minlength` attribute only applies to integrations capturing a cvv without a number field.
@@ -8419,17 +8710,19 @@ var VERSION = "3.59.0";
  * @property {field} [expirationYear] A field for expiration year in `YYYY` or `YY` format. This should be used with the `expirationMonth` property.
  * @property {field} [cvv] A field for 3 or 4 digit card verification code (like CVV or CID). If you wish to create a CVV-only payment method nonce to verify a card already stored in your Vault, omit all other fields to only collect CVV.
  * @property {field} [postalCode] A field for postal or region code.
+ * @property {field} [cardholderName] A field for the cardholder name on the customer's credit card.
  */
 
 /**
  * An object that represents CSS that will be applied in each hosted field. This object looks similar to CSS. Typically, these styles involve fonts (such as `font-family` or `color`).
  *
- * You may also pass the name of a class on your site that contains the styles you would like to apply. The style properties will be automatically pulled off the class and applied to the Hosted Fields inputs. Note: this is recomended for `input` elements only. If using a `select` for the expiration date, unexpected styling may occur.
+ * You may also pass the name of a class on your site that contains the styles you would like to apply. The style properties will be automatically pulled off the class and applied to the Hosted Fields inputs. Note: this is recommended for `input` elements only. If using a `select` for the expiration date, unexpected styling may occur.
  *
  * These are the CSS properties that Hosted Fields supports. Any other CSS should be specified on your page and outside of any Braintree configuration. Trying to set unsupported properties will fail and put a warning in the console.
  *
  * Supported CSS properties are:
  * `appearance`
+ * `box-shadow`
  * `color`
  * `direction`
  * `font-family`
@@ -8450,14 +8743,25 @@ var VERSION = "3.59.0";
  * `opacity`
  * `outline`
  * `margin`
+ * `margin-top`
+ * `margin-right`
+ * `margin-bottom`
+ * `margin-left`
  * `padding`
+ * `padding-top`
+ * `padding-right`
+ * `padding-bottom`
+ * `padding-left`
+ * `text-align`
  * `text-shadow`
  * `transition`
  * `-moz-appearance`
+ * `-moz-box-shadow`
  * `-moz-osx-font-smoothing`
  * `-moz-tap-highlight-color`
  * `-moz-transition`
  * `-webkit-appearance`
+ * `-webkit-box-shadow`
  * `-webkit-font-smoothing`
  * `-webkit-tap-highlight-color`
  * `-webkit-transition`
@@ -8472,6 +8776,7 @@ var VERSION = "3.59.0";
  * @param {string} [options.authorization] A tokenizationKey or clientToken. Can be used in place of `options.client`.
  * @param {fieldOptions} options.fields A {@link module:braintree-web/hosted-fields~fieldOptions set of options for each field}.
  * @param {styleOptions} [options.styles] {@link module:braintree-web/hosted-fields~styleOptions Styles} applied to each field.
+ * @param {boolean} [options.preventAutofill=false] When true, browsers will not try to prompt the customer to autofill their credit card information.
  * @param {callback} [callback] The second argument, `data`, is the {@link HostedFields} instance. If no callback is provided, `create` returns a promise that resolves with the {@link HostedFields} instance.
  * @returns {void}
  * @example
@@ -8496,6 +8801,24 @@ var VERSION = "3.59.0";
  *     cvv: {
  *       container: '#cvv',
  *       placeholder: '•••'
+ *     },
+ *     expirationDate: {
+ *       container: '#expiration-date'
+ *     }
+ *   }
+ * }, callback);
+ * @example <caption>With cardholder name</caption>
+ * braintree.hostedFields.create({
+ *   client: clientInstance,
+ *   fields: {
+ *     number: {
+ *       container: '#card-number'
+ *     },
+ *     cardholderName: {
+ *       container: '#cardholder-name'
+ *     },
+ *     cvv: {
+ *       container: '#cvv',
  *     },
  *     expirationDate: {
  *       container: '#expiration-date'
@@ -8683,15 +9006,20 @@ module.exports = {
   VERSION: VERSION
 };
 
-},{"../lib/basic-component-verification":54,"../lib/braintree-error":56,"../lib/promise":72,"./external/hosted-fields":41,"./shared/errors":46,"@braintree/wrap-promise":25,"restricted-input/supports-input-formatting":36}],44:[function(_dereq_,module,exports){
+},{"../lib/basic-component-verification":80,"../lib/braintree-error":82,"../lib/promise":96,"./external/hosted-fields":67,"./shared/errors":72,"@braintree/wrap-promise":37,"restricted-input/supports-input-formatting":62}],70:[function(_dereq_,module,exports){
 'use strict';
 
 var isAndroid = _dereq_('@braintree/browser-detection/is-android');
 var isChromeOS = _dereq_('@braintree/browser-detection/is-chrome-os');
 var isIos = _dereq_('@braintree/browser-detection/is-ios');
+var isChrome = _dereq_('@braintree/browser-detection/is-chrome');
 
 function hasSoftwareKeyboard() {
   return isAndroid() || isChromeOS() || isIos();
+}
+
+function isChromeIos() {
+  return isChrome() && isIos();
 }
 
 module.exports = {
@@ -8701,18 +9029,19 @@ module.exports = {
   isIe10: _dereq_('@braintree/browser-detection/is-ie10'),
   isAndroid: isAndroid,
   isChromeOS: isChromeOS,
+  isChromeIos: isChromeIos,
   isFirefox: _dereq_('@braintree/browser-detection/is-firefox'),
   isIos: isIos,
   isIosWebview: _dereq_('@braintree/browser-detection/is-ios-webview'),
   hasSoftwareKeyboard: hasSoftwareKeyboard
 };
 
-},{"@braintree/browser-detection/is-android":3,"@braintree/browser-detection/is-chrome-os":4,"@braintree/browser-detection/is-edge":6,"@braintree/browser-detection/is-firefox":7,"@braintree/browser-detection/is-ie":8,"@braintree/browser-detection/is-ie10":9,"@braintree/browser-detection/is-ie9":11,"@braintree/browser-detection/is-ios":13,"@braintree/browser-detection/is-ios-webview":12}],45:[function(_dereq_,module,exports){
+},{"@braintree/browser-detection/is-android":16,"@braintree/browser-detection/is-chrome":18,"@braintree/browser-detection/is-chrome-os":17,"@braintree/browser-detection/is-edge":19,"@braintree/browser-detection/is-firefox":20,"@braintree/browser-detection/is-ie":21,"@braintree/browser-detection/is-ie10":22,"@braintree/browser-detection/is-ie9":23,"@braintree/browser-detection/is-ios":25,"@braintree/browser-detection/is-ios-webview":24}],71:[function(_dereq_,module,exports){
 'use strict';
 
 var enumerate = _dereq_('../../lib/enumerate');
 var errors = _dereq_('./errors');
-var VERSION = "3.59.0";
+var VERSION = "3.76.2";
 
 var constants = {
   VERSION: VERSION,
@@ -8757,14 +9086,17 @@ var constants = {
   },
   allowedStyles: [
     '-moz-appearance',
+    '-moz-box-shadow',
     '-moz-osx-font-smoothing',
     '-moz-tap-highlight-color',
     '-moz-transition',
     '-webkit-appearance',
+    '-webkit-box-shadow',
     '-webkit-font-smoothing',
     '-webkit-tap-highlight-color',
     '-webkit-transition',
     'appearance',
+    'box-shadow',
     'color',
     'direction',
     'font',
@@ -8783,13 +9115,26 @@ var constants = {
     'letter-spacing',
     'line-height',
     'margin',
+    'margin-top',
+    'margin-right',
+    'margin-bottom',
+    'margin-left',
     'opacity',
     'outline',
     'padding',
+    'padding-top',
+    'padding-right',
+    'padding-bottom',
+    'padding-left',
+    'text-align',
     'text-shadow',
     'transition'
   ],
   allowedFields: {
+    cardholderName: {
+      name: 'cardholder-name',
+      label: 'Cardholder Name'
+    },
     number: {
       name: 'credit-card-number',
       label: 'Credit Card Number'
@@ -8822,6 +9167,7 @@ var constants = {
     placeholder: 'string'
   },
   autocompleteMappings: {
+    'cardholder-name': 'cc-name',
     'credit-card-number': 'cc-number',
     expiration: 'cc-exp',
     'expiration-month': 'cc-exp-month',
@@ -8833,7 +9179,7 @@ var constants = {
 
 constants.events = enumerate([
   'ADD_CLASS',
-  'AUTOFILL_EXPIRATION_DATE',
+  'AUTOFILL_DATA_AVAILABLE',
   'BIN_AVAILABLE',
   'CARD_FORM_ENTRY_HAS_BEGUN',
   'CLEAR_FIELD',
@@ -8855,14 +9201,14 @@ constants.events = enumerate([
 
 module.exports = constants;
 
-},{"../../lib/enumerate":66,"./errors":46}],46:[function(_dereq_,module,exports){
+},{"../../lib/enumerate":89,"./errors":72}],72:[function(_dereq_,module,exports){
 'use strict';
 
 /**
  * @name BraintreeError.Hosted Fields - Creation Error Codes
- * @description Errors that occur when [creating the Hosted Fields component](/current/module-braintree-web_hosted-fields.html#.create).
+ * @description Errors that occur when [creating the Hosted Fields component](./module-braintree-web_hosted-fields.html#.create).
  * @property {UNKNOWN} HOSTED_FIELDS_TIMEOUT Occurs when Hosted Fields does not finish setting up within 60 seconds.
- * @property {MERCHANT} HOSTED_FIELDS_INVALID_FIELD_KEY Occurs when Hosted Fields is instantated with an invalid Field option.
+ * @property {MERCHANT} HOSTED_FIELDS_INVALID_FIELD_KEY Occurs when Hosted Fields is instantiated with an invalid Field option.
  * @property {MERCHANT} HOSTED_FIELDS_INVALID_FIELD_SELECTOR Occurs when Hosted Fields given a field selector that is not valid.
  * @property {MERCHANT} HOSTED_FIELDS_FIELD_DUPLICATE_IFRAME Occurs when Hosted Fields given a field selector that already contains an iframe.
  * @property {MERCHANT} HOSTED_FIELDS_FIELD_PROPERTY_INVALID Occurs when a field configuration option is not valid.
@@ -8870,22 +9216,22 @@ module.exports = constants;
 
 /**
  * @name BraintreeError.Hosted Fields - Field Manipulation Error Codes
- * @description Errors that occur when modifying fields through [`addClass`](/current/HostedFields.html#addClass), [`removeClass`](/current/HostedFields.html#removeClass), [`setAttribute`](/current/HostedFields.html#setAttribute), [`removeAttribute`](/current/HostedFields.html#removeAttribute), [`clear`](/current/HostedFields.html#clear), [`focus`](/current/HostedFields.html#focus), and [`setMonthOptions`](/current/HostedFields.html#setMonthOptions).
+ * @description Errors that occur when modifying fields through [`addClass`](./HostedFields.html#addClass), [`removeClass`](./HostedFields.html#removeClass), [`setAttribute`](./HostedFields.html#setAttribute), [`removeAttribute`](./HostedFields.html#removeAttribute), [`clear`](./HostedFields.html#clear), [`focus`](./HostedFields.html#focus), and [`setMonthOptions`](./HostedFields.html#setMonthOptions).
  * @property {MERCHANT} HOSTED_FIELDS_FIELD_INVALID Occurs when attempting to modify a field that is not a valid Hosted Fields option.
  * @property {MERCHANT} HOSTED_FIELDS_FIELD_NOT_PRESENT Occurs when attempting to modify a field that is not configured with Hosted Fields.
  * @property {MERCHANT} HOSTED_FIELDS_FIELD_PROPERTY_INVALID Occurs when a field configuration option is not valid.
  */
 
 /**
- * @name BraintreeError.Hosted Fields - Set Attribtue Error Codes
- * @description Errors that occur when using the [`setAttribtue` method](/current/HostedFields.html#setAttribute)
- * @property {MERCHANT} HOSTED_FIELDS_ATTRIBUTE_NOT_SUPPORTED Occurs when trying to set an attribtue that is not supported to be set.
- * @property {MERCHANT} HOSTED_FIELDS_ATTRIBUTE_VALUE_NOT_ALLOWED Occurs when the type of value for an attribue is not allowed to be set.
+ * @name BraintreeError.Hosted Fields - Set Attribute Error Codes
+ * @description Errors that occur when using the [`setAttribute` method](./HostedFields.html#setAttribute)
+ * @property {MERCHANT} HOSTED_FIELDS_ATTRIBUTE_NOT_SUPPORTED Occurs when trying to set an attribute that is not supported to be set.
+ * @property {MERCHANT} HOSTED_FIELDS_ATTRIBUTE_VALUE_NOT_ALLOWED Occurs when the type of value for an attribute is not allowed to be set.
  */
 
 /**
  * @name BraintreeError.Hosted Fields - Tokenize Error Codes
- * @description Errors that occur when [tokenizing the card details with Hosted Fields](/current/HostedFields.html#tokenize).
+ * @description Errors that occur when [tokenizing the card details with Hosted Fields](./HostedFields.html#tokenize).
  * @property {NETWORK} HOSTED_FIELDS_TOKENIZATION_NETWORK_ERROR Occurs when the Braintree gateway cannot be contacted.
  * @property {CUSTOMER} HOSTED_FIELDS_TOKENIZATION_FAIL_ON_DUPLICATE Occurs when attempting to vault a card, but the client token being used is configured to fail if the card already exists in the vault.
  * @property {CUSTOMER} HOSTED_FIELDS_TOKENIZATION_CVV_VERIFICATION_FAILED Occurs when cvv verification is turned on in the Braintree control panel.
@@ -8968,7 +9314,7 @@ module.exports = {
   }
 };
 
-},{"../../lib/braintree-error":56}],47:[function(_dereq_,module,exports){
+},{"../../lib/braintree-error":82}],73:[function(_dereq_,module,exports){
 'use strict';
 
 function findParentTags(element, tag) {
@@ -8988,7 +9334,7 @@ function findParentTags(element, tag) {
 
 module.exports = findParentTags;
 
-},{}],48:[function(_dereq_,module,exports){
+},{}],74:[function(_dereq_,module,exports){
 'use strict';
 
 var browserDetection = _dereq_('./browser-detection');
@@ -8998,7 +9344,7 @@ var allowedFields = Object.keys(constants.allowedFields);
 var directions = constants.navigationDirections;
 
 var focusIntercept = {
-  generate: function (type, direction, handler) {
+  generate: function (hostedFieldsId, type, direction, handler) {
     var input = document.createElement('input');
     var focusInterceptStyles = {
       border: 'none !important',
@@ -9019,7 +9365,7 @@ var focusIntercept = {
     input.setAttribute('autocomplete', 'off');
     input.setAttribute('data-braintree-direction', direction);
     input.setAttribute('data-braintree-type', type);
-    input.setAttribute('id', 'bt-' + type + '-' + direction);
+    input.setAttribute('id', 'bt-' + type + '-' + direction + '-' + hostedFieldsId);
     input.setAttribute('style',
       JSON.stringify(focusInterceptStyles)
         .replace(/[{}"]/g, '')
@@ -9069,7 +9415,7 @@ var focusIntercept = {
 
     idComponents = idString.split('-');
 
-    if (idComponents.length !== 3) { return false; }
+    if (idComponents.length < 4) { return false; }
 
     hasBTPrefix = idComponents[0] === 'bt';
     isAllowedType = allowedFields.indexOf(idComponents[1]) > -1;
@@ -9085,7 +9431,7 @@ var focusIntercept = {
 
 module.exports = focusIntercept;
 
-},{"./browser-detection":44,"./constants":45,"@braintree/class-list":15}],49:[function(_dereq_,module,exports){
+},{"./browser-detection":70,"./constants":71,"@braintree/class-list":26}],75:[function(_dereq_,module,exports){
 'use strict';
 
 var creditCardType = _dereq_('credit-card-type');
@@ -9106,7 +9452,7 @@ module.exports = function (number) {
   return results;
 };
 
-},{"credit-card-type":26}],50:[function(_dereq_,module,exports){
+},{"credit-card-type":38}],76:[function(_dereq_,module,exports){
 'use strict';
 
 var createAuthorizationData = _dereq_('./create-authorization-data');
@@ -9140,7 +9486,7 @@ function addMetadata(configuration, data) {
 
 module.exports = addMetadata;
 
-},{"./constants":60,"./create-authorization-data":63,"./json-clone":69}],51:[function(_dereq_,module,exports){
+},{"./constants":83,"./create-authorization-data":86,"./json-clone":93}],77:[function(_dereq_,module,exports){
 'use strict';
 
 var Promise = _dereq_('./promise');
@@ -9176,7 +9522,7 @@ module.exports = {
   sendEvent: sendAnalyticsEvent
 };
 
-},{"./add-metadata":50,"./constants":60,"./promise":72}],52:[function(_dereq_,module,exports){
+},{"./add-metadata":76,"./constants":83,"./promise":96}],78:[function(_dereq_,module,exports){
 'use strict';
 
 var loadScript = _dereq_('@braintree/asset-loader/load-script');
@@ -9185,7 +9531,7 @@ module.exports = {
   loadScript: loadScript
 };
 
-},{"@braintree/asset-loader/load-script":2}],53:[function(_dereq_,module,exports){
+},{"@braintree/asset-loader/load-script":3}],79:[function(_dereq_,module,exports){
 'use strict';
 
 var assignNormalized = typeof Object.assign === 'function' ? Object.assign : assignPolyfill;
@@ -9210,13 +9556,13 @@ module.exports = {
   _assign: assignPolyfill
 };
 
-},{}],54:[function(_dereq_,module,exports){
+},{}],80:[function(_dereq_,module,exports){
 'use strict';
 
 var BraintreeError = _dereq_('./braintree-error');
 var Promise = _dereq_('./promise');
 var sharedErrors = _dereq_('./errors');
-var VERSION = "3.59.0";
+var VERSION = "3.76.2";
 
 function basicComponentVerification(options) {
   var client, authorization, name;
@@ -9258,7 +9604,7 @@ module.exports = {
   verify: basicComponentVerification
 };
 
-},{"./braintree-error":56,"./errors":67,"./promise":72}],55:[function(_dereq_,module,exports){
+},{"./braintree-error":82,"./errors":90,"./promise":96}],81:[function(_dereq_,module,exports){
 'use strict';
 
 var once = _dereq_('./once');
@@ -9304,7 +9650,7 @@ module.exports = function (functions, cb) {
   }
 };
 
-},{"./once":71}],56:[function(_dereq_,module,exports){
+},{"./once":95}],82:[function(_dereq_,module,exports){
 'use strict';
 
 var enumerate = _dereq_('./enumerate');
@@ -9389,182 +9735,10 @@ BraintreeError.findRootError = function (err) {
 
 module.exports = BraintreeError;
 
-},{"./enumerate":66}],57:[function(_dereq_,module,exports){
+},{"./enumerate":89}],83:[function(_dereq_,module,exports){
 'use strict';
 
-var isVerifiedDomain = _dereq_('../is-verified-domain');
-
-function checkOrigin(postMessageOrigin, merchantUrl) {
-  var merchantOrigin, merchantHost;
-  var a = document.createElement('a');
-
-  a.href = merchantUrl;
-
-  if (a.protocol === 'https:') {
-    merchantHost = a.host.replace(/:443$/, '');
-  } else if (a.protocol === 'http:') {
-    merchantHost = a.host.replace(/:80$/, '');
-  } else {
-    merchantHost = a.host;
-  }
-
-  merchantOrigin = a.protocol + '//' + merchantHost;
-
-  if (merchantOrigin === postMessageOrigin) { return true; }
-
-  a.href = postMessageOrigin;
-
-  return isVerifiedDomain(postMessageOrigin);
-}
-
-module.exports = {
-  checkOrigin: checkOrigin
-};
-
-},{"../is-verified-domain":68}],58:[function(_dereq_,module,exports){
-'use strict';
-
-var enumerate = _dereq_('../enumerate');
-
-module.exports = enumerate([
-  'CONFIGURATION_REQUEST'
-], 'bus:');
-
-},{"../enumerate":66}],59:[function(_dereq_,module,exports){
-'use strict';
-
-var bus = _dereq_('framebus');
-var events = _dereq_('./events');
-var checkOrigin = _dereq_('./check-origin').checkOrigin;
-var BraintreeError = _dereq_('../braintree-error');
-
-function BraintreeBus(options) {
-  options = options || {};
-
-  this.channel = options.channel;
-  if (!this.channel) {
-    throw new BraintreeError({
-      type: BraintreeError.types.INTERNAL,
-      code: 'MISSING_CHANNEL_ID',
-      message: 'Channel ID must be specified.'
-    });
-  }
-
-  this.merchantUrl = options.merchantUrl;
-
-  this._isDestroyed = false;
-  this._isVerbose = false;
-
-  this._listeners = [];
-
-  this._log('new bus on channel ' + this.channel, [location.href]);
-}
-
-BraintreeBus.prototype.on = function (eventName, originalHandler) {
-  var namespacedEvent, args;
-  var handler = originalHandler;
-  var self = this;
-
-  if (this._isDestroyed) { return; }
-
-  if (this.merchantUrl) {
-    handler = function () {
-      /* eslint-disable no-invalid-this */
-      if (checkOrigin(this.origin, self.merchantUrl)) {
-        originalHandler.apply(this, arguments);
-      }
-      /* eslint-enable no-invalid-this */
-    };
-  }
-
-  namespacedEvent = this._namespaceEvent(eventName);
-  args = Array.prototype.slice.call(arguments);
-  args[0] = namespacedEvent;
-  args[1] = handler;
-
-  this._log('on', args);
-  bus.on.apply(bus, args);
-
-  this._listeners.push({
-    eventName: eventName,
-    handler: handler,
-    originalHandler: originalHandler
-  });
-};
-
-BraintreeBus.prototype.emit = function (eventName) {
-  var args;
-
-  if (this._isDestroyed) { return; }
-
-  args = Array.prototype.slice.call(arguments);
-  args[0] = this._namespaceEvent(eventName);
-
-  this._log('emit', args);
-  bus.emit.apply(bus, args);
-};
-
-BraintreeBus.prototype._offDirect = function (eventName) {
-  var args = Array.prototype.slice.call(arguments);
-
-  if (this._isDestroyed) { return; }
-
-  args[0] = this._namespaceEvent(eventName);
-
-  this._log('off', args);
-  bus.off.apply(bus, args);
-};
-
-BraintreeBus.prototype.off = function (eventName, originalHandler) {
-  var i, listener;
-  var handler = originalHandler;
-
-  if (this._isDestroyed) { return; }
-
-  if (this.merchantUrl) {
-    for (i = 0; i < this._listeners.length; i++) {
-      listener = this._listeners[i];
-
-      if (listener.originalHandler === originalHandler) {
-        handler = listener.handler;
-      }
-    }
-  }
-
-  this._offDirect(eventName, handler);
-};
-
-BraintreeBus.prototype._namespaceEvent = function (eventName) {
-  return ['braintree', this.channel, eventName].join(':');
-};
-
-BraintreeBus.prototype.teardown = function () {
-  var listener, i;
-
-  for (i = 0; i < this._listeners.length; i++) {
-    listener = this._listeners[i];
-    this._offDirect(listener.eventName, listener.handler);
-  }
-
-  this._listeners.length = 0;
-
-  this._isDestroyed = true;
-};
-
-BraintreeBus.prototype._log = function (functionName, args) {
-  if (this._isVerbose) {
-    console.log(functionName, args); // eslint-disable-line no-console
-  }
-};
-
-BraintreeBus.events = events;
-
-module.exports = BraintreeBus;
-
-},{"../braintree-error":56,"./check-origin":57,"./events":58,"framebus":33}],60:[function(_dereq_,module,exports){
-'use strict';
-
-var VERSION = "3.59.0";
+var VERSION = "3.76.2";
 var PLATFORM = 'web';
 
 var CLIENT_API_URLS = {
@@ -9592,6 +9766,7 @@ module.exports = {
   FRAUDNET_SOURCE: 'BRAINTREE_SIGNIN',
   FRAUDNET_FNCLS: 'fnparams-dede7cc5-15fd-4c75-a9f4-36c430ee3a99',
   FRAUDNET_URL: 'https://c.paypal.com/da/r/fb.js',
+  BUS_CONFIGURATION_REQUEST_EVENT: 'BUS_CONFIGURATION_REQUEST',
   GRAPHQL_URLS: GRAPHQL_URLS,
   INTEGRATION_TIMEOUT_MS: 60000,
   VERSION: VERSION,
@@ -9601,7 +9776,7 @@ module.exports = {
   BRAINTREE_LIBRARY_VERSION: 'braintree/' + PLATFORM + '/' + VERSION
 };
 
-},{}],61:[function(_dereq_,module,exports){
+},{}],84:[function(_dereq_,module,exports){
 'use strict';
 
 var BraintreeError = _dereq_('./braintree-error');
@@ -9619,7 +9794,7 @@ module.exports = function (instance, methodNames) {
   });
 };
 
-},{"./braintree-error":56,"./errors":67}],62:[function(_dereq_,module,exports){
+},{"./braintree-error":82,"./errors":90}],85:[function(_dereq_,module,exports){
 'use strict';
 
 // endRemoveIf(production)
@@ -9636,7 +9811,7 @@ module.exports = {
   create: createAssetsUrl
 };
 
-},{"./constants":60}],63:[function(_dereq_,module,exports){
+},{"./constants":83}],86:[function(_dereq_,module,exports){
 'use strict';
 
 var atob = _dereq_('../lib/vendor/polyfill').atob;
@@ -9682,8 +9857,7 @@ function createAuthorizationData(authorization) {
 
 module.exports = createAuthorizationData;
 
-},{"../lib/constants":60,"../lib/vendor/polyfill":74}],64:[function(_dereq_,module,exports){
-(function (global){
+},{"../lib/constants":83,"../lib/vendor/polyfill":99}],87:[function(_dereq_,module,exports){
 'use strict';
 
 var BraintreeError = _dereq_('./braintree-error');
@@ -9691,7 +9865,7 @@ var Promise = _dereq_('./promise');
 var assets = _dereq_('./assets');
 var sharedErrors = _dereq_('./errors');
 
-var VERSION = "3.59.0";
+var VERSION = "3.76.2";
 
 function createDeferredClient(options) {
   var promise = Promise.resolve();
@@ -9700,7 +9874,7 @@ function createDeferredClient(options) {
     return Promise.resolve(options.client);
   }
 
-  if (!(global.braintree && global.braintree.client)) {
+  if (!(window.braintree && window.braintree.client)) {
     promise = assets.loadScript({
       src: options.assetsUrl + '/web/' + VERSION + '/js/client.min.js'
     }).catch(function (err) {
@@ -9716,15 +9890,15 @@ function createDeferredClient(options) {
   }
 
   return promise.then(function () {
-    if (global.braintree.client.VERSION !== VERSION) {
+    if (window.braintree.client.VERSION !== VERSION) {
       return Promise.reject(new BraintreeError({
         type: sharedErrors.INCOMPATIBLE_VERSIONS.type,
         code: sharedErrors.INCOMPATIBLE_VERSIONS.code,
-        message: 'Client (version ' + global.braintree.client.VERSION + ') and ' + options.name + ' (version ' + VERSION + ') components must be from the same SDK version.'
+        message: 'Client (version ' + window.braintree.client.VERSION + ') and ' + options.name + ' (version ' + VERSION + ') components must be from the same SDK version.'
       }));
     }
 
-    return global.braintree.client.create({
+    return window.braintree.client.create({
       authorization: options.authorization,
       debug: options.debug
     });
@@ -9735,8 +9909,7 @@ module.exports = {
   create: createDeferredClient
 };
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./assets":52,"./braintree-error":56,"./errors":67,"./promise":72}],65:[function(_dereq_,module,exports){
+},{"./assets":78,"./braintree-error":82,"./errors":90,"./promise":96}],88:[function(_dereq_,module,exports){
 'use strict';
 
 var batchExecuteFunctions = _dereq_('./batch-execute-functions');
@@ -9774,7 +9947,7 @@ Destructor.prototype.teardown = function (callback) {
 
 module.exports = Destructor;
 
-},{"./batch-execute-functions":55}],66:[function(_dereq_,module,exports){
+},{"./batch-execute-functions":81}],89:[function(_dereq_,module,exports){
 'use strict';
 
 function enumerate(values, prefix) {
@@ -9789,13 +9962,13 @@ function enumerate(values, prefix) {
 
 module.exports = enumerate;
 
-},{}],67:[function(_dereq_,module,exports){
+},{}],90:[function(_dereq_,module,exports){
 'use strict';
 
 /**
- * @name BraintreeError.Shared Interal Error Codes
+ * @name BraintreeError.Shared Internal Error Codes
  * @ignore
- * @description These codes should never be experienced by the mechant directly.
+ * @description These codes should never be experienced by the merchant directly.
  * @property {INTERNAL} INVALID_USE_OF_INTERNAL_FUNCTION Occurs when the client is created without a gateway configuration. Should never happen.
  */
 
@@ -9839,7 +10012,18 @@ module.exports = {
   }
 };
 
-},{"./braintree-error":56}],68:[function(_dereq_,module,exports){
+},{"./braintree-error":82}],91:[function(_dereq_,module,exports){
+'use strict';
+
+module.exports = function findRootNode(element) {
+  while (element.parentNode) {
+    element = element.parentNode;
+  }
+
+  return element;
+};
+
+},{}],92:[function(_dereq_,module,exports){
 'use strict';
 
 var parser;
@@ -9874,14 +10058,14 @@ function isVerifiedDomain(url) {
 
 module.exports = isVerifiedDomain;
 
-},{}],69:[function(_dereq_,module,exports){
+},{}],93:[function(_dereq_,module,exports){
 'use strict';
 
 module.exports = function (value) {
   return JSON.parse(JSON.stringify(value));
 };
 
-},{}],70:[function(_dereq_,module,exports){
+},{}],94:[function(_dereq_,module,exports){
 'use strict';
 
 module.exports = function (obj) {
@@ -9890,22 +10074,97 @@ module.exports = function (obj) {
   });
 };
 
-},{}],71:[function(_dereq_,module,exports){
-arguments[4][23][0].apply(exports,arguments)
-},{"dup":23}],72:[function(_dereq_,module,exports){
-(function (global){
+},{}],95:[function(_dereq_,module,exports){
 'use strict';
 
-var Promise = global.Promise || _dereq_('promise-polyfill');
+function once(fn) {
+  var called = false;
+
+  return function () {
+    if (!called) {
+      called = true;
+      fn.apply(null, arguments);
+    }
+  };
+}
+
+module.exports = once;
+
+},{}],96:[function(_dereq_,module,exports){
+'use strict';
+
+var PromisePolyfill = _dereq_('promise-polyfill');
 var ExtendedPromise = _dereq_('@braintree/extended-promise');
 
+// eslint-disable-next-line no-undef
+var PromiseGlobal = typeof Promise !== 'undefined' ? Promise : PromisePolyfill;
+
 ExtendedPromise.suppressUnhandledPromiseMessage = true;
-ExtendedPromise.setPromise(Promise);
+ExtendedPromise.setPromise(PromiseGlobal);
 
-module.exports = Promise;
+module.exports = PromiseGlobal;
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"@braintree/extended-promise":17,"promise-polyfill":34}],73:[function(_dereq_,module,exports){
+},{"@braintree/extended-promise":28,"promise-polyfill":59}],97:[function(_dereq_,module,exports){
+'use strict';
+
+var uuid = _dereq_('@braintree/uuid');
+var findRootNode = _dereq_('./find-root-node');
+
+// based on https://github.com/krakenjs/belter/blob/cdddc4f8ddb172d29db9e7e1ad1eeeacfb93e215/src/dom.js#L981-L1031
+// thanks @bluepnume
+
+function isShadowElement(element) {
+  element = findRootNode(element);
+
+  return element.toString() === '[object ShadowRoot]';
+}
+
+function getShadowHost(element) {
+  element = findRootNode(element);
+
+  if (!isShadowElement(element)) {
+    return null;
+  }
+
+  return element.host;
+}
+
+function transformToSlot(element, styles) {
+  var styleNode = findRootNode(element).querySelector('style');
+  var shadowHost = getShadowHost(element);
+  var slotName = 'shadow-slot-' + uuid();
+  var slot = document.createElement('slot');
+  var slotProvider = document.createElement('div');
+
+  slot.setAttribute('name', slotName);
+  element.appendChild(slot);
+
+  slotProvider.setAttribute('slot', slotName);
+  shadowHost.appendChild(slotProvider);
+
+  if (styles) {
+    if (!styleNode) {
+      styleNode = document.createElement('style');
+      element.appendChild(styleNode);
+    }
+
+    styleNode.sheet.insertRule('::slotted([slot="' + slotName + '"]) { ' + styles + ' }');
+  }
+
+  if (isShadowElement(shadowHost)) {
+    return transformToSlot(slotProvider, styles);
+  }
+
+  return slotProvider;
+}
+
+module.exports = {
+  isShadowElement: isShadowElement,
+  getShadowHost: getShadowHost,
+  transformToSlot: transformToSlot
+};
+
+},{"./find-root-node":91,"@braintree/uuid":33}],98:[function(_dereq_,module,exports){
 'use strict';
 
 function useMin(isDebug) {
@@ -9914,13 +10173,12 @@ function useMin(isDebug) {
 
 module.exports = useMin;
 
-},{}],74:[function(_dereq_,module,exports){
-(function (global){
+},{}],99:[function(_dereq_,module,exports){
 'use strict';
 
-var atobNormalized = typeof global.atob === 'function' ? global.atob : atob;
+var atobNormalized = typeof atob === 'function' ? window.atob : atobPolyfill;
 
-function atob(base64String) {
+function atobPolyfill(base64String) {
   var a, b, c, b1, b2, b3, b4, i;
   var base64Matcher = new RegExp('^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})([=]{1,2})?$');
   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
@@ -9949,30 +10207,15 @@ function atob(base64String) {
 
 module.exports = {
   atob: function (base64String) {
-    return atobNormalized.call(global, base64String);
+    return atobNormalized.call(window, base64String);
   },
-  _atob: atob
+  _atob: atobPolyfill
 };
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],75:[function(_dereq_,module,exports){
-'use strict';
-
-function uuid() {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-    var r = Math.random() * 16 | 0;
-    var v = c === 'x' ? r : r & 0x3 | 0x8;
-
-    return v.toString(16);
-  });
-}
-
-module.exports = uuid;
-
-},{}]},{},[43])(43)
+},{}]},{},[69])(69)
 });
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../../../timers-browserify/main.js */ "./node_modules/timers-browserify/main.js").setImmediate))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../timers-browserify/main.js */ "./node_modules/timers-browserify/main.js").setImmediate))
 
 /***/ }),
 
@@ -40371,7 +40614,7 @@ class BraintreeHostedField extends react__WEBPACK_IMPORTED_MODULE_0___default.a.
 
 }
 BraintreeHostedField.propTypes = {
-  type: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['number', 'expirationDate', 'expirationMonth', 'expirationYear', 'cvv', 'postalCode']).isRequired,
+  type: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['number', 'expirationDate', 'expirationMonth', 'expirationYear', 'cvv', 'postalCode', 'cardholderName']).isRequired,
   id: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number]),
   placeholder: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,

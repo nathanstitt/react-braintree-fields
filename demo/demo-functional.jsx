@@ -1,54 +1,53 @@
-import { render } from 'react-dom';
 import React from 'react';
 import { Braintree, HostedField } from '../src/index';
 
 const Demo = () => {
-    const [tokenize, setTokenizeFunc] = React.useState()
-    const [cardType, setCardType] = React.useState('')
-    const [error, setError] = React.useState(null)
-    const [token, setToken] = React.useState(null)
-    const [focusedFieldName, setFocusedField] = React.useState('')
-    const numberField = React.useRef()
+    const [tokenize, setTokenizeFunc] = React.useState();
+    const [cardType, setCardType] = React.useState('');
+    const [error, setError] = React.useState(null);
+    const [token, setToken] = React.useState(null);
+    const [focusedFieldName, setFocusedField] = React.useState('');
+    const numberField = React.useRef();
     const cvvField = React.useRef();
+    const cardholderNameField = React.useRef();
 
     const onAuthorizationSuccess = () => {
-      numberField.current.focus();
-    }
+        numberField.current.focus();
+    };
 
     const onDataCollectorInstanceReady = (collector) => {
         // DO SOMETHING with Braintree collector as needed
-    }
+    };
 
-    const handleError = (error) => {
-        setError(error.message || String(error));
-    }
+    const handleError = (newError) => {
+        setError(newError.message || String(newError));
+    };
 
-    const onFieldBlur = (field, event) => setFocusedField('')
-    const onFieldFocus = (field, event) => setFocusedField(event.emittedBy)
+    const onFieldBlur = (field, event) => setFocusedField('');
+    const onFieldFocus = (field, event) => setFocusedField(event.emittedBy);
 
     const onCardTypeChange = ({ cards }) => {
         if (1 === cards.length) {
-          const [card] = cards;
+            const [card] = cards;
 
-          setCardType(card.type);
+            setCardType(card.type);
 
-          if (card.code && card.code.name) {
-            cvvField.current.setPlaceholder(card.code.name);
-          } else {
-            cvvField.current.setPlaceholder('CVV');
-          }
-
+            if (card.code && card.code.name) {
+                cvvField.current.setPlaceholder(card.code.name);
+            } else {
+                cvvField.current.setPlaceholder('CVV');
+            }
         } else {
             setCardType('');
-          cvvField.current.setPlaceholder('CVV');
+            cvvField.current.setPlaceholder('CVV');
         }
-    }
+    };
 
     const getToken = () => {
         tokenize()
             .then(setToken)
             .catch(handleError);
-    }
+    };
 
     const renderResult = (title, obj) => {
         if (!obj) { return null; }
@@ -58,7 +57,7 @@ const Demo = () => {
                 <pre>{JSON.stringify(obj, null, 4)}</pre>
             </div>
         );
-    }
+    };
 
     return (
         <div>
@@ -71,11 +70,11 @@ const Demo = () => {
                 onCardTypeChange={onCardTypeChange}
                 getTokenRef={ref => setTokenizeFunc(() => ref)}
                 styles={{
-                    'input': {
+                    input: {
                         'font-size': 'inherit',
                     },
                     ':focus': {
-                        'color': 'blue'
+                        color: 'blue',
                     },
                 }}
             >
@@ -86,19 +85,28 @@ const Demo = () => {
                     Number:
                     <HostedField
                         type="number"
-                        className={focusedFieldName == 'number' ? 'focused' : ''}
+                        className={'number' === focusedFieldName ? 'focused' : ''}
                         onBlur={onFieldBlur}
                         onFocus={onFieldFocus}
                         prefill="4111 1111 1111 1111"
                         ref={numberField}
                     />
                     <p>Card type: {cardType}</p>
+                    Name:
+                    <HostedField
+                        type="cardholderName"
+                        className={'cardholderName' === focusedFieldName ? 'focused' : ''}
+                        onBlur={onFieldBlur}
+                        onFocus={onFieldFocus}
+                        placeholder="Name on Card"
+                        ref={cardholderNameField}
+                    />
                     Date:
                     <HostedField
                         type="expirationDate"
                         onBlur={onFieldBlur}
                         onFocus={onFieldFocus}
-                        className={focusedFieldName == 'expirationDate' ? 'focused' : ''}
+                        className={'expirationDate' === focusedFieldName ? 'focused' : ''}
                     />
                     Month:
                     <HostedField type="expirationMonth" />
@@ -115,8 +123,7 @@ const Demo = () => {
                 <button onClick={getToken}>Get nonce token</button>
             </div>
         </div>
-    )
-
-}
+    );
+};
 
 export default Demo;

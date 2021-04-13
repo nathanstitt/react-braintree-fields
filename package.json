@@ -52,6 +52,6 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "braintree-web": "^3.59.0"
+    "braintree-web": "^3.76.2"
   }
 }

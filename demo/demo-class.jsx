@@ -1,4 +1,3 @@
-import { render } from 'react-dom';
 import React from 'react';
 import { Braintree, HostedField } from '../src/index';
 
@@ -30,19 +29,18 @@ class Demo extends React.PureComponent {
 
     onCardTypeChange({ cards }) {
         if (1 === cards.length) {
-          const [card] = cards;
+            const [card] = cards;
 
-          this.setState({ card: card.type });
+            this.setState({ card: card.type });
 
-          if (card.code && card.code.name) {
-            this.cvvField.setPlaceholder(card.code.name);
-          } else {
-            this.cvvField.setPlaceholder('CVV');
-          }
-
+            if (card.code && card.code.name) {
+                this.cvvField.setPlaceholder(card.code.name);
+            } else {
+                this.cvvField.setPlaceholder('CVV');
+            }
         } else {
-          this.setState({ card: '' });
-          this.cvvField.setPlaceholder('CVV');
+            this.setState({ card: '' });
+            this.cvvField.setPlaceholder('CVV');
         }
     }
 
@@ -65,7 +63,7 @@ class Demo extends React.PureComponent {
     }
 
     onAuthorizationSuccess() {
-      this.numberField.current.focus();
+        this.numberField.current.focus();
     }
 
     render() {
@@ -104,6 +102,8 @@ class Demo extends React.PureComponent {
                             ref={this.numberField}
                         />
                         <p>Card type: {this.state.card}</p>
+                        Name:
+                        <HostedField type="cardholderName" />
                         Date:
                         <HostedField type="expirationDate" />
                         Month:
@@ -122,6 +122,7 @@ class Demo extends React.PureComponent {
             </div>
         );
     }
+
 }
 
 export default Demo;

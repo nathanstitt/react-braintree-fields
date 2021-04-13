@@ -21,6 +21,7 @@ const buildTree = (
         styles={styles}
         getTokenRef={ref => (getToken = ref)}
     >
+        <HostedField type="cardholderName"  placeholder="name"  {...props.cardholderName}  />
         <HostedField type="number"          placeholder="cc #"  {...props.number}          />
         <HostedField type="expirationDate"  placeholder="date"  {...props.expirationDate}  />
         <HostedField type="expirationMonth" placeholder="month" {...props.expirationMonth} />
