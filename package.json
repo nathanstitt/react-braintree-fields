@@ -51,7 +51,6 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.22.0",
     "braintree-web": "^3.76.2"
   }
 }

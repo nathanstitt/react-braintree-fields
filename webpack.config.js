@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const path = require('path');
 
 const config = {
     mode: 'development',
@@ -26,9 +25,6 @@ const config = {
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
         }),
     ],
-    node: {
-        fs: 'empty',
-    },
     devServer: {
         hot: false,
         inline: true,
