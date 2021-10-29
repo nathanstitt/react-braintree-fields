@@ -76,17 +76,17 @@ class MySillyCheckoutForm extends React.PureComponent {
 }
 ```
 
-See [demo site](https://nathanstitt.github.io/react-braintree-fields/) for a working example. It renders [demo/demo-class.jsx](demo/demo-class.jsx)  There's also a [functional version](demo/demo-functional.jsx) available that illustrates how to work around the issue of storing a function reference using setState that was discovered in [issue #20](https://github.com/nathanstitt/react-braintree-fields/issues/20)
+See [demo site](https://nathanstitt.github.io/react-braintree-fields/) for a working example. It renders [demo/demo-class.jsx](demo/demo-class.jsx)  There is also a [functional version](demo/demo-functional.jsx) available that illustrates how to work around the issue of storing a function reference using setState that was discovered in [issue #20](https://github.com/nathanstitt/react-braintree-fields/issues/20)
 
 ## Braintree Component
 
 Props:
  * authorization: Required, either a [tokenization key or a client token](https://developers.braintreepayments.com/guides/hosted-fields/setup-and-integration/)
- * onAuthorizationSuccess: Function that will be called after Braintree successfully initializes the form.
+ * onAuthorizationSuccess: Function that is called after Braintree successfully initializes the form
  * styles: Object containing [valid field styles](https://braintree.github.io/braintree-web/3.11.1/module-braintree-web_hosted-fields.html#.create)
- * onError: Function that will be called if an Braintree error is encountered.
+ * onError: Function that is called if an Braintree error is encountered.
  * getTokenRef: A function that will be called once Braintree the API is initialized.  It will be called with a function that can be used to initiate tokenization.
-   * The tokenization function will return a Promise which will be either resolved or rejected.  If resolved, the promise payload will contain an object with the `nonce` and other data from Braintree.
+   * The tokenization function will return a Promise which will be either resolved or rejected.  If resolved, the promise payload will contain an object with the `nonce` and other data from Braintree. If rejected it will return the error notice from Braintree
  * onDataCollectorInstanceReady: A function that will be called with the results of `Braintree.dataCollector.create`. This can be used in conjunction with [Braintree's Advanced Fraud Tools](https://developers.braintreepayments.com/guides/advanced-fraud-tools/client-side/javascript/v3).
 
 ## HostedField Component
