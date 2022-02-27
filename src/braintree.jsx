@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Api from './api';
+import { Context } from './context'
+
 
 export default class Braintree extends React.Component {
 
@@ -21,13 +23,10 @@ export default class Braintree extends React.Component {
         tagName: 'div',
     }
 
-    static childContextTypes = {
-        braintreeApi: PropTypes.instanceOf(Api),
-    }
-
     constructor(props) {
         super(props);
         this.api = new Api(props);
+        this.contextValue = { braintreeApi: this.api }
     }
 
     componentDidMount() {
@@ -49,18 +48,17 @@ export default class Braintree extends React.Component {
         return this.api.tokenize(options);
     }
 
-    getChildContext() {
-        return { braintreeApi: this.api };
-    }
-
     render() {
         const { className: providedClass, tagName: Tag } = this.props;
         let className = 'braintree-hosted-fields-wrapper';
         if (providedClass) { className += ` ${providedClass}`; }
+
         return (
-            <Tag className={className}>
-                {this.props.children}
-            </Tag>
+            <Context.Provider value={this.contextValue}>
+                <Tag className={className}>
+                    {this.props.children}
+                </Tag>
+            </Context.Provider>
         );
     }
 
