@@ -15,7 +15,7 @@
   "scripts": {
     "test": "jest",
     "build": "./script/build",
-    "demo": "$(npm bin)/webpack-dev-server",
+    "demo": "$(npm bin)/webpack serve",
     "ci": "./script/cibuild",
     "preversion": "./script/preversion"
   },

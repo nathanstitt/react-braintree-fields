@@ -109,7 +109,7 @@ class Demo extends React.PureComponent {
                         Month:
                         <HostedField type="expirationMonth" />
                         Year:
-                        <HostedField type="expirationYear" />
+                        <HostedField type="expirationYear" options={{ maskInput: { character: 'X' } }} />
                         CVV:
                         <HostedField type="cvv" placeholder="CVV" ref={cvvField => { this.cvvField = cvvField; }} />
                         Zip:

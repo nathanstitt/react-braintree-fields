@@ -106,8 +106,9 @@ export default class BraintreeClientApi {
         select,
         type,
         prefill,
-        id = `braintree-field-wrapper-${this.nextFieldId()}`,
         rejectUnsupportedCards,
+        id = `braintree-field-wrapper-${this.nextFieldId()}`,
+        options = {},
         ...handlers
     }) {
         const onRenderComplete = () => {
@@ -120,6 +121,7 @@ export default class BraintreeClientApi {
                 select,
                 prefill,
                 selector: `#${id}`,
+                ...options,
             }
             if (('number' === type) && rejectUnsupportedCards) {
                 this.fields.number.rejectUnsupportedCards = true
