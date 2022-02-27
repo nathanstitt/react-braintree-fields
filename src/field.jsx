@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Api from './api';
+import { Context } from './context'
 
 export default class BraintreeHostedField extends React.Component {
 
@@ -20,9 +20,7 @@ export default class BraintreeHostedField extends React.Component {
         prefill: PropTypes.string,
     }
 
-    static contextTypes = {
-        braintreeApi: PropTypes.instanceOf(Api),
-    }
+    static contextType = Context
 
     state = {}
 
