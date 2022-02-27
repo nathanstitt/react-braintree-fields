@@ -120,7 +120,12 @@ class Demo extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
     }), "Month:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_src_index__WEBPACK_IMPORTED_MODULE_1__.HostedField, {
       type: "expirationMonth"
     }), "Year:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_src_index__WEBPACK_IMPORTED_MODULE_1__.HostedField, {
-      type: "expirationYear"
+      type: "expirationYear",
+      options: {
+        maskInput: {
+          character: 'X'
+        }
+      }
     }), "CVV:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_src_index__WEBPACK_IMPORTED_MODULE_1__.HostedField, {
       type: "cvv",
       placeholder: "CVV",
@@ -159,6 +164,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var braintree_web_hosted_fields__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(braintree_web_hosted_fields__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var braintree_web_data_collector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! braintree-web/data-collector */ "./node_modules/braintree-web/dist/browser/data-collector.js");
 /* harmony import */ var braintree_web_data_collector__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(braintree_web_data_collector__WEBPACK_IMPORTED_MODULE_2__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -284,14 +295,15 @@ class BraintreeClientApi {
       select,
       type,
       prefill,
+      rejectUnsupportedCards,
       id = "braintree-field-wrapper-".concat(this.nextFieldId()),
-      rejectUnsupportedCards
+      options = {}
     } = _ref2,
-        handlers = _objectWithoutProperties(_ref2, ["formatInput", "maxlength", "minlength", "placeholder", "select", "type", "prefill", "id", "rejectUnsupportedCards"]);
+        handlers = _objectWithoutProperties(_ref2, ["formatInput", "maxlength", "minlength", "placeholder", "select", "type", "prefill", "rejectUnsupportedCards", "id", "options"]);
 
     var onRenderComplete = () => {
       this.fieldHandlers[type] = handlers;
-      this.fields[type] = {
+      this.fields[type] = _objectSpread({
         formatInput,
         maxlength,
         minlength,
@@ -299,7 +311,7 @@ class BraintreeClientApi {
         select,
         prefill,
         selector: "#".concat(id)
-      };
+      }, options);
 
       if ('number' === type && rejectUnsupportedCards) {
         this.fields.number.rejectUnsupportedCards = true;
