@@ -371,6 +371,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./api */ "./src/api.js");
+/* harmony import */ var _context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./context */ "./src/context.js");
+
 
 
 
@@ -378,6 +380,9 @@ class Braintree extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
   constructor(props) {
     super(props);
     this.api = new _api__WEBPACK_IMPORTED_MODULE_2__.default(props);
+    this.contextValue = {
+      braintreeApi: this.api
+    };
   }
 
   componentDidMount() {
@@ -400,12 +405,6 @@ class Braintree extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     return this.api.tokenize(options);
   }
 
-  getChildContext() {
-    return {
-      braintreeApi: this.api
-    };
-  }
-
   render() {
     var {
       className: providedClass,
@@ -417,9 +416,11 @@ class Braintree extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       className += " ".concat(providedClass);
     }
 
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Tag, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_context__WEBPACK_IMPORTED_MODULE_3__.Context.Provider, {
+      value: this.contextValue
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Tag, {
       className: className
-    }, this.props.children);
+    }, this.props.children));
   }
 
 }
@@ -438,9 +439,25 @@ Braintree.propTypes = {
 Braintree.defaultProps = {
   tagName: 'div'
 };
-Braintree.childContextTypes = {
-  braintreeApi: prop_types__WEBPACK_IMPORTED_MODULE_1___default().instanceOf(_api__WEBPACK_IMPORTED_MODULE_2__.default)
-};
+
+/***/ }),
+
+/***/ "./src/context.js":
+/*!************************!*\
+  !*** ./src/context.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Context": () => (/* binding */ Context)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var Context = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createContext({
+  braintreeApi: null
+});
 
 /***/ }),
 
@@ -458,7 +475,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./api */ "./src/api.js");
+/* harmony import */ var _context__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./context */ "./src/context.js");
 
 
 
@@ -526,9 +543,7 @@ BraintreeHostedField.propTypes = {
   onBlur: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func),
   prefill: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
 };
-BraintreeHostedField.contextTypes = {
-  braintreeApi: prop_types__WEBPACK_IMPORTED_MODULE_1___default().instanceOf(_api__WEBPACK_IMPORTED_MODULE_2__.default)
-};
+BraintreeHostedField.contextType = _context__WEBPACK_IMPORTED_MODULE_2__.Context;
 
 /***/ }),
 
