@@ -27,26 +27,8 @@ const config = {
     ],
     devServer: {
         hot: false,
-        inline: true,
         port: 2222,
         historyApiFallback: true,
-        stats: {
-            colors: true,
-            profile: true,
-            hash: false,
-            version: false,
-            timings: false,
-            assets: true,
-            chunks: false,
-            modules: false,
-            reasons: true,
-            children: false,
-            source: true,
-            errors: true,
-            errorDetails: false,
-            warnings: true,
-            publicPath: false,
-        },
     },
 };
 
